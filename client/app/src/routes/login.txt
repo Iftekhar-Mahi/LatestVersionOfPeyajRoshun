@@ -1,0 +1,29 @@
+const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = () => {
+        // Perform login logic here
+        // You can access the entered values using email and password variables
+        console.log('Email:', email);
+        console.log('Password:', password);
+    };
+
+<div className="container">
+            <h1 className="font-weight-light display text-center">Login</h1>
+            <input
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            
+            <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <button onClick={handleLogin} className="btn btn-primary">Login</button>
+            <button onClick={()=>setAuth(true)} className="btn btn-primary">Authenticate</button>
+            
+        </div>
