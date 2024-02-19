@@ -15,12 +15,11 @@ const Home = ({setAuth}) => {
 
       const parseRes = await response.json();
       console.log(parseRes);
-      //
       setFirstName(parseRes.firstname);
     } catch (err) {
       console.error(err.message);
     }
-    //commit ay
+    
   }
   useEffect(() => {
     getFirstName();

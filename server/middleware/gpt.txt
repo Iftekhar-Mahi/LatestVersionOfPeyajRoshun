@@ -1,0 +1,147 @@
+const router = require('express').Router();
+const pool = require("../db/index");
+const bcrypt = require("bcrypt");
+const jwtGenerator = require("../utils/jwtGenerator");
+const validInfo = require("../middleware/validinfo");
+const authorization = require("../middleware/authorization");
+
+////registering
+router.post("/register",validInfo,async (req,res)=>{
+    try {
+        
+        //1. destructure the req.body (name,email,password)
+        const {FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password}=req.body;
+        //2. check if user exists (if user exists then throw error)
+        const user = await pool.query("SELECT * FROM users WHERE email = $1",[Email]);
+        if(user.rows.length!==0){
+            return res.status(401).send("User already exists");
+        }
+
+        
+        //3. Bcrypt the user password
+        const saltRound=10;
+        const salt=await bcrypt.genSalt(saltRound);
+        const bcryptPassword=await bcrypt.hash(Password,salt);
+        //4. enter the new user inside our database
+        const newUser=await pool.query("INSERT INTO users (FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *",[FirstName, LastName, Email, RoadNo, HouseNo, City, District,bcryptPassword]);
+        
+        //5. generating our jwt token
+        const token=jwtGenerator(newUser.rows[0].userid);
+        //6. send the token
+        res.json({token});
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server error");
+    }
+});
+
+//login route
+router.post("/login",validInfo,async (req,res)=>{
+    try {
+        //1. destructure the req.body
+        const {Email,Password}=req.body;
+        //2. check if user doesn't exist(if not then throw error)
+        const user=await pool.query("SELECT * FROM users WHERE email=$1",[Email]);
+        if(user.rows.length===0){
+            return res.status(401).json("Password or Email is incorrect");
+        }
+        //3. check if incoming password is the same as the database password
+        const validPassword=await bcrypt.compare(Password,user.rows[0].password);
+        if(!validPassword){
+            return res.status(401).json("Password or Email is incorrect");
+        }
+        console.log(validPassword);
+        //4. give them the jwt token
+        const token=jwtGenerator(user.rows[0].userid);
+        res.json({token});
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server error");
+    }
+});
+
+router.get("/is-verify",authorization,async (req,res)=>{
+    try {
+        res.json(true);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server error");
+    }
+});
+
+
+module.exports = router;
+
+
+**first file is jwtAuth.js**
+
+const router = require('express').Router();
+const pool = require("../db/index");
+const authorization = require("../middleware/authorization");
+
+router.get("/",authorization,async (req,res)=>{
+    try {
+        //req.user has the payload, has the user id
+        const user = await pool.query("SELECT firstName,lastname,email,roadno,houseno,city,district FROM users WHERE userid = $1",[req.user]);
+        //console.log(user.rows[0]);
+        res.json(user.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server error");
+    }
+});
+
+module.exports = router;
+
+**second file is dashboard.js**
+
+
+
+const jwt=require("jsonwebtoken");
+require("dotenv").config();
+
+module.exports= async (req,res,next)=>{
+    try {
+        const jwtToken=req.header("token");
+        if(!jwtToken){
+            return res.status(403).json("Not Authorized");
+        }
+        const payload=jwt.verify(jwtToken,process.env.jwtSecret);
+        req.user=payload.user;
+        console.log(req.user);
+        next();
+    } catch (err) {
+        console.error(err.message);
+        return res.status(403).json("Not Authorized");
+    }
+}
+
+**third file is authorization.js**
+
+***********
+
+fourth starts
+
+module.exports =(req,res,next)=>{
+    const {FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password}=req.body;
+    function validEmail(userEmail){
+        // eslint-disable-next-line no-useless-escape
+        const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return re.test(userEmail);
+    }
+    if(req.path === "/register"){
+        if (![FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password].every(Boolean)) {
+            return res.status(401).json("Missing Credentials");
+        } else if (!validEmail(Email)) {
+            return res.status(401).json("Invalid Email");
+        }
+    } else if (req.path === "/login") {
+        if (![Email, Password].every(Boolean)) {
+            return res.status(401).json("Missing Credentials");
+        } else if (!validEmail(Email)) {
+            return res.status(401).json("Invalid Email");
+        }
+    }
+    next();
+}
+**fourth file is validinfo.js**

@@ -41,10 +41,11 @@ app.get("/api/v1/categories", async (req, res) => {
 // get products by category
 app.get("/api/products/:categoryid", async (req, res) => {
     console.log("Fetching products for category:", req.params.categoryid);
-    console.log("categoryid:", categoryid);
+    console.log("categoryid:", req.params.categoryid);
     try {
-        const results = await db.query("SELECT * FROM products WHERE categoryid = $1", [categoryid]);
-        console.log(results);
+        console.log("asche reh");
+        const results = await db.query("SELECT * FROM products WHERE categoryid = $1", [req.params.categoryid]);
+       console.log(results);
         res.status(200).json(results.rows);
     } catch (err) {
         console.error('Error fetching products:', err);
