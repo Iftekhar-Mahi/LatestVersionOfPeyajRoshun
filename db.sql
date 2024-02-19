@@ -1,22 +1,101 @@
 -- -- list of all tables \d
+-- User Table
+CREATE TABLE Users (
+    UserID BIGSERIAL PRIMARY KEY,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) UNIQUE NOT NULL,
+    RoadNo VARCHAR(50),
+    HouseNo VARCHAR(50),
+    City VARCHAR(100),
+    District VARCHAR(100),
+    Password VARCHAR(255) NOT NULL
+);
 
--- CREATE TABLE products(
---     id INT,
---     name VARCHAR(50),
---     price INT,
---     on_sale boolean
+-- Category Table
 
--- );
+CREATE TABLE Categories (
+    CategoryID SERIAL PRIMARY KEY,
+    CategoryName VARCHAR(255) NOT NULL,
+    Description TEXT
+);
 
--- CREATE TABLE restaurants(
---     id BIGSERIAL NOT NULL PRIMARY KEY,
---     name VARCHAR(50) NOT NULL,
---     location VARCHAR(50)NOT NULL,
---     price_range INT NOT NULL check(price_range>= 1 and price_range<=5)
--- );
+-- Product Table
+CREATE TABLE Products (
+    ProductID SERIAL PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    QuantityInStock INT NOT NULL,
+    Price INT NOT NULL,
+    CategoryID INT REFERENCES Categories(CategoryID),
+    ExpireDate DATE
+);
 
--- INSERT INTO restaurants(id,name,location,price_range)
--- values(123,'mcdonalds','newyorks',3);
+-- Orders Table
+CREATE TABLE Orders (
+    OrderID SERIAL PRIMARY KEY,
+    UserID BIGINT REFERENCES Users(UserID),
+    DatePlaced DATE,
+    Amount INT NOT NULL,
+    PaymentMethod VARCHAR(50),
+    PaymentStatus VARCHAR(50),
+    DeliveryStatus VARCHAR(50)
+);
+
+-- Order Details Table
+CREATE TABLE OrderDetails (
+    OrderID INT,
+    ProductID INT,
+    Quantity INT NOT NULL,
+    Price INT NOT NULL,
+    PRIMARY KEY (OrderID, ProductID),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- ProductReview Table
+CREATE TABLE ProductReview (
+    UserID BIGINT,
+    ProductID INT,
+    Rating INT NOT NULL,
+    Comment TEXT,
+    PRIMARY KEY (UserID, ProductID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- OrderReview Table
+CREATE TABLE OrderReview (
+    UserID BIGINT,
+    OrderID INT,
+    Rating INT NOT NULL,
+    Comment TEXT,
+    PRIMARY KEY (UserID, OrderID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
+
+
+-- Promotions Table
+CREATE TABLE Promotions (
+    PromotionID SERIAL PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Description TEXT,
+    CouponCode VARCHAR(50) UNIQUE,
+    DiscountPercentage DECIMAL(5,2) NOT NULL,
+    StartDate DATE,
+    EndDate DATE
+);
+
+-- PromotionProduct Table
+CREATE TABLE PromotionProduct (
+    PromotionID INT,
+    ProductID INT,
+    DiscountPercentage DECIMAL(5,2) NOT NULL,
+    PRIMARY KEY (PromotionID, ProductID),
+    FOREIGN KEY (PromotionID) REFERENCES Promotions(PromotionID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
 
 -- Users Table
 INSERT INTO Users (FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password)
@@ -59,6 +138,92 @@ VALUES
   ('Canned Beans', 18, 1.2, 8, '2023-02-10'),
   ('Rice', 50, 2.2, 9, '2023-01-31'),
   ('All-Purpose Cleaner', 10, 5.0, 10, '2023-01-15');
+
+-- Additional Products
+INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+VALUES
+  ('Orange', 40, 2.0, 1, '2023-02-10'),
+  ('Carrot', 25, 0.75, 2, '2023-02-05'),
+  ('Cheese', 15, 4.5, 3, '2023-03-01'),
+  ('Baguette', 20, 2.8, 4, '2023-01-28'),
+  ('Salmon Fillet', 10, 12.0, 5, '2023-01-18'),
+  ('Juice', 30, 3.0, 6, '2023-02-20'),
+  ('Pretzels', 25, 1.2, 7, '2023-03-10'),
+  ('Canned Soup', 20, 1.5, 8, '2023-02-28'),
+  ('Quinoa', 15, 3.5, 9, '2023-02-15'),
+  ('Window Cleaner', 8, 4.0, 10, '2023-01-20');
+-- More Additional Products
+INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+VALUES
+  ('Grapes', 35, 3.0, 1, '2023-02-15'),
+  ('Broccoli', 20, 1.2, 2, '2023-02-08'),
+  ('Yogurt', 25, 2.5, 3, '2023-03-05'),
+  ('Croissant', 15, 2.2, 4, '2023-01-22'),
+  ('Pork Chops', 12, 9.0, 5, '2023-01-25'),
+  ('Iced Tea', 40, 1.75, 6, '2023-03-10'),
+  ('Peanuts', 30, 1.0, 7, '2023-03-20'),
+  ('Canned Corn', 18, 1.3, 8, '2023-02-15'),
+  ('Pasta', 40, 2.0, 9, '2023-02-28'),
+  ('Bathroom Cleaner', 12, 4.5, 10, '2023-01-10');
+-- More Additional Products
+INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+VALUES
+  ('Pineapple', 30, 4.5, 1, '2023-02-20'),
+  ('Spinach', 18, 1.0, 2, '2023-02-12'),
+  ('Butter', 20, 3.0, 3, '2023-03-08'),
+  ('Bagel', 25, 1.8, 4, '2023-01-30'),
+  ('Ground Beef', 15, 7.0, 5, '2023-01-18'),
+  ('Lemonade', 35, 2.2, 6, '2023-03-15'),
+  ('Popcorn', 22, 1.5, 7, '2023-03-05'),
+  ('Canned Tuna', 18, 1.7, 8, '2023-02-28'),
+  ('Quinoa Pasta', 20, 2.5, 9, '2023-02-28'),
+  ('Glass Cleaner', 10, 4.0, 10, '2023-01-15');
+
+  -- Additional Snacks
+INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+VALUES
+  ('Potato Chips', 30, 1.5, 7, '2023-03-10'),
+  ('Chocolate Bar', 25, 2.0, 7, '2023-02-28'),
+  ('Trail Mix', 20, 3.0, 7, '2023-03-15'),
+  ('Pretzel Sticks', 18, 1.2, 7, '2023-02-20'),
+  ('Cheese Puffs', 22, 1.8, 7, '2023-03-05'),
+  ('Granola Bars', 28, 2.5, 7, '2023-03-08'),
+  ('Popcorn Bags', 24, 1.5, 7, '2023-02-25'),
+  ('Dried Fruit Mix', 20, 2.2, 7, '2023-03-01'),
+  ('Crackers', 30, 1.0, 7, '2023-03-20'),
+  ('Nuts Assortment', 25, 3.5, 7, '2023-03-12'),
+  ('Pita Chips', 18, 1.3, 7, '2023-02-18'),
+  ('Rice Cakes', 22, 1.0, 7, '2023-02-22'),
+  ('Candy Bars Variety', 26, 2.8, 7, '2023-03-25'),
+  ('Sour Gummy Worms', 20, 1.7, 7, '2023-02-28'),
+  ('Mixed Nuts', 15, 4.0, 7, '2023-03-10');
+-- Additional Grains
+INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+VALUES
+  ('Brown Rice', 30, 2.0, 9, '2023-02-28'),
+  ('Quinoa', 25, 3.5, 9, '2023-03-05'),
+  ('Whole Wheat Pasta', 20, 2.2, 9, '2023-02-22'),
+  ('Barley', 18, 1.8, 9, '2023-02-20'),
+  ('Couscous', 22, 1.5, 9, '2023-03-01'),
+  ('Oats', 28, 2.5, 9, '2023-03-08'),
+  ('Bulgur', 24, 1.7, 9, '2023-02-25');
+-- Additional Bakery Items
+INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+VALUES
+  ('Cinnamon Roll', 15, 2.5, 4, '2023-02-18'),
+  ('Baguette', 20, 2.8, 4, '2023-02-20'),
+  ('Blueberry Muffin', 18, 1.8, 4, '2023-02-22'),
+  ('Sourdough Bread', 22, 3.0, 4, '2023-03-01'),
+  ('Chocolate Croissant', 25, 2.2, 4, '2023-03-05'),
+  ('Apple Danish', 28, 2.0, 4, '2023-03-08'),
+  ('Whole Grain Bread', 24, 1.7, 4, '2023-02-25'),
+  ('Pretzel', 20, 1.5, 4, '2023-03-10'),
+  ('Almond Croissant', 15, 3.5, 4, '2023-03-15'),
+  ('Cheese Danish', 18, 2.2, 4, '2023-03-20'),
+  ('Rye Bread', 22, 1.5, 4, '2023-03-25'),
+  ('Multigrain Bagel', 24, 1.8, 4, '2023-04-01');
+
+
 
 -- Orders Table
 INSERT INTO Orders (UserID, DatePlaced, Amount, PaymentMethod, PaymentStatus, DeliveryStatus)

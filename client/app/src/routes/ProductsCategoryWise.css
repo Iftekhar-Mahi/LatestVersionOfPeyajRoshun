@@ -1,0 +1,36 @@
+/* ProductCategoryWise.css */
+
+.container {
+    max-width: 1000px; /* Increase the max-width to expand the overall width */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #6d4198;
+  }
+  
+  .product h2 {
+    color: #bdb1b1;
+    border-bottom: 2px solid #cad5d6;
+    padding-bottom: 5px;
+  }
+  
+  .product ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .product li {
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  
+  /* Add more styles as needed */
+  
+  
+  
