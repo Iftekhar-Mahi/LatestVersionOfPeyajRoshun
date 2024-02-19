@@ -1,0 +1,12 @@
+.category-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-name-extended {
+  font-size: 20px; /* Increase font size of category name */
+  padding-right: 150px; /* Add padding to make span tags longer */
+}
+
+  

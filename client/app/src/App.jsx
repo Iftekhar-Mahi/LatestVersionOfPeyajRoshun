@@ -33,12 +33,12 @@ const App = () => {
     }
 
     useEffect(() => {
-        isAuth()
+        isAuth();
     });
 
     return (
         <CategoriesContext>
-            <div>
+            <div style={{backgroundColor:"tomato"}}>
             <Router>
                 <Routes>
                     <Route exact path="/" element={<PeyajRoshun/>} />
@@ -46,7 +46,8 @@ const App = () => {
                     <Route exact path="/signup" element={!isAuthenticated ? <SignUpPage setAuth={setAuth}/> : <Navigate to = "/login" />} />
                     <Route exact path="/home" element={isAuthenticated ? <HomePage setAuth={setAuth}/> : <Navigate to = "/login" />} />
                     <Route exact path="/productscategorywise/:categoryid" element={isAuthenticated ? <ProductCategoryWise setAuth={setAuth}/> : <Navigate to = "/home" />} />
-                    <Route exact path="/user/:id" element={UserDetailsPage} />
+                    <Route exact path="/user/:id" element={<UserDetailsPage setAuth={setAuth} />} />
+
                 </Routes>
             </Router>
             </div>
