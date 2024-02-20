@@ -38,7 +38,7 @@ const App = () => {
 
     return (
         <CategoriesContext>
-            <div style={{backgroundColor:"tomato"}}>
+            <div>
             <Router>
                 <Routes>
                     <Route exact path="/" element={<PeyajRoshun/>} />

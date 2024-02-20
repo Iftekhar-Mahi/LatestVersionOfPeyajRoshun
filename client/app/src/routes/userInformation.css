@@ -1,5 +1,20 @@
 /* UserInformation.css */
 
+.buttonLogOut {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-left: 85px; /* Add margin-left to move it 5px to the right */
+}
+
+.buttonLogOut:hover {
+  background-color: #45a049;
+}
+
 .user-info-container {
     border: 2px solid #4CAF50; /* Green border */
     border-radius: 10px;

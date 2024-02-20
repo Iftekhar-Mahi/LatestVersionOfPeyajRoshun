@@ -1,15 +1,16 @@
-import React, { Fragment, useState, useEffect } from "react";
-import "./LoginPage.css"; // Import CSS file
-
+import React, { useState, useEffect } from "react";
+import "./Home.css";
 import CategoryList from "../components/CategoryList";
 import UserInformation from "../routes/userInfo";
 
 const Home = ({ setAuth }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // State to track login status
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
   const [district, setDistrict] = useState("");
+  const [showUserInfo, setShowUserInfo] = useState(false); // State to track whether to show user info
 
   async function getUserInfo() {
     try {
@@ -34,37 +35,48 @@ const Home = ({ setAuth }) => {
     getUserInfo();
   }, []);
 
-  const logout = async (e) => {
-    e.preventDefault();
+  const handleLogout = () => {
     try {
       localStorage.removeItem("token");
-      setAuth(false);
+      setAuth(false); // Update authentication status
+      setIsLoggedIn(false); // Update login status
     } catch (err) {
       console.error(err.message);
     }
   };
 
-  return (
-    <div className="container" style={{ backgroundColor: "tomato" }}>
-      <h1
-        className="home-heading text-center"
-        style={{ fontSize: "3rem", color: "cyan" }}
-      >
-        Welcome to Home
-      </h1>
+  const toggleUserInfo = () => {
+    setShowUserInfo(!showUserInfo); // Toggle the showUserInfo state
+  };
 
-      <h2 className="text-center" style={{color:"cyan"}}>
-        {firstName} {lastName}
-      </h2>
-      <button onClick={logout} className="btn btn-primary">
-        LogOut
+  return (
+    <div>
+      <button onClick={toggleUserInfo} className="btn">
+        {showUserInfo ? "Close Profile" : "See My Profile"}
       </button>
-      <br></br>
-      <UserInformation
-        userInfo={{ firstName, lastName, email, city, district }}
-      />
-      <br></br>
-      <CategoryList />
+      <div className="container">
+        <h1
+          className="home-heading text-center"
+          style={{ fontSize: "3rem", color: "cyan" }}
+        >
+          Welcome to Home
+        </h1>
+
+        {isLoggedIn && (
+          <>
+            <h2 className="text-center" style={{ color: "black" }}>
+              {firstName} {lastName}
+            </h2>
+            {showUserInfo && (
+              <UserInformation
+                userInfo={{ firstName, lastName, email, city, district }}
+                handleLogout={handleLogout}
+              />
+            )}
+          </>
+        )}
+      </div>
+      <CategoryList/>
     </div>
   );
 };

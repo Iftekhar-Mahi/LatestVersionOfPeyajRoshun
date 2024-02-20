@@ -1,12 +1,62 @@
-.category-info {
+.category-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust height as needed */
+}
+
+.list-group {
+  width: 50%; /* Adjust width as needed */
+  padding: 0; /* Remove default padding */
+}
+
+.list-group-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px; /* Adjust margin as needed */
+  padding: 10px; /* Add padding to list items */
+  background-color: #f8f9fa; /* Change background color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add border radius */
+}
+
+.list-group-item:nth-child(even) {
+  background-color: #e9ecef; /* Change background color for even list items */
+}
+
+.category-info {
+  flex: 1;
 }
 
 .category-name-extended {
-  font-size: 20px; /* Increase font size of category name */
-  padding-right: 150px; /* Add padding to make span tags longer */
+  font-size: 1.2rem; /* Adjust font size as needed */
 }
 
-  
+.btn {
+  padding: 5px 10px; /* Add padding to buttons */
+  background-color: #ffc107; /* Change button background color */
+  color: #212529; /* Change button text color */
+  border: none; /* Remove button border */
+  border-radius: 3px; /* Add button border radius */
+  cursor: pointer; /* Add cursor pointer */
+}
+
+.btn:hover {
+  background-color: #ffca28; /* Change button background color on hover */
+}
+
+.btn:focus {
+  outline: none; /* Remove button focus outline */
+}
+
+/* Move buttons to the right */
+.button-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.btn-container {
+  float: right;
+}

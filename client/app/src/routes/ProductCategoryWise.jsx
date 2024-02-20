@@ -77,11 +77,11 @@ const ProductCategoryWise = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <div className="container">
+      <div className="product-category-wise-container">
         <h1>ProductCategoryWise</h1>
         <p>Category ID: {categoryid}</p>
         {products.map((product) => (
-          <div className="product" key={product.productid} >
+          <div className="product-item" key={product.productid} >
             <h2>{product.name}</h2>
             <ul>
               <li>Price: {product.price}</li>
