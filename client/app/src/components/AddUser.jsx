@@ -36,8 +36,10 @@ const AddUser = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
             })
+            
             const parseRes = await response.json()
             console.log(parseRes)
+            alert("Request to Add has been sent to server!") // Add alert message
         } catch (err) {
             console.error(err.message)
         }

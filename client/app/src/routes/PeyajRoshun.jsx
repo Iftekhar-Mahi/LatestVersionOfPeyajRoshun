@@ -1,6 +1,6 @@
   import React, { Fragment } from 'react';
   import { Link } from 'react-router-dom';
-  import './PeyajRoshun.css'; // Import the CSS file
+  import '../styles/PeyajRoshun.css'; // Import the CSS file
 
   const PeyajRoshun = () => {
     return (

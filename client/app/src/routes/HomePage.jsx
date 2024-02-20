@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
 import CategoryList from "../components/CategoryList";
 import UserInformation from "../routes/userInfo";
+import "../styles/Home.css";
+
 
 const Home = ({ setAuth }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true); // State to track login status

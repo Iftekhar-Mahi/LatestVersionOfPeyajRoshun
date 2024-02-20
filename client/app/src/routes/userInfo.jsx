@@ -1,5 +1,5 @@
 import React from "react";
-import "./userInformation.css"; // Import CSS file
+import "../styles/userInformation.css"; // Import CSS file
 
 const UserInformation = ({ userInfo, handleLogout }) => {
   const handleLogoutClick = () => {
@@ -8,6 +8,7 @@ const UserInformation = ({ userInfo, handleLogout }) => {
     
       return (
         <div className="user-info-container">
+          <p><strong>User Information</strong></p>  
           <p><strong>First Name:</strong> {userInfo.firstName}</p>
           <p><strong>Last Name:</strong> {userInfo.lastName}</p>
           <p><strong>Email:</strong> {userInfo.email}</p>

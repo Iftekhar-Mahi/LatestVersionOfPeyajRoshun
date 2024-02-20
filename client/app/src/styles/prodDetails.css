@@ -1,0 +1,24 @@
+.product-details-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  .product-item {
+    margin-bottom: 20px;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #007bff;
+  }
+  
