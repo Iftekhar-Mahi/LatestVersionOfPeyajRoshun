@@ -3,9 +3,9 @@
 
 drop database peyajroshun;
 Create database peyajroshun;
-CREATE TABLE Users (
     UserID BIGSERIAL PRIMARY KEY,
-    FirstName VARCHAR(255) NOT NULL,
+    FiCREATE TABLE Users (
+rstName VARCHAR(255) NOT NULL,
     LastName VARCHAR(255) NOT NULL,
     Email VARCHAR(255) UNIQUE NOT NULL,
     RoadNo VARCHAR(50),
@@ -30,7 +30,6 @@ CREATE TABLE Products (
     Description VARCHAR(255) NOT NULL,
     QuantityInStock INT NOT NULL,
     Price INT NOT NULL,
-    Rating INTEGER CHECK (Rating >= 1 AND Rating <= 5),
     CategoryID INT REFERENCES Categories(CategoryID),
     ExpireDate DATE
 );
@@ -114,7 +113,7 @@ CREATE TABLE Cart (
 
 
 -- Users Table
-INSERT INTO Users (FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password)
+ INSERT INTO Users (FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password)
 VALUES
   ('John', 'Doe', 'john.doe@email.com', '123', '456', 'CityA', 'DistrictX', 'password123'),
   ('Alice', 'Smith', 'alice.smith@email.com', '789', '101', 'CityB', 'DistrictY', 'password456'),
@@ -124,7 +123,7 @@ VALUES
   ('Sophia', 'Miller', 'sophia.miller@email.com', '606', '707', 'CityF', 'DistrictU', 'passwordGHI'),
   ('James', 'Davis', 'james.davis@email.com', '909', '808', 'CityG', 'DistrictT', 'passwordJKL'),
   ('Emma', 'Taylor', 'emma.taylor@email.com', '404', '606', 'CityH', 'DistrictS', 'passwordMNO'),
-  ('Michael', 'Clark', 'michael.clark@email.com', '707', '404', 'CityI', 'DistrictR', 'passwordPQR'),
+  ('Michael', 'Clark', 'michael.clark@email.com', '707', '404', 'CityI', 'DistrictR', 'passwordPQR');
 
 
 -- Categories Table
@@ -145,104 +144,111 @@ VALUES
   ('Personal Care', 'Personal care and hygiene products');
 
 -- Products Table
-INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
-VALUES
-  ('Apple', 50, 2.5, 1, '2023-01-31'),
-  ('Banana', 30, 1.0, 1, '2023-01-30'),
-  ('Milk', 20, 3.5, 3, '2023-02-15'),
-  ('Bread', 25, 2.0, 4, '2023-01-25'),
-  ('Chicken Breast', 15, 8.0, 5, '2023-01-20'),
-  ('Soda', 40, 1.5, 6, '2023-02-28'),
-  ('Chips', 35, 1.8, 7, '2023-03-15'),
-  ('Canned Beans', 18, 1.2, 8, '2023-02-10'),
-  ('Rice', 50, 2.2, 9, '2023-01-31'),
-  ('All-Purpose Cleaner', 10, 5.0, 10, '2023-01-15');
 
+INSERT INTO Products (Name, Description, QuantityInStock, Price, CategoryID, ExpireDate)
+VALUES
+  ('Apple', 'Fresh and juicy apple', 50, 2.5, 1, '2023-01-31'),
+  ('Banana', 'Yellow and nutritious banana', 30, 1.0, 1, '2023-01-30'),
+  ('Milk', 'Creamy and nutritious milk', 20, 3.5, 3, '2023-02-15'),
+  ('Bread', 'Freshly baked bread', 25, 2.0, 4, '2023-01-25'),
+  ('Chicken Breast', 'Lean and tender chicken breast', 15, 8.0, 5, '2023-01-20'),
+  ('Soda', 'Refreshing carbonated beverage', 40, 1.5, 6, '2023-02-28'),
+  ('Chips', 'Crunchy and savory chips', 35, 1.8, 7, '2023-03-15'),
+  ('Canned Beans', 'Canned beans for convenience', 18, 1.2, 8, '2023-02-10'),
+  ('Rice', 'High-quality rice grains', 50, 2.2, 9, '2023-01-31'),
+  ('All-Purpose Cleaner', 'Versatile cleaning solution', 10, 5.0, 10, '2023-01-15');
+INSERT INTO Products (Name, Description, QuantityInStock, Price, CategoryID, ExpireDate)
+VALUES
+  ('Cinnamon Roll', 'Sweet and aromatic cinnamon roll', 15, 2.5, 4, '2023-02-18'),
+  ('Baguette', 'Crusty and flavorful baguette', 20, 2.8, 4, '2023-02-20'),
+  ('Blueberry Muffin', 'Moist and fruity blueberry muffin', 18, 1.8, 4, '2023-02-22'),
+  ('Sourdough Bread', 'Tangy and chewy sourdough bread', 22, 3.0, 4, '2023-03-01'),
+  ('Chocolate Croissant', 'Buttery and chocolate-filled croissant', 25, 2.2, 4, '2023-03-05'),
+  ('Apple Danish', 'Flaky and apple-filled danish', 28, 2.0, 4, '2023-03-08'),
+  ('Whole Grain Bread', 'Nutritious and wholesome whole grain bread', 24, 1.7, 4, '2023-02-25'),
+  ('Pretzel', 'Crunchy and salty pretzel', 20, 1.5, 4, '2023-03-10'),
+  ('Almond Croissant', 'Buttery and almond-filled croissant', 15, 3.5, 4, '2023-03-15'),
+  ('Cheese Danish', 'Flaky and cheese-filled danish', 18, 2.2, 4, '2023-03-20'),
+  ('Rye Bread', 'Hearty and flavorful rye bread', 22, 1.5, 4, '2023-03-25'),
+  ('Multigrain Bagel', 'Nutritious and multigrain bagel', 24, 1.8, 4, '2023-04-01');
+-- Vegetable Items
 -- Additional Products
-INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+INSERT INTO Products (Name, Description, QuantityInStock, Price, CategoryID, ExpireDate)
 VALUES
-  ('Orange', 40, 2.0, 1, '2023-02-10'),
-  ('Carrot', 25, 0.75, 2, '2023-02-05'),
-  ('Cheese', 15, 4.5, 3, '2023-03-01'),
-  ('Baguette', 20, 2.8, 4, '2023-01-28'),
-  ('Salmon Fillet', 10, 12.0, 5, '2023-01-18'),
-  ('Juice', 30, 3.0, 6, '2023-02-20'),
-  ('Pretzels', 25, 1.2, 7, '2023-03-10'),
-  ('Canned Soup', 20, 1.5, 8, '2023-02-28'),
-  ('Quinoa', 15, 3.5, 9, '2023-02-15'),
-  ('Window Cleaner', 8, 4.0, 10, '2023-01-20');
+  ('Orange', 'Juicy and refreshing orange', 40, 2.0, 1, '2023-02-10'),
+  ('Carrot', 'Fresh and nutritious carrot', 25, 0.75, 2, '2023-02-05'),
+  ('Cheese', 'Delicious and creamy cheese', 15, 4.5, 3, '2023-03-01'),
+  ('Baguette', 'Crusty and flavorful baguette', 20, 2.8, 4, '2023-01-28'),
+  ('Salmon Fillet', 'Fresh and tender salmon fillet', 10, 12.0, 5, '2023-01-18'),
+  ('Juice', 'Refreshing and flavorful juice', 30, 3.0, 6, '2023-02-20'),
+  ('Pretzels', 'Crunchy and salty pretzels', 25, 1.2, 7, '2023-03-10'),
+  ('Canned Soup', 'Convenient and tasty canned soup', 20, 1.5, 8, '2023-02-28'),
+  ('Quinoa', 'Healthy and nutritious quinoa', 15, 3.5, 9, '2023-02-15'),
+  ('Window Cleaner', 'Effective and versatile window cleaner', 8, 4.0, 10, '2023-01-20');
 -- More Additional Products
-INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+INSERT INTO Products (Name, Description, QuantityInStock, Price, CategoryID, ExpireDate)
 VALUES
-  ('Grapes', 35, 3.0, 1, '2023-02-15'),
-  ('Broccoli', 20, 1.2, 2, '2023-02-08'),
-  ('Yogurt', 25, 2.5, 3, '2023-03-05'),
-  ('Croissant', 15, 2.2, 4, '2023-01-22'),
-  ('Pork Chops', 12, 9.0, 5, '2023-01-25'),
-  ('Iced Tea', 40, 1.75, 6, '2023-03-10'),
-  ('Peanuts', 30, 1.0, 7, '2023-03-20'),
-  ('Canned Corn', 18, 1.3, 8, '2023-02-15'),
-  ('Pasta', 40, 2.0, 9, '2023-02-28'),
-  ('Bathroom Cleaner', 12, 4.5, 10, '2023-01-10');
+  ('Grapes', 'Sweet and juicy grapes', 35, 3.0, 1, '2023-02-15'),
+  ('Broccoli', 'Nutritious and versatile broccoli', 20, 1.2, 2, '2023-02-08'),
+  ('Yogurt', 'Creamy and probiotic-rich yogurt', 25, 2.5, 3, '2023-03-05'),
+  ('Croissant', 'Buttery and flaky croissant', 15, 2.2, 4, '2023-01-22'),
+  ('Pork Chops', 'Tender and flavorful pork chops', 12, 9.0, 5, '2023-01-25'),
+  ('Iced Tea', 'Refreshing and thirst-quenching iced tea', 40, 1.75, 6, '2023-03-10'),
+  ('Peanuts', 'Crunchy and protein-packed peanuts', 30, 1.0, 7, '2023-03-20'),
+  ('Canned Corn', 'Sweet and delicious canned corn', 18, 1.3, 8, '2023-02-15'),
+  ('Pasta', 'Versatile and satisfying pasta', 40, 2.0, 9, '2023-02-28'),
+  ('Bathroom Cleaner', 'Effective and convenient bathroom cleaner', 12, 4.5, 10, '2023-01-10');
 -- More Additional Products
-INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+INSERT INTO Products (Name, Description, QuantityInStock, Price, CategoryID, ExpireDate)
 VALUES
-  ('Pineapple', 30, 4.5, 1, '2023-02-20'),
-  ('Spinach', 18, 1.0, 2, '2023-02-12'),
-  ('Butter', 20, 3.0, 3, '2023-03-08'),
-  ('Bagel', 25, 1.8, 4, '2023-01-30'),
-  ('Ground Beef', 15, 7.0, 5, '2023-01-18'),
-  ('Lemonade', 35, 2.2, 6, '2023-03-15'),
-  ('Popcorn', 22, 1.5, 7, '2023-03-05'),
-  ('Canned Tuna', 18, 1.7, 8, '2023-02-28'),
-  ('Quinoa Pasta', 20, 2.5, 9, '2023-02-28'),
-  ('Glass Cleaner', 10, 4.0, 10, '2023-01-15');
+  ('Pineapple', 'Sweet and tropical pineapple', 30, 4.5, 1, '2023-02-20'),
+  ('Spinach', 'Nutritious and leafy spinach', 18, 1.0, 2, '2023-02-12'),
+  ('Butter', 'Creamy and rich butter', 20, 3.0, 3, '2023-03-08'),
+  ('Bagel', 'Soft and chewy bagel', 25, 1.8, 4, '2023-01-30'),
+  ('Ground Beef', 'High-quality and flavorful ground beef', 15, 7.0, 5, '2023-01-18'),
+  ('Lemonade', 'Refreshing and tangy lemonade', 35, 2.2, 6, '2023-03-15'),
+  ('Popcorn', 'Crunchy and savory popcorn', 22, 1.5, 7, '2023-03-05'),
+  ('Canned Tuna', 'Flaky and versatile canned tuna', 18, 1.7, 8, '2023-02-28'),
+  ('Quinoa Pasta', 'Gluten-free and nutritious quinoa pasta', 20, 2.5, 9, '2023-02-28'),
+  ('Glass Cleaner', 'Streak-free and effective glass cleaner', 10, 4.0, 10, '2023-01-15');
 
   -- Additional Snacks
-INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+INSERT INTO Products (Name, Description, QuantityInStock, Price, CategoryID, ExpireDate)
 VALUES
-  ('Potato Chips', 30, 1.5, 7, '2023-03-10'),
-  ('Chocolate Bar', 25, 2.0, 7, '2023-02-28'),
-  ('Trail Mix', 20, 3.0, 7, '2023-03-15'),
-  ('Pretzel Sticks', 18, 1.2, 7, '2023-02-20'),
-  ('Cheese Puffs', 22, 1.8, 7, '2023-03-05'),
-  ('Granola Bars', 28, 2.5, 7, '2023-03-08'),
-  ('Popcorn Bags', 24, 1.5, 7, '2023-02-25'),
-  ('Dried Fruit Mix', 20, 2.2, 7, '2023-03-01'),
-  ('Crackers', 30, 1.0, 7, '2023-03-20'),
-  ('Nuts Assortment', 25, 3.5, 7, '2023-03-12'),
-  ('Pita Chips', 18, 1.3, 7, '2023-02-18'),
-  ('Rice Cakes', 22, 1.0, 7, '2023-02-22'),
-  ('Candy Bars Variety', 26, 2.8, 7, '2023-03-25'),
-  ('Sour Gummy Worms', 20, 1.7, 7, '2023-02-28'),
-  ('Mixed Nuts', 15, 4.0, 7, '2023-03-10');
+  ('Potato Chips', 'Crunchy and flavorful potato chips', 30, 1.5, 7, '2023-03-10'),
+  ('Chocolate Bar', 'Rich and indulgent chocolate bar', 25, 2.0, 7, '2023-02-28'),
+  ('Trail Mix', 'Nutty and energizing trail mix', 20, 3.0, 7, '2023-03-15'),
+  ('Pretzel Sticks', 'Crunchy and salty pretzel sticks', 18, 1.2, 7, '2023-02-20'),
+  ('Cheese Puffs', 'Cheesy and addictive cheese puffs', 22, 1.8, 7, '2023-03-05'),
+  ('Granola Bars', 'Healthy and satisfying granola bars', 28, 2.5, 7, '2023-03-08'),
+  ('Popcorn Bags', 'Convenient and microwaveable popcorn bags', 24, 1.5, 7, '2023-02-25'),
+  ('Dried Fruit Mix', 'Sweet and chewy dried fruit mix', 20, 2.2, 7, '2023-03-01'),
+  ('Crackers', 'Crispy and versatile crackers', 30, 1.0, 7, '2023-03-20'),
+  ('Nuts Assortment', 'Assortment of flavorful nuts', 25, 3.5, 7, '2023-03-12'),
+  ('Pita Chips', 'Crunchy and savory pita chips', 18, 1.3, 7, '2023-02-18'),
+  ('Rice Cakes', 'Light and crispy rice cakes', 22, 1.0, 7, '2023-02-22'),
+  ('Candy Bars Variety', 'Variety pack of delicious candy bars', 26, 2.8, 7, '2023-03-25'),
+  ('Sour Gummy Worms', 'Tangy and chewy sour gummy worms', 20, 1.7, 7, '2023-02-28'),
+  ('Mixed Nuts', 'Assortment of mixed nuts', 15, 4.0, 7, '2023-03-10');
 -- Additional Grains
-INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+INSERT INTO Products (Name, Description, QuantityInStock, Price, CategoryID, ExpireDate)
 VALUES
-  ('Brown Rice', 30, 2.0, 9, '2023-02-28'),
-  ('Quinoa', 25, 3.5, 9, '2023-03-05'),
-  ('Whole Wheat Pasta', 20, 2.2, 9, '2023-02-22'),
-  ('Barley', 18, 1.8, 9, '2023-02-20'),
-  ('Couscous', 22, 1.5, 9, '2023-03-01'),
-  ('Oats', 28, 2.5, 9, '2023-03-08'),
-  ('Bulgur', 24, 1.7, 9, '2023-02-25');
+  ('Brown Rice', 'Nutritious and hearty brown rice', 30, 2.0, 9, '2023-02-28'),
+  ('Quinoa', 'Healthy and protein-rich quinoa', 25, 3.5, 9, '2023-03-05'),
+  ('Whole Wheat Pasta', 'Whole grain and fiber-rich pasta', 20, 2.2, 9, '2023-02-22'),
+  ('Barley', 'Nutty and versatile barley', 18, 1.8, 9, '2023-02-20'),
+  ('Couscous', 'Fluffy and flavorful couscous', 22, 1.5, 9, '2023-03-01'),
+  ('Oats', 'Hearty and nutritious oats', 28, 2.5, 9, '2023-03-08'),
+  ('Bulgur', 'Nutritious and versatile bulgur', 24, 1.7, 9, '2023-02-25');
 -- Additional Bakery Items
-INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
+
+INSERT INTO Products (Name, Description, QuantityInStock, Price, CategoryID, ExpireDate)
 VALUES
-  ('Cinnamon Roll', 15, 2.5, 4, '2023-02-18'),
-  ('Baguette', 20, 2.8, 4, '2023-02-20'),
-  ('Blueberry Muffin', 18, 1.8, 4, '2023-02-22'),
-  ('Sourdough Bread', 22, 3.0, 4, '2023-03-01'),
-  ('Chocolate Croissant', 25, 2.2, 4, '2023-03-05'),
-  ('Apple Danish', 28, 2.0, 4, '2023-03-08'),
-  ('Whole Grain Bread', 24, 1.7, 4, '2023-02-25'),
-  ('Pretzel', 20, 1.5, 4, '2023-03-10'),
-  ('Almond Croissant', 15, 3.5, 4, '2023-03-15'),
-  ('Cheese Danish', 18, 2.2, 4, '2023-03-20'),
-  ('Rye Bread', 22, 1.5, 4, '2023-03-25'),
-  ('Multigrain Bagel', 24, 1.8, 4, '2023-04-01');
-
-
+  ('Onion (1 kg)', 'Versatile and flavorful onion', 20, 1.5, 2, '2023-02-28'),
+  ('Garlic (1 kg)', 'Aromatic and pungent garlic', 15, 2.0, 2, '2023-02-25'),
+  ('Carrot (1 kg)', 'Fresh and nutritious carrot', 25, 1.0, 2, '2023-03-05'),
+  ('Broccoli', 'Nutritious and versatile broccoli', 18, 1.2, 2, '2023-02-22'),
+  ('Spinach (bunch)', 'Leafy and nutrient-packed spinach', 20, 1.8, 2, '2023-03-01');
 
 -- Orders Table
 INSERT INTO Orders (UserID, DatePlaced, Amount, PaymentMethod, PaymentStatus, DeliveryStatus)

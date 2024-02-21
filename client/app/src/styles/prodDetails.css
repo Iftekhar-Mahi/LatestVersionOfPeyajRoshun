@@ -1,24 +1,60 @@
+/* prodDetails.css */
+
+/* Existing styles */
 .product-details-container {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 20px;
-  }
-  
-  .product-item {
-    margin-bottom: 20px;
-  }
-  
-  .add-to-cart-btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .add-to-cart-btn:hover {
-    background-color: #007bff;
-  }
-  
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-item {
+  margin-bottom: 20px;
+}
+
+.add-to-cart-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+
+/* New styles for list */
+.product-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-item ul li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.product-item ul li:last-child {
+  border-bottom: none; /* Remove border for last list item */
+}
+
+/* Colors and effects */
+.product-item ul li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.product-item ul li a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.product-item ul li a:hover {
+  color: #0056b3;
+}
