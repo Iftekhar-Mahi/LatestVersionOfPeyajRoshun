@@ -1,5 +1,8 @@
 -- -- list of all tables \d
 -- User Table
+
+drop database peyajroshun;
+Create database peyajroshun;
 CREATE TABLE Users (
     UserID BIGSERIAL PRIMARY KEY,
     FirstName VARCHAR(255) NOT NULL,
@@ -24,8 +27,10 @@ CREATE TABLE Categories (
 CREATE TABLE Products (
     ProductID SERIAL PRIMARY KEY,
     Name VARCHAR(255) NOT NULL,
+    Description VARCHAR(255) NOT NULL,
     QuantityInStock INT NOT NULL,
     Price INT NOT NULL,
+    Rating INTEGER CHECK (Rating >= 1 AND Rating <= 5),
     CategoryID INT REFERENCES Categories(CategoryID),
     ExpireDate DATE
 );
@@ -97,6 +102,17 @@ CREATE TABLE PromotionProduct (
 );
 
 
+--Create table for Cart
+
+CREATE TABLE Cart (
+    CartID SERIAL PRIMARY KEY,
+    UserID BIGINT REFERENCES Users(UserID),
+    ProductID INT REFERENCES Products(ProductID),
+    Quantity INT NOT NULL
+);
+
+
+
 -- Users Table
 INSERT INTO Users (FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password)
 VALUES
@@ -109,7 +125,7 @@ VALUES
   ('James', 'Davis', 'james.davis@email.com', '909', '808', 'CityG', 'DistrictT', 'passwordJKL'),
   ('Emma', 'Taylor', 'emma.taylor@email.com', '404', '606', 'CityH', 'DistrictS', 'passwordMNO'),
   ('Michael', 'Clark', 'michael.clark@email.com', '707', '404', 'CityI', 'DistrictR', 'passwordPQR'),
-  ('Olivia', 'Moore', 'olivia.moore@email.com', '808', '909', 'CityJ', 'DistrictQ', 'passwordSTU');
+
 
 -- Categories Table
 INSERT INTO Categories (CategoryName, Description)
@@ -123,7 +139,10 @@ VALUES
   ('Snacks', 'Snacks and finger foods'),
   ('Canned Goods', 'Canned and preserved items'),
   ('Grains', 'Rice, pasta, and grains'),
-  ('Cleaning Supplies', 'Household cleaning supplies');
+  ('Cleaning Supplies', 'Household cleaning supplies'),
+  ('Condiments', 'Sauces, spices, and seasonings'),
+  ('Frozen Foods', 'Frozen meals and ingredients'),
+  ('Personal Care', 'Personal care and hygiene products');
 
 -- Products Table
 INSERT INTO Products (Name, QuantityInStock, Price, CategoryID, ExpireDate)
@@ -254,6 +273,7 @@ VALUES
   (8, 9, 2, 2.2),
   (9, 10, 1, 5.0);
 
+
 -- ProductReview Table
 INSERT INTO ProductReview (UserID, ProductID, Rating, Comment)
 VALUES
@@ -337,3 +357,6 @@ SELECT * FROM Promotions;
 
 -- PromotionProduct Table
 SELECT * FROM PromotionProduct;
+
+
+psql -h <hostname> -p <port> -U <username> -d <database>

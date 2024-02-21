@@ -51,6 +51,19 @@ app.get("/api/products/:categoryid", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+// get a product
+
+app.get("/api/productDetails/:productid", async (req, res) => {
+    console.log("Fetching product:", req.params.productid);
+    try {
+        const results = await db.query("SELECT * FROM products WHERE productid = $1", [req.params.productid]);
+        console.log(req.params.productid);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching product:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
 
 // ...
 
