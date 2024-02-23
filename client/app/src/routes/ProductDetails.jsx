@@ -1,9 +1,13 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import "../styles/prodDetails.css"; // Import the CSS file
+import { useUserContext } from "../App";
+//import "../styles/prodDetails.css"; // Import the CSS file
 
 const ProductDetails = ({ setAuth }) => {
+
   const { id } = useParams();
+  const {userId,setuserId} = useUserContext();
+
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -22,10 +26,33 @@ const ProductDetails = ({ setAuth }) => {
     fetchProduct();
   }, [id]);
 
-  const handleAddToCart = () => {
-    // Logic to add product to cart can be implemented here
-    alert("Product added to cart!");
+  const handleAddToCart = async () => {
+    try {
+      const response = await fetch(`http://localhost:3006/api/addToCart/${id}/user/${userId}`, {
+        method: "POST",
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to add product to cart");
+      }
+  
+      // Optionally, you can check the response body for any data returned by the server
+      const responseData = await response.json();
+      console.log(responseData);
+      
+  
+      // If you want to perform any action after successful addition to cart,
+      // you can add it here
+  
+      // For example, you can show a success message
+      alert("Product added to cart successfully");
+    } catch (error) {
+      console.error("Error adding product to cart:", error);
+      // Handle error (e.g., show an error message to the user)
+      alert("Failed to add product to cart. Please try again later.");
+    }
   };
+  
 
   return (
     <Fragment>

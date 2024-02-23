@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import '../styles/ProductsCategoryWise.css'; // Import the CSS file
+// import '../styles/ProductsCategoryWise.css'; 
+// Import the CSS file
 
 const ProductCategoryWise = ({ setAuth }) => {
   const { categoryid } = useParams();
@@ -25,20 +26,20 @@ const ProductCategoryWise = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <div className="product-category-wise-container">
+      <div>
         <h1>ProductCategoryWise</h1>
         <p>Category ID: {categoryid}</p>
         {products.map((product) => (
-          <div className="product-item" key={product.productid} >
+          <div key={product.productid} >
             <h2>{product.name}</h2>
-            <ul>
+            
               <li>Price: {product.price}</li>
               <li>Quantity in Stock: {product.quantityinstock}</li>
-              <li>Category ID: {product.categoryid}</li>
-            </ul>
+              <li>Category ID: {product.id}</li>
+            
             <Link to={`/productDetails/${product.productid}`}>
-              <button style={{ backgroundColor: 'blue', color: 'white', padding: '10px', borderRadius: '5px' }}>View Details</button>
-            </Link>
+                <button>View Details</button>
+              </Link>
           </div>
         ))}
       </div>

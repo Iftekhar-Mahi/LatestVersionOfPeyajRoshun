@@ -1,24 +1,149 @@
-import React from "react";
-import "../styles/userInformation.css"; // Import CSS file
+// import React, { useState, useEffect } from "react";
 
-const UserInformation = ({ userInfo, handleLogout }) => {
-  const handleLogoutClick = () => {
-    handleLogout();
-  };
-    
-      return (
-        <div className="user-info-container">
-          <p><strong>User Information</strong></p>  
-          <p><strong>First Name:</strong> {userInfo.firstName}</p>
-          <p><strong>Last Name:</strong> {userInfo.lastName}</p>
-          <p><strong>Email:</strong> {userInfo.email}</p>
-          <p><strong>City:</strong> {userInfo.city}</p>
-          <p><strong>District:</strong> {userInfo.district}</p>
-          {/* Add more user info attributes here */}
-            <button className="buttonLogOut" onClick={handleLogoutClick}>Logout</button>
-        </div>
-      );
+// const UserInformation = ({setAuth}) => {
+//   const [firstName, setFirstName] = useState("");
+//   const [lastName, setLastName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [city, setCity] = useState("");
+//   const [district, setDistrict] = useState("");
+//   const [logoutClicked, setLogoutClicked] = useState(false);
+//   const [isLoggedIn, setIsLoggedIn] = useState(true);
   
+
+//   useEffect(() => {
+//     async function getUserInfo() {
+//       try {
+//         const response = await fetch("http://localhost:3006/dashboard/", {
+//           method: "GET",
+//           headers: { token: localStorage.token },
+//         });
+//         const userData = await response.json();
+//         console.log(userData);
+//         // Update states with received data
+//         setFirstName(userData.firstname);
+//         setLastName(userData.lastname);
+//         setEmail(userData.email);
+//         setCity(userData.city);
+//         setDistrict(userData.district);
+//       } catch (err) {
+//         console.log("Could not fetch user info");
+//       }
+//     }
+//     getUserInfo();
+//   }, []);
+
+//   const buttonLogout = () => {
+//     console.log("Logout button clicked");
+//     // You can add your logout logic here
+//     try{
+//       localStorage.removeItem("token");
+//       setIsLoggedIn(false);
+//       setAuth(false); 
+
+//     }
+//     catch(err){
+//       console.error("Could not logout", err);
+//     }
+//   };
+
+//   return (
+//     <div className="user-info-container">
+//       <p><strong>User Information</strong></p>  
+//       <p><strong>First Name:</strong> {firstName}</p>
+//       <p><strong>Last Name:</strong> {lastName}</p>
+//       <p><strong>Email:</strong> {email}</p>
+//       <p><strong>City:</strong> {city}</p>
+//       <p><strong>District:</strong> {district}</p>
+//       {/* Add more user info attributes here */}
+//       {logoutClicked && <p>Logout button clicked</p>}
+//       <button className="buttonLogOut" onClick={buttonLogout}>Logout</button>
+//     </div>
+//   );
+// };
+
+// export default UserInformation;
+
+
+
+import React, { useState, useEffect, useContext } from "react";
+import { useUserContext } from "../App";
+
+const UserInformation = ({ setAuth }) => {
+  const { userId,setUserId } = useUserContext(); // Access userId from context
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [city, setCity] = useState("");
+  const [district, setDistrict] = useState("");
+  const [logoutClicked, setLogoutClicked] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  useEffect(() => {
+    async function getUserInfo() {
+      try {
+        const response = await fetch("http://localhost:3006/dashboard/", {
+          method: "GET",
+          headers: { token: localStorage.token },
+        });
+        const userData = await response.json();
+        console.log(userData);
+        // Update states with received data
+        setUserId(userData.userid);
+        setFirstName(userData.firstname);
+        setLastName(userData.lastname);
+        setEmail(userData.email);
+        setCity(userData.city);
+        setDistrict(userData.district);
+      } catch (err) {
+        console.log("Could not fetch user info");
+      }
+    }
+    getUserInfo();
+  }, []);
+
+  const buttonLogout = () => {
+    console.log("Logout button clicked");
+    // You can add your logout logic here
+    try {
+      localStorage.removeItem("token");
+      setIsLoggedIn(false);
+      setAuth(false);
+    } catch (err) {
+      console.error("Could not logout", err);
+    }
+  };
+
+  return (
+    <div className="user-info-container">
+      <p>
+        <strong>User Information</strong>
+      </p>
+      <p>
+        <strong>User ID:</strong> {userId}
+      </p>
+      <p>
+        <strong>First Name:</strong> {firstName}
+      </p>
+      <p>
+        <strong>Last Name:</strong> {lastName}
+      </p>
+      <p>
+        <strong>Email:</strong> {email}
+      </p>
+      <p>
+        <strong>City:</strong> {city}
+      </p>
+      <p>
+        <strong>District:</strong> {district}
+      </p>
+      {/* Add more user info attributes here */}
+      {logoutClicked && <p>Logout button clicked</p>}
+      <button className="buttonLogOut" onClick={buttonLogout}>
+        Logout
+      </button>
+    </div>
+  );
 };
 
 export default UserInformation;

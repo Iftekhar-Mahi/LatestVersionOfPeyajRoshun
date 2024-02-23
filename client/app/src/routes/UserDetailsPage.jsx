@@ -2,6 +2,35 @@ import React, { useState, useEffect } from "react";
 
 const UserDetailsPage = ({ match }) => {
   const [user, setUser] = useState(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [city, setCity] = useState("");
+  const [district, setDistrict] = useState("");
+  const [showUserInfo, setShowUserInfo] = useState(false); // State to track whether to show user info
+
+  async function getUserInfo() {
+    try {
+      const response = await fetch("http://localhost:3006/dashboard/", {
+        method: "GET",
+        headers: { token: localStorage.token },
+      });
+
+      const userData = await response.json();
+      console.log(userData);
+      setFirstName(userData.firstname);
+      setLastName(userData.lastname);
+      setEmail(userData.email);
+      setCity(userData.city);
+      setDistrict(userData.district);
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
   useEffect(() => {
     const fetchUserDetails = async () => {

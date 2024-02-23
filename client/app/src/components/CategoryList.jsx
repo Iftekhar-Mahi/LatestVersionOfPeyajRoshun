@@ -1,23 +1,31 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import categoryFinder from "../apis/categoryFinder";
-import { CategoriesContext } from "../context/categoriesContext";
+
 import { Navigate, useNavigate } from "react-router-dom";
 import "./CategoryList.css";
 
 const CategoryList = () => {
   const navigate = useNavigate();
-  const { categories, setCategories } = useContext(CategoriesContext);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
+    
     const fetchData = async () => {
       try {
-        const response = await categoryFinder.get("/");
-        setCategories(response.data.data.categories);
+        const response = await fetch("http://localhost:3006/api/v1/categories");
+        console.log("response was receiverd");
+        const data = await response.json();
+        console.log(response);
+        console.log(data);
+        console.log(data.data);
+        console.log(data.data.categories);
+        setCategories(data.data.categories);
         console.log(response);
       } catch (err) {
-        console.log(err);
+        console.log("Couldnt Fetch what error? Categories");
       }
     };
+    console.log("Category List Mounted");
     fetchData();
   }, []);
 
@@ -27,40 +35,20 @@ const CategoryList = () => {
 
   return (
     <>
-      <div className="category-heading-container">
-        <h1 className="category-list-heading">Categories</h1>
-        <p className="category-description">
-          You can choose products from these categories:
-        </p>
-      </div>
-      <div className="category-list-container">
-        <ul className="list-group">
-          {categories.map((category, index) => (
-            <li
-              key={index}
-              className={
-                index % 2 === 0
-                  ? "list-group-item bg-secondary text-white"
-                  : "list-group-item bg-dark text-white"
-              }
-            >
-              <div className="category-info">
-                <p className="category-name-extended">
-                  {category.categoryname}
-                </p>
-              </div>
-              <div className="button-container">
-                <button
-                  className="btn btn-outline-warning"
-                  onClick={() => navigateToProducts(category)}
-                >
-                  Go
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h1>Categories</h1>
+      <p>You can choose products from these categories:</p>
+      <ul>
+        {categories.map((category) => (
+          <li key={category.categoryid}>
+            <div>
+              <p>{category.categoryname}</p>
+            </div>
+            <div>
+              <button onClick={() => navigateToProducts(category)}>Go</button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </>
   );
 };

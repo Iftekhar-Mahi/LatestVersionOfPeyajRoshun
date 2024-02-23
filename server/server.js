@@ -43,8 +43,11 @@ app.get("/api/products/:categoryid", async (req, res) => {
     console.log("Fetching products for category:", req.params.categoryid);
     console.log("categoryid:", req.params.categoryid);//
     try {
+        console.log("Fetching products for category:", req.params.categoryid);
         const results = await db.query("SELECT * FROM products WHERE categoryid = $1", [req.params.categoryid]);
-        console.log(results);
+        console.log("Not reached here");
+        //console.log(results);
+
         res.status(200).json(results.rows);
     } catch (err) {
         console.error('Error fetching products:', err);
@@ -65,8 +68,83 @@ app.get("/api/productDetails/:productid", async (req, res) => {
     }
 });
 
-// ...
+app.get("/api/productsByName",async (req,res)=>{
+    console.log("Fetching product by name:", req.query.name);
+    try {
 
+        
+        const results = await db.query("SELECT * FROM products WHERE name = $1", [req.query.name]);
+        console.log(req.query.name);
+        console.log(results.rows);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching product:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+app.get("/api/productsByPrice",async (req,res)=>{ 
+    console.log("Fetching product by price:", req.query.price);
+    try {
+        console.log(req.query.price);
+        const results = await db.query("SELECT * FROM products WHERE price = $1", [req.query.price]);
+        console.log(req.query.price);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching product:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+
+app.get("/api/productsByRating",async (req,res)=>{       
+    console.log("Fetching product by rating:", req.query.rating);
+    try {
+        const results = await db.query("SELECT * FROM products WHERE rating = $1", [req.query.rating]);
+        console.log(req.query.rating);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching product:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+
+app.get("/api/cart/:userid",async (req,res)=>{
+    console.log("Fetching cart");
+    try {
+        const results = await db.query("SELECT * FROM products WHERE productid IN (SELECT productid FROM cart WHERE userid =$1)", [req.params.userid]);
+        console.log(results);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching cart:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+app.delete("/api/removeFromCart/:productid/user/:userid", async (req, res) => {
+    console.log("Removing product from cart:", req.params.productid);
+    try {
+        const results = await db.query("DELETE FROM cart WHERE productid = $1 and userid=$2 returning * ", [req.params.productid,req.params.userid]);
+        console.log(results.rowCount); // Logging the number of rows affected
+        res.status(200).json(results.rows); // Returning the number of affected rows in JSON format
+    } catch (err) {
+        console.error('Error removing product from cart:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+app.post("/api/addToCart/:productid/user/:userid", async (req, res) => {
+    console.log("Adding product to cart:", req.params.productid);
+    try {
+        const results = await db.query("INSERT INTO cart (userid, productid,quantity) VALUES ($1, $2,4) returning *", [req.params.userid,req.params.productid]);
+        console.log(results);
+        res.status(201).json(results.rows);
+    } catch (err) {
+        console.error('Error adding product to cart:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
 // get a category
 app.get("/api/v1/categories/:id",async (req,res)=>{
     try{
