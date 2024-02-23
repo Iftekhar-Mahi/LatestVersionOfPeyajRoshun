@@ -21,25 +21,20 @@ app.use("/dashboard",require("./routes/dashboard"));
 // ...
 
 // get all categories
-app.get("/api/v1/categories", async (req, res) => {
+app.get("/categories", async (req, res) => {
 
     try {
         const results = await db.query('SELECT * FROM categories');
         console.log("route handler ren");
         //console.log(results);
-        res.status(200).json({
-            status: "success",
-            results: results.rows.length,
-            data: {
-                categories: results.rows,
-            },
-        });
+        res.status(200).json(results.rows);
     } catch (err) {
         console.log(err);
     }
 });
-// get products by category
-app.get("/api/products/:categoryid", async (req, res) => {
+
+// get All products of a certain category
+app.get("/products/:categoryid", async (req, res) => {
     console.log("Fetching products for category:", req.params.categoryid);
     console.log("categoryid:", req.params.categoryid);//
     try {
@@ -56,7 +51,7 @@ app.get("/api/products/:categoryid", async (req, res) => {
 });
 // get a product
 
-app.get("/api/productDetails/:productid", async (req, res) => {
+app.get("/productdetails/:productid", async (req, res) => {
     console.log("Fetching product:", req.params.productid);
     try {
         const results = await db.query("SELECT * FROM products WHERE productid = $1", [req.params.productid]);
@@ -136,6 +131,7 @@ app.delete("/api/removeFromCart/:productid/user/:userid", async (req, res) => {
 
 app.post("/api/addToCart/:productid/user/:userid", async (req, res) => {
     console.log("Adding product to cart:", req.params.productid);
+    console.log("Adding product to cart:", req.params.userid);
     try {
         const results = await db.query("INSERT INTO cart (userid, productid,quantity) VALUES ($1, $2,4) returning *", [req.params.userid,req.params.productid]);
         console.log(results);
@@ -145,21 +141,7 @@ app.post("/api/addToCart/:productid/user/:userid", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
-// get a category
-app.get("/api/v1/categories/:id",async (req,res)=>{
-    try{
-        const results=await db.query("SELECT * FROM categories WHERE categoryid=$1",[req.params.id]);
-        console.log(results);
-        res.status(200).json({
-            status:"success",
-            data:{
-                category:results.rows[0],
-            },
-        });
-    }catch(err){    
-        console.log(err);
-    }
-});
+
 //create a user
 app.post("/api/v1/user",async (req,res)=>{
     try{
@@ -175,10 +157,6 @@ app.post("/api/v1/user",async (req,res)=>{
         console.log(err);
     }
 });
-
-
-console.log("mahi");
-
 const port=process.env.PORT || 3001;
 app.listen(port,()=>{
     console.log(`connected via port ${port}`);
