@@ -32,7 +32,7 @@ const App = () => {
 
   const isAuth = async () => {
     try {
-      const response = await fetch("http://localhost:3006/auth/is-verify", {
+      const response = await fetch("http://localhost:3006/auth/is-verify/", {
         method: "GET",
         headers: { token: localStorage.token },
       });
@@ -41,12 +41,12 @@ const App = () => {
       parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
       // Set userId if authenticated
       if (parseRes === true) {
-        const userDataResponse = await fetch("http://localhost:3006/auth/user", {
+        const userDataResponse = await fetch("http://localhost:3006/dashboard/", {
           method: "GET",
           headers: { token: localStorage.token },
         });
         const userData = await userDataResponse.json();
-        setUserId(userData.id);
+        setUserId(userData.userid);
       }
     } catch (err) {
       console.error(err.message);
@@ -54,11 +54,14 @@ const App = () => {
   };
 
   useEffect(() => {
+    console.log(userId);
     isAuth();
   }, []);
 
   return (
+
     <UserContext.Provider value={{ userId, setUserId }}>
+    <p>UserId: {userId}</p>
       <div>
         <Router>
           <Routes>

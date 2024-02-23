@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./SearchProducts.css"; // Import the CSS file
 
 const SearchProducts = () => {
   const [searchByWhat, setSearchByWhat] = useState("");
@@ -51,8 +52,12 @@ const SearchProducts = () => {
   };
 
   return (
-    <div>
-      <select value={searchByWhat} onChange={handleSearchByWhatChange}>
+    <div className="search-products-container">
+      <select
+        value={searchByWhat}
+        onChange={handleSearchByWhatChange}
+        className="search-products-select"
+      >
         <option value="">Select How to Search</option>
         <option value="name">Name</option>
         <option value="price">Price</option>
@@ -65,25 +70,30 @@ const SearchProducts = () => {
           value={searchProduct}
           onChange={handleSearchProductChange}
           placeholder={`Search by ${searchByWhat}`}
+          className="search-products-input"
         />
       )}
 
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch} className="search-products-button">
+        Search
+      </button>
 
       {products.length > 0 && (
-        <ul>
+        <ul className="search-products-list">
           {products.map((product) => (
-            <li key={product.id}>
-              
-              {product.name}
-              <br></br>
+            <li key={product.id} className="search-products-item">
+              <span className="search-products-name">{product.name}</span>
+              <br />
               <Link to={`/productDetails/${product.productid}`}>
-                <button>View Details</button>
+                <button className="search-products-view-button">
+                  View Details
+                </button>
               </Link>
             </li>
           ))}
         </ul>
       )}
+
     </div>
   );
 };

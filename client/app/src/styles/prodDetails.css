@@ -1,60 +1,63 @@
-/* prodDetails.css */
-
-/* Existing styles */
+/* ProductDetails.css */
 .product-details-container {
-  margin: 20px;
+  margin-top: 50px;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  background-color: #f2f5f8;
+  border-radius: 8px;
 }
 
 .product-item {
-  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.product-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-item ul li {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.price-label {
+  color: #ffc107; /* Yellow color for price label */
+}
+
+.price-value {
+  color: #007bff; /* Blue color for price value */
+}
+
+.name-label {
+  color: #28a745; /* Green color for name label */
+}
+
+.quantity-label {
+  color: #dc3545; /* Red color for quantity label */
+}
+
+.category-label {
+  color: #6610f2; /* Purple color for category label */
+}
+
+.description-label {
+  color: #17a2b8; /* Cyan color for description label */
 }
 
 .add-to-cart-btn {
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
   padding: 10px 20px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
   background-color: #0056b3;
-}
-
-/* New styles for list */
-.product-item ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.product-item ul li {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.product-item ul li:last-child {
-  border-bottom: none; /* Remove border for last list item */
-}
-
-/* Colors and effects */
-.product-item ul li:hover {
-  background-color: #f0f0f0;
-  cursor: pointer;
-}
-
-.product-item ul li a {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.product-item ul li a:hover {
-  color: #0056b3;
 }

@@ -13,6 +13,9 @@ const Home = ({ setAuth }) => {
   return (
     <div>
       <NavbarHome/>
+      <br/>
+      <br/>
+      <br/>
       <CategoryList/>
     </div>
   );

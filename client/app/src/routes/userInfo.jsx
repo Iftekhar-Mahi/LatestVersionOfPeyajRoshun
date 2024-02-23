@@ -69,7 +69,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useUserContext } from "../App";
 
 const UserInformation = ({ setAuth }) => {
-  const { userId,setUserId } = useUserContext(); // Access userId from context
+  const { userId, setUserId } = useUserContext(); // Access userId from context
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -115,33 +115,21 @@ const UserInformation = ({ setAuth }) => {
   };
 
   return (
-    <div className="user-info-container">
-      <p>
-        <strong>User Information</strong>
-      </p>
-      <p>
-        <strong>User ID:</strong> {userId}
-      </p>
-      <p>
-        <strong>First Name:</strong> {firstName}
-      </p>
-      <p>
-        <strong>Last Name:</strong> {lastName}
-      </p>
-      <p>
-        <strong>Email:</strong> {email}
-      </p>
-      <p>
-        <strong>City:</strong> {city}
-      </p>
-      <p>
-        <strong>District:</strong> {district}
-      </p>
-      {/* Add more user info attributes here */}
-      {logoutClicked && <p>Logout button clicked</p>}
-      <button className="buttonLogOut" onClick={buttonLogout}>
-        Logout
-      </button>
+    <div className="container mt-4">
+      <div className="card border-danger p-4 rounded"> {/* Apply Bootstrap card class, border color, padding, and rounded corners */}
+        <div className="card-body">
+          <h5 className="card-title text-danger border-bottom pb-2 mb-4"><strong>User Information</strong></h5> {/* Apply Bootstrap card title class, text color, bottom border, padding */}
+          <p><strong>User ID:</strong> {userId}</p>
+          <p><strong>First Name:</strong> {firstName}</p>
+          <p><strong>Last Name:</strong> {lastName}</p>
+          <p><strong>Email:</strong> {email}</p>
+          <p><strong>City:</strong> {city}</p>
+          <p><strong>District:</strong> {district}</p>
+          {/* Add more user info attributes here */}
+          {logoutClicked && <p>Logout button clicked</p>}
+          <button className="btn btn-danger" onClick={buttonLogout}>Logout</button> {/* Apply Bootstrap button class and danger color */}
+        </div>
+      </div>
     </div>
   );
 };
