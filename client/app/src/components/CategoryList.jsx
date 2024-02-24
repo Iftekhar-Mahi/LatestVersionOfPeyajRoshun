@@ -77,8 +77,8 @@ const CategoryList = () => {
 
   return (
     <div className="container">
-      <h1 className="mt-4">Categories</h1>
-      <p>You can choose products from these categories:</p>
+      <h3 className="mt-4">Categories</h3>
+      <h5>You can choose products from these categories:</h5>
       <div className="row">
         {categories.map((category) => (
           <div key={category.categoryid} className="col-md-4">

@@ -4,8 +4,13 @@ drop database peyajroshun;
 
 Create database peyajroshun;
 
-UserID BIGSERIAL PRIMARY KEY,
+--popular query for testing
+SELECT * from orders;
+SELECT * from orderdetails where orderid=
+SELECT * from cart;
+
 CREATE TABLE Users (
+UserID BIGSERIAL PRIMARY KEY,
   firstName VARCHAR(255) NOT NULL,
   LastName VARCHAR(255) NOT NULL,
   Email VARCHAR(255) UNIQUE NOT NULL,
@@ -111,10 +116,47 @@ CREATE TABLE
 CREATE TABLE
   Cart (
     CartID SERIAL PRIMARY KEY,
-    UserID BIGINT REFERENCES Users (UserID),
+    UserID BIGSERIAL REFERENCES Users (UserID),
     ProductID INT REFERENCES Products (ProductID),
     Quantity INT NOT NULL
   );
+
+
+CREATE OR REPLACE FUNCTION placeorderforuser(
+    uid bigint, 
+    payment_method VARCHAR(50), 
+    payment_status VARCHAR(50)
+) 
+RETURNS void AS $$
+DECLARE
+    id int;
+BEGIN
+    -- Create a new order for the user
+    INSERT INTO orders (userid, dateplaced, amount, paymentmethod, paymentstatus, deliverystatus)
+    VALUES (uid, CURRENT_DATE, 0, payment_method, payment_status, 'Processing')
+    RETURNING orderid INTO id;
+
+    -- Move products from cart to order details
+    -- Move unique products from cart to order details
+    INSERT INTO orderdetails (orderid, productid, quantity, price)
+    SELECT DISTINCT ON (c.productid) id, c.productid, c.quantity, p.price
+    FROM cart c
+    INNER JOIN products p ON c.productid = p.productid
+    WHERE c.userid = uid;
+
+    -- Update the order amount based on the sum of product prices
+    UPDATE orders
+    SET amount = (SELECT SUM(price * quantity) FROM orderdetails WHERE orderid = id)
+    WHERE orderid = id;
+
+    -- Delete products from cart for the user
+    DELETE FROM cart WHERE userid = uid;
+    
+    -- Optional: If you want to return the OrderI
+    -- RETURN orderid;
+END;
+$$ LANGUAGE plpgsql;
+
 
 INSERT INTO
   CART (UserID, ProductID, Quantity)

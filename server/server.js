@@ -142,6 +142,21 @@ app.post("/api/addToCart/:productid/user/:userid", async (req, res) => {
     }
 });
 
+app.post("/api/placeorder/:userid", async (req, res) => {
+    try {
+        const userId = req.params.userid;
+        const { paymentmethod, paymentstatus } = req.body;
+        console.log(paymentmethod);
+        console.log(paymentstatus);
+
+        const results = await db.query("SELECT placeorderforuser($1, $2, $3)", [userId, paymentmethod, paymentstatus]);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error placing order:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
 //create a user
 app.post("/api/v1/user",async (req,res)=>{
     try{
