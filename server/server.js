@@ -49,6 +49,15 @@ app.get("/products/:categoryid", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+app.get("/api/allproducts", async (req, res) => {
+    try {
+        const results = await db.query("SELECT * FROM products");
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.log(err);
+    }
+});
 // get a product
 
 app.get("/productdetails/:productid", async (req, res) => {

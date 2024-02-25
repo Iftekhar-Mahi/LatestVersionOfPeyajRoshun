@@ -85,6 +85,7 @@ const CategoryList = () => {
             <div className="card mb-4">
               <div className="card-body">
                 <h5 className="card-title">{category.categoryname}</h5>
+                <h3> {category.description}</h3>
                 <button
                   className="btn btn-primary"
                   onClick={() => navigateToProducts(category)}
