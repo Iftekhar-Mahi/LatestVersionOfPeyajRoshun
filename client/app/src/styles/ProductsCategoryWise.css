@@ -1,63 +1,113 @@
-/* ProductCategoryWise.css */
+/* Product Container */
+
 .product-container {
-  margin-top: 0px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background for the container */
+  border-radius: 5px; /* Subtle rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+
+/* Product Title */
 
 .product-title {
-  color: #3f51b5;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333; /* Darker text color for better contrast */
+  text-align: center; /* Center align the title */
 }
 
+/* Category Information */
+
 .category-info {
-  color: #4caf50;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #999; /* Lighter text color for less emphasis */
+  text-align: center; /* Center align the category info */
 }
+
+/* Product Grid */
 
 .product-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between; /* Distribute products evenly */
+  margin: 0 -10px; /* Remove horizontal margin from grid */
 }
+
+/* Product Card */
 
 .product-card {
-  flex: 0 0 calc(33.333% - 20px); /* Three cards per row */
-  margin-bottom: 20px;
+  flex: 0 0 33.3333%; /* Set equal width for cards (4 columns per row) */
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #fff; /* Light background color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px; /* Increased spacing between cards */
+  transition: all 0.2s ease-in-out; /* Smooth hover effect */
 }
+
+.product-card:hover {
+  transform: scale(1.02); /* Slight scale-up on hover for emphasis */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Product Card Content */
 
 .product-card-content {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
+  padding: 0; /* Remove default padding inside the card for cleaner look */
 }
+
+/* Product Name */
 
 .product-name {
-  color: #f44336;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #333; /* Darker text color for better contrast */
 }
 
+/* Product Details */
+
 .product-details {
-  list-style: none;
-  padding: 0;
+  list-style: none; /* Remove default bullet points */
+  padding: 10px 0; /* Add vertical padding for better spacing */
+  margin: 0; /* Remove default margin */
+  border-top: 1px solid #eee; /* Add subtle border to separate details */
 }
 
 .product-detail {
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between; /* Align detail label and value */
+  margin-bottom: 5px; /* Add some space between details */
+  font-size: 0.9em; /* Slightly smaller font for details */
+  color: #666; /* Lighter text color for less emphasis */
 }
 
-.product-price {
-  color: #ff9800;
-}
-
-.product-quantity {
-  color: #ffeb3b;
-}
-
+.product-price,
+.product-quantity,
 .product-category-id {
-  color: #607d8b;
+  font-weight: bold; /* Emphasize detail values */
 }
 
-.details-link {
-  background-color: #795548;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
+/* See Details Button */
+
+.see-details-button-container {
+  text-align: center; /* Center the button horizontally */
+  margin-top: 10px; /* Add some space above the button */
+}
+
+.see-details-button {
+  background-color: #007bff; /* Blue button color */
+  color: #fff; /* White button text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Indicate hover interaction */
+  transition: all 0.2s ease-in-out;
+}
+
+.see-details-button:hover {
+  background-color: #0062cc; /* Darken button color on hover */
 }

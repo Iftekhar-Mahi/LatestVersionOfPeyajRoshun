@@ -17,6 +17,8 @@ import SearchProducts from "./routes/SearchProducts";
 import Cart from "./routes/Cart";
 import Home from "./routes/HomePage";
 import Checkout from "./routes/Checkout"; // Import the Checkout component
+import ProductReview from "./routes/ProductReview"; // Import the ProductReview component
+import EditPage from "./routes/EditPage"; // Import the EditPage component
 
 // Create a custom context for userId and setUserId
 const UserContext = createContext();
@@ -73,7 +75,9 @@ const App = () => {
             <Route exact path="/userProfile" element={isAuthenticated ? <UserInformation setAuth={setAuth}/> : <Navigate to="/login" />} />
             <Route exact path="/productDetails/:id" element={isAuthenticated ? <ProductDetails/> : <Navigate to="/login" />} />
             <Route exact path="/searchProducts" element={isAuthenticated ? <SearchProducts/> : <Navigate to="/login" />} />
+            <Route exact path = "/product/:id/reviews" element={isAuthenticated ? <ProductReview/> : <Navigate to="/login" />} />
             <Route exact path="/checkout" element={isAuthenticated ? <Checkout/> : <Navigate to="/login" />} /> 
+            <Route exact path="/edit" element={isAuthenticated ? <EditPage/> : <Navigate to="/login" />} /> 
           </Routes>
         </Router>
       </div>

@@ -1,0 +1,52 @@
+.edit-container {
+    margin-top: 20px;
+  }
+  
+  .edit-card {
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .edit-card-body {
+    width: 100%;
+  }
+  
+  .edit-card-title {
+    font-size: 1.25rem;
+    color: #dc3545;
+    border-bottom: 1px solid #dc3545;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-field {
+    margin-bottom: 10px;
+  }
+  
+  .edit-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .edit-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover {
+    background-color: #c82333;
+  }
+  
+  .edit-success-message {
+    color: green;
+    margin-top: 10px;
+  }
+
+  

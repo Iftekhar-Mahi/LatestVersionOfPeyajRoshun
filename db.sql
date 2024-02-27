@@ -1,3 +1,24 @@
+CREATE OR REPLACE FUNCTION validate_email_format()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Check if the new email is in a valid format
+    IF NEW.email IS NOT NULL AND NOT NEW.email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$' THEN
+        RAISE EXCEPTION 'Invalid email format';
+    END IF;
+
+    -- If the email is valid, allow the update to proceed
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER check_email_format
+BEFORE UPDATE OF email ON users
+FOR EACH ROW
+EXECUTE FUNCTION validate_email_format();
+
+
+
+
 
 CREATE OR REPLACE FUNCTION placeorderforuser(
     uid bigint, 
@@ -31,6 +52,21 @@ BEGIN
     
     -- Optional: If you want to return the OrderI
     -- RETURN orderid;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+CREATE OR REPLACE FUNCTION getavgrating(id INT)
+RETURNS DECIMAL AS $$
+DECLARE
+    avg_rating DECIMAL;
+BEGIN
+    SELECT AVG(rating) INTO avg_rating
+    FROM ProductReview
+    WHERE productid = id;
+    
+    RETURN avg_rating;
 END;
 $$ LANGUAGE plpgsql;
 

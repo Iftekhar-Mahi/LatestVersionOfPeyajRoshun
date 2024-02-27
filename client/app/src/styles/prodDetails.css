@@ -1,24 +1,21 @@
-/* ProductDetails.css */
+/* prodDetails.css */
+
 .product-details-container {
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #f2f5f8;
-  border-radius: 8px;
+  margin-top: 20px;
+  padding: 0 20px;
+  font-family: 'Arial', sans-serif;
 }
 
 .product-item {
-  border: 1px solid #ced4da;
+  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.product-item ul {
-  list-style: none;
-  padding: 0;
-}
-
-.product-item ul li {
-  margin-bottom: 10px;
+.product-item:hover {
+  transform: translateY(-5px);
 }
 
 .label {
@@ -26,38 +23,54 @@
 }
 
 .price-label {
-  color: #ffc107; /* Yellow color for price label */
-}
-
-.price-value {
-  color: #007bff; /* Blue color for price value */
+  color: #f44336; /* Vibrant color for price label */
 }
 
 .name-label {
-  color: #28a745; /* Green color for name label */
+  color: #3f51b5; /* Vibrant color for product name label */
+}
+
+.rating-label {
+  color: #26b7b0; /* Vibrant color for rating label */
 }
 
 .quantity-label {
-  color: #dc3545; /* Red color for quantity label */
+  color: #4caf50; /* Vibrant color for quantity label */
 }
 
 .category-label {
-  color: #6610f2; /* Purple color for category label */
+  color: #9c27b0; /* Vibrant color for category label */
 }
 
 .description-label {
-  color: #17a2b8; /* Cyan color for description label */
+  color: #ff9800; /* Vibrant color for description label */
+}
+
+.price-value,
+span {
+  color: #333; /* Default color for text */
 }
 
 .add-to-cart-btn {
-  background-color: #007bff;
+  background-color: #2196f3; /* Vibrant color for add to cart button */
   color: #fff;
-  border: none;
   padding: 10px 20px;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
-  background-color: #0056b3;
+  background-color: #1976d2; /* Darker shade on hover */
+}
+
+.success-message {
+  font-size: 15px;
+  background-color: #72c574; /* Vibrant color for success message */
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 10px;
 }

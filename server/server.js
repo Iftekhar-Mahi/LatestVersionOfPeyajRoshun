@@ -33,6 +33,29 @@ app.get("/categories", async (req, res) => {
     }
 });
 
+
+app.post("/edit/:userId", async (req, res) => {
+    const userId = req.params.userId;
+    const { firstName, lastName, email, city, district } = req.body;
+
+    try {
+        const query = `
+            UPDATE users
+            SET firstName = $1, lastName = $2, email = $3, city = $4, district = $5
+            WHERE userId = $6
+        `;
+        await db.query(query, [firstName, lastName, email, city, district, userId]);
+
+        // Respond with success message
+        res.status(200).json({ message: 'Profile updated successfully' });
+    } catch (err) {
+        console.error("Error updating profile:", err);
+        res.status(500).json({ error: 'An error occurred while updating the profile' });
+    }
+});
+
+
+
 // get All products of a certain category
 app.get("/products/:categoryid", async (req, res) => {
     console.log("Fetching products for category:", req.params.categoryid);
@@ -49,6 +72,19 @@ app.get("/products/:categoryid", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+app.get("/api/productavgrating/:productid", async (req, res) => {
+    console.log("Fetching product rating:", req.params.productid);
+    try {
+        const results = await db.query("SELECT ROUND(getavgrating($1), 3) as rating", [req.params.productid]);
+        console.log(req.params.productid);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching product:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}
+);
 
 app.get("/api/allproducts", async (req, res) => {
     try {
@@ -72,12 +108,23 @@ app.get("/productdetails/:productid", async (req, res) => {
     }
 });
 
-app.get("/api/productsByName",async (req,res)=>{
+
+//get product review
+app.get("/api/products/:productid/reviews", async (req, res) => {
+    console.log("Fetching reviews for product:", req.params.productid);
+    try {
+        const results = await db.query("SELECT * FROM productreview WHERE productid = $1", [req.params.productid]);
+        console.log(req.params.productid);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching reviews:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}  );
+app.get("/api/productsByName", async (req, res) => {
     console.log("Fetching product by name:", req.query.name);
     try {
-
-        
-        const results = await db.query("SELECT * FROM products WHERE name = $1", [req.query.name]);
+       const results = await db.query("SELECT * FROM products WHERE name ILIKE '%' || $1 || '%'", [req.query.name]);
         console.log(req.query.name);
         console.log(results.rows);
         res.status(200).json(results.rows);
