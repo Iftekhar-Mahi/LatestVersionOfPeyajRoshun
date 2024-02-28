@@ -5,12 +5,11 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-
+import AllOrders from "./routes/AllOrders";
 import UserInformation from "./routes/userInfo";
 import ProductDetails from "./routes/ProductDetails";   
 import PeyajRoshun from "./routes/PeyajRoshun";
 import ProductCategoryWise from "./routes/ProductCategoryWise";
-import UserDetailsPage from "./routes/UserDetailsPage";
 import LoginPage from "./routes/LoginPage";
 import SignUpPage from "./routes/SignUp";
 import SearchProducts from "./routes/SearchProducts";
@@ -19,7 +18,7 @@ import Home from "./routes/HomePage";
 import Checkout from "./routes/Checkout"; // Import the Checkout component
 import ProductReview from "./routes/ProductReview"; // Import the ProductReview component
 import EditPage from "./routes/EditPage"; // Import the EditPage component
-
+import Promotions from "./routes/Promotions"; // Import the Promotions component
 // Create a custom context for userId and setUserId
 const UserContext = createContext();
 
@@ -78,6 +77,8 @@ const App = () => {
             <Route exact path = "/product/:id/reviews" element={isAuthenticated ? <ProductReview/> : <Navigate to="/login" />} />
             <Route exact path="/checkout" element={isAuthenticated ? <Checkout/> : <Navigate to="/login" />} /> 
             <Route exact path="/edit" element={isAuthenticated ? <EditPage/> : <Navigate to="/login" />} /> 
+            <Route exact path="/seeHotDeals" element={isAuthenticated ? <Promotions/> : <Navigate to="/login" />} />
+            <Route exact path="/orders" element={isAuthenticated ? <AllOrders/> : <Navigate to="/login" />} />
           </Routes>
         </Router>
       </div>

@@ -1,38 +1,87 @@
+/* User Information Container */
+
 .user-info-container {
-  margin-top: 20px;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh; /* Fill viewport height */
+    background-color: aliceblue; /* Added background color */
+  }
+ 
+
+/* User Information Card */
 
 .user-info-card {
-  border: 1px solid #dc3545;
-  border-radius: 5px;
-  padding: 20px;
+  background-color: #935555; /* White card background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(57, 190, 59, 0.1); /* Subtle shadow */
+  padding: 30px; /* Increased padding for more space */
+  max-width: 500px; /* Increased card width */
 }
+
+/* User Information Card Body */
 
 .user-info-card-body {
-  width: 100%;
+  text-align: center; /* Center text alignment */
 }
+
+/* User Information Card Title */
 
 .user-info-card-title {
-  font-size: 1.25rem;
-  color: #dc3545;
-  border-bottom: 1px solid #dc3545;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  font-size: 1.8em; /* Larger title size */
+  margin-bottom: 20px; /* Increased spacing below title */
+  color: #333; /* Darker text color */
 }
+
+/* User Information Item */
 
 .user-info-item {
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Increased spacing between information items */
+  font-weight: bold; /* Bold key information */
 }
 
+.user-info-item > strong {
+  margin-right: 10px; /* Increased spacing between key and value */
+  color: #f7ca18; /* Gradient color for key */
+}
+
+.user-info-item span {
+  color: #ff9a9e; /* Gradient color for value */
+}
+
+/* User Information Button */
+
 .user-info-button {
-  background-color: #dc3545;
-  color: white;
-  padding: 8px 16px;
+  background-color: #f7ca18; /* Gradient background color */
+  color: #fff; /* White text color */
+  padding: 12px 25px; /* Increased button padding for larger size */
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Indicate hover interaction */
+  transition: all 0.2s ease-in-out;
+  margin-top: 20px; /* Increased spacing above button */
+  text-decoration: none; /* Remove default link underline */
+  display: inline-block; /* Allow buttons to be displayed inline */
 }
 
 .user-info-button:hover {
-  background-color: #c82333;
+  background-color: #ff9a9e; /* Switch gradient color on hover */
+}
+
+/* Edit Profile Link */
+
+.user-info-button.ml-2 {
+  margin-left: 15px; /* Increased spacing between buttons */
+  background-color: #ff9a9e; /* Gradient background color */
+}
+
+.user-info-button.ml-2:hover {
+  background-color: #f7ca18; /* Switch gradient color on hover */
+}
+
+/* Hidden Logout Message (Optional) */
+
+.user-info-item.hidden {
+  display: none; /* Hide the logout message initially */
 }

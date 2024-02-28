@@ -1,57 +1,97 @@
+/* Cart Container */
+
 .cart-container {
-  max-width: 600px;
-  margin: 0 auto;
+  display: flex; /* Switch to flexbox for better alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center content horizontally */
+  width: 100%; /* Maintain full width */
+  margin: 0 auto; /* Center horizontally */
   padding: 20px;
+  background-color: #d89b9b; /* Light background color */
+  border-radius: 10px; /* Rounded corners for container */
+  transition: background-color 0.2s ease-in-out; /* Subtle hover effect for container */
 }
+
+.cart-container:hover {
+  background-color: #d08ba9; /* Slightly darker background on hover */
+}
+
+/* Cart Title */
 
 .cart-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 24px; /* Maintain large font size */
+  margin-bottom: 20px; /* Spacing below title */
 }
 
+/* Product Cards */
+
 .card {
-  background-color: #fff;
+  display: flex; /* Switch to flexbox for horizontal layout */
+  justify-content: space-between; /* Align items horizontally */
+  width: 50%;
+  height: 200px; /* Adjusted width for better responsiveness */
+  background-color: #fff; /* White card background */
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.2s ease-in-out; /* Hover effects for card */
 }
 
-.card-title {
-  font-size: 18px;
-  margin-bottom: 10px;
+.card:hover {
+  transform: scale(1.02); /* Slight card scale on hover for emphasis */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  border-color: #ccc; /* Adjust border color on hover (optional) */
 }
 
+/* Card Content */
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Title and Text */
+
+.card-title,
 .card-text {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 16px; /* Consistent font size */
+  margin-bottom: 5px; /* Reduced spacing for compact layout */
 }
+
+/* Remove Button */
 
 .remove-button {
-  background-color: #dc3545;
+  background-color: #dc3545; /* Red color for removal */
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 8px 15px;
+  padding: 5px 10px; /* Reduced padding for better fit */
   cursor: pointer;
+  transition: all 0.2s ease-in-out; /* Smooth hover animation */
 }
 
 .remove-button:hover {
-  background-color: #c82333;
+  background-color: #b00000; /* Darker red on hover */
+  /* Add additional hover effects if needed (e.g., transform: scale(1.02);) */
 }
 
+/* Proceed to Checkout Button */
+
 .proceed-to-checkout-button {
-  display: inline-block;
-  background-color: #007bff;
+  background-color: #007bff; /* Blue color for checkout */
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 10px 20px; /* Maintain padding */
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.2s ease-in-out; /* Smooth hover animation */
+  margin-top: 20px; /* Add spacing above button */
 }
 
 .proceed-to-checkout-button:hover {
-  background-color: #cfa2c7;
+  background-color: #b0509f; /* Purple color on hover */
+  /* Add additional hover effects if needed (e.g., transform: scale(1.02);) */
 }

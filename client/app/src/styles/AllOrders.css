@@ -1,0 +1,68 @@
+/* Orders Container */
+
+.orders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e8f0f5; /* Light background color */
+  padding: 30px;
+  border-radius: 10px; /* Rounded corners for container */
+}
+
+/* Orders Title */
+
+.orders-title {
+  font-size: 2.5em; /* Larger title size */
+  margin-bottom: 20px; /* Spacing below title */
+  color: #333; /* Darker text color */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  font-weight: bold; /* Make the heading bold */
+}
+
+/* Order Card */
+
+.order-card {
+  background-color: #fff; /* White card background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+  width: 80%; /* Responsive width */
+  margin-bottom: 15px; /* Spacing between cards */
+  transition: all 0.2s ease-in-out; /* Smooth hover animation */
+}
+
+.order-card:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  border: 1px solid #ddd; /* Optional border addition on hover */
+}
+
+/* Order Information */
+
+.order-date,
+.order-amount,
+.order-payment-method,
+.order-payment-status {
+  margin-bottom: 5px; /* Spacing between information items */
+  font-size: 1em; /* Consistent font size for information */
+  display: flex; /* Wrap labels and content */
+  align-items: center; /* Align content vertically */
+  justify-content: space-between; /* Align labels and content horizontally */
+}
+
+.order-date,
+.order-amount {
+  color: #333; /* Darker text color for key information */
+}
+
+.order-payment-method,
+.order-payment-status {
+  color: #666; /* Lighter text color for remaining information */
+}
+
+/* Additional Styling (Optional) */
+
+.order-payment-method:after,
+.order-payment-status:after {
+  content: ":"; /* Add colon after labels */
+  margin-right: 5px; /* Space between colon and value */
+}

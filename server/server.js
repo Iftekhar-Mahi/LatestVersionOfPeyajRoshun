@@ -86,9 +86,50 @@ app.get("/api/productavgrating/:productid", async (req, res) => {
 }
 );
 
+app.get("/orders/:id", async (req, res) => {
+    try {
+        console.log("Fetching orders for user:", req.params.id);
+        const results = await db.query("SELECT * FROM orders WHERE userid = $1 order by amount desc", [req.params.id]);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching orders:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+app.get("/bugs", async (req, res) => {
+    try {
+        const results = await db.query('SELECT name,productid,categoryid FROM products order by productid asc');
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+
+app.get("/promotions", async (req, res) => {
+    try {
+        const results = await db.query('SELECT * FROM promotions');
+        //console.log(results.rows);
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching promotions:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+app.get("/bugsTwo", async (req, res) => {
+    try {
+        const results = await db.query('SELECT productid,comment from productreview order by productid asc');
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.log(err);
+    }
+});
+
 app.get("/api/allproducts", async (req, res) => {
     try {
-        const results = await db.query("SELECT * FROM products");
+        const results = await db.query("SELECT * FROM products order by productid asc");
         res.status(200).json(results.rows);
     } catch (err) {
         console.log(err);
@@ -164,7 +205,7 @@ app.get("/api/productsByRating",async (req,res)=>{
 app.get("/api/cart/:userid",async (req,res)=>{
     console.log("Fetching cart");
     try {
-        const results = await db.query("SELECT * FROM products WHERE productid IN (SELECT productid FROM cart WHERE userid =$1)", [req.params.userid]);
+        const results = await db.query("SELECT p.productid as productid, p.name as name ,p.price as price, c.quantity as quantity from  products p join cart c on (p.productid=c.productid) where userid=$1", [req.params.userid]);
         console.log(results);
         res.status(200).json(results.rows);
     } catch (err) {
@@ -185,13 +226,36 @@ app.delete("/api/removeFromCart/:productid/user/:userid", async (req, res) => {
     }
 });
 
-app.post("/api/addToCart/:productid/user/:userid", async (req, res) => {
+
+//handle
+app.post("/api/addToCart/:productid/user/:userid/quantity/:num", async (req, res) => {
     console.log("Adding product to cart:", req.params.productid);
-    console.log("Adding product to cart:", req.params.userid);
+    console.log("Adding product to cart for user:", req.params.userid);
     try {
-        const results = await db.query("INSERT INTO cart (userid, productid,quantity) VALUES ($1, $2,4) returning *", [req.params.userid,req.params.productid]);
-        console.log(results);
-        res.status(201).json(results.rows);
+        const checkQuery = `
+            SELECT userid, productid FROM cart 
+            WHERE userid = $1 AND productid = $2`;
+        const checkValues = [req.params.userid, req.params.productid];
+        const checkResult = await db.query(checkQuery, checkValues);
+        
+        if (checkResult.rows.length > 0) {
+            // If the combination exists, update the quantity
+            const updateQuery = `
+                UPDATE cart 
+                SET quantity = quantity + $1 
+                WHERE userid = $2 AND productid = $3`;
+            const updateValues = [req.params.num, req.params.userid, req.params.productid];
+            await db.query(updateQuery, updateValues);
+        } else {
+            // If the combination doesn't exist, insert a new row
+            const insertQuery = `
+                INSERT INTO cart (userid, productid, quantity) 
+                VALUES ($1, $2, $3)`;
+            const insertValues = [req.params.userid, req.params.productid, req.params.num];
+            await db.query(insertQuery, insertValues);
+        }
+
+        res.status(201).json({ message: "Product added to cart successfully." });
     } catch (err) {
         console.error('Error adding product to cart:', err);
         res.status(500).json({ error: "Internal Server Error" });
@@ -212,6 +276,8 @@ app.post("/api/placeorder/:userid", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+
 
 //create a user
 app.post("/api/v1/user",async (req,res)=>{

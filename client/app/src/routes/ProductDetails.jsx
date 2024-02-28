@@ -8,8 +8,11 @@ const ProductDetails = ({ setAuth }) => {
   const { userId, setUserId } = useUserContext();
 
   const [product, setProduct] = useState(null);
-  const [addedToCart, setAddedToCart] = useState(false); // State to track whether the product is added to the cart
+  const [addedToCart, setAddedToCart] = useState(false);
   const [productRating, setProductRating] = useState(0);
+  const [num, setNum] = useState(1);
+  const [quantityInStock, setQuantityInStock] = useState(0); // State to hold the quantity in stock
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -18,12 +21,12 @@ const ProductDetails = ({ setAuth }) => {
         const data = await response.json();
         console.log("the desired Data:", data);
         setProduct(data);
+        setQuantityInStock(data[0].quantityinstock); // Set the quantity in stock when product data is fetched
       } catch (error) {
         console.error("Error fetching product:", error);
       }
     };
 
-   
     fetchProduct();
   }, [id]);
 
@@ -35,19 +38,18 @@ const ProductDetails = ({ setAuth }) => {
         const data = await response.json();
         console.log("the desired Data:", data);
         setProductRating(data[0].rating);
-      } catch (error) {   
+      } catch (error) {
         console.error("Error fetching product:", error);
       }
     };
     fetchProductRating();
   }, [id]);
-   
 
   const handleAddToCart = async () => {
     try {
       console.log("Adding product to cart:", id);
       console.log("Adding product to cart for user:", userId);
-      const response = await fetch(`http://localhost:3006/api/addToCart/${id}/user/${userId}`, {
+      const response = await fetch(`http://localhost:3006/api/addToCart/${id}/user/${userId}/quantity/${num}`, {
         method: "POST",
       });
 
@@ -55,19 +57,27 @@ const ProductDetails = ({ setAuth }) => {
         throw new Error("Failed to add product to cart");
       }
 
-      // Optionally, you can check the response body for any data returned by the server
       const responseData = await response.json();
       console.log(responseData);
 
-      // If you want to perform any action after successful addition to cart,
-      // you can add it here
-
-      // For example, you can show a success message
-      setAddedToCart(true); // Update addedToCart state to true after successful addition to cart
+      setAddedToCart(true);
     } catch (error) {
       console.error("Error adding product to cart:", error);
-      // Handle error (e.g., show an error message to the user)
       alert("Failed to add product to cart. Please try again later.");
+    }
+  };
+
+  const incrementQuantity = () => {
+    if (num < quantityInStock) {
+      setNum(num + 1);
+    } else {
+      alert("Cannot exceed available quantity in stock.");
+    }
+  };
+
+  const decrementQuantity = () => {
+    if (num > 1) {
+      setNum(num - 1);
     }
   };
 
@@ -88,7 +98,7 @@ const ProductDetails = ({ setAuth }) => {
               </li>
               <li>
                 <span className="label quantity-label">Quantity in Stock:</span>{" "}
-                <span>{product[0].quantityinstock}</span>
+                <span>{quantityInStock}</span>
               </li>
               <li>
                 <span className="label category-label">Category ID:</span>{" "}
@@ -102,11 +112,19 @@ const ProductDetails = ({ setAuth }) => {
                 <span className="label rating-label">Average Rating:</span>{" "}
                 <span>{productRating}</span>
               </li>
+              <li>
+                <span className="label quantity-label">Quantity:</span>{" "}
+                <span>
+                  <button onClick={decrementQuantity}>-</button>
+                  {num}
+                  <button onClick={incrementQuantity}>+</button>
+                </span>
+              </li>
             </ul>
             <button className="add-to-cart-btn" onClick={handleAddToCart}>
               Add to Cart
             </button>
-            {addedToCart && ( 
+            {addedToCart && (
               <div>
                 {addedToCart && (
                   <span className="success-message">

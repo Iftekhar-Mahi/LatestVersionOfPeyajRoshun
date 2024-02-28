@@ -1,52 +1,91 @@
-.edit-container {
-    margin-top: 20px;
-  }
-  
-  .edit-card {
-    border: 1px solid #dc3545;
-    border-radius: 5px;
-    padding: 20px;
-  }
-  
-  .edit-card-body {
-    width: 100%;
-  }
-  
-  .edit-card-title {
-    font-size: 1.25rem;
-    color: #dc3545;
-    border-bottom: 1px solid #dc3545;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .edit-field {
-    margin-bottom: 10px;
-  }
-  
-  .edit-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-  }
-  
-  .edit-button {
-    background-color: #dc3545;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .edit-button:hover {
-    background-color: #c82333;
-  }
-  
-  .edit-success-message {
-    color: green;
-    margin-top: 10px;
-  }
+/* Edit Container */
 
-  
+.edit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  height: 100vh; /* Fill viewport height */
+  background-color: linear-gradient(to right, #f7ca18, #ff9a9e); /* Gradient background */
+}
+
+/* Edit Card */
+
+.edit-card {
+  background-color: #6bc4db; /* White card background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 30px; /* Increased padding for more space */
+  max-width: 500px; /* Increased card width */
+}
+
+/* Edit Card Body */
+
+.edit-card-body {
+  text-align: center; /* Center text alignment */
+}
+
+/* Edit Card Title */
+
+.edit-card-title {
+  font-size: 1.8em; /* Larger title size */
+  margin-bottom: 20px; /* Increased spacing below title */
+  color: #333; /* Darker text color */
+}
+
+/* User ID */
+
+.edit-card-body p {
+  margin-bottom: 15px; /* Increased spacing below user ID */
+  font-weight: bold; /* Bold user ID */
+  font-size: 1.2em; /* Larger font size for user ID */
+}
+
+/* Edit Field */
+
+.edit-field {
+  margin-bottom: 20px; /* Increased spacing between fields */
+}
+
+.edit-field strong {
+  margin-right: 10px; /* Increased spacing between label and input */
+  font-weight: bold; /* Make labels bold */
+  font-size: 1.1em; /* Larger font size for labels */
+}
+
+/* Edit Input */
+
+.edit-input {
+  width: 100%; /* Full-width input */
+  padding: 10px; /* Increased input padding */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 3px; /* Rounded corners */
+  font-size: 1em; /* Larger font size for input text */
+}
+
+/* Edit Button */
+
+.edit-button {
+  background-color: #f7ca18; /* Gradient background color */
+  color: #fff; /* White button text */
+  padding: 15px 30px; /* Increased button padding for larger size */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Indicate hover interaction */
+  transition: all 0.2s ease-in-out;
+  margin-top: 20px; /* Increased spacing above button */
+  font-size: 1.1em; /* Larger font size for button text */
+  text-decoration: none; /* Remove default link underline */
+}
+
+.edit-button:hover {
+  background-color: #ff9a9e; /* Switch gradient color on hover */
+}
+
+/* Edit Success Message (Optional) */
+
+.edit-success-message {
+  color: rgb(76, 20, 206); /* Green color for success */
+  margin-top: 15px; /* Increased spacing above message */
+  font-size: 1.1em; /* Larger font size for message */
+}

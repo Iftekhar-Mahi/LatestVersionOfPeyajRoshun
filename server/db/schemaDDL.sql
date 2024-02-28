@@ -113,11 +113,67 @@ CREATE TABLE
   );
 
 --Create table for Cart
-CREATE TABLE
-  Cart (
-    CartID SERIAL PRIMARY KEY,
-    UserID BIGSERIAL REFERENCES Users (UserID),
-    ProductID INT REFERENCES Products (ProductID),
-    Quantity INT NOT NULL
-  );
+drop table Cart;
+CREATE TABLE Cart (
+    UserID BIGSERIAL,
+    CartID SERIAL,
+    ProductID INT,
+    Quantity INT NOT NULL,
+    PRIMARY KEY (UserID, CartID, ProductID),
+    FOREIGN KEY (UserID) REFERENCES Users (UserID),
+    FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
+);
 
+-- Order Details Table
+ALTER TABLE OrderDetails
+DROP CONSTRAINT IF EXISTS orderdetails_orderid_fkey;
+
+ALTER TABLE OrderDetails
+ADD CONSTRAINT orderdetails_orderid_fkey
+FOREIGN KEY (OrderID) REFERENCES Orders (OrderID)
+ON DELETE CASCADE;
+
+-- ProductReview Table
+ALTER TABLE ProductReview
+DROP CONSTRAINT IF EXISTS productreview_userid_fkey,
+DROP CONSTRAINT IF EXISTS productreview_productid_fkey;
+
+ALTER TABLE ProductReview
+ADD CONSTRAINT productreview_userid_fkey
+FOREIGN KEY (UserID) REFERENCES Users (UserID)
+ON DELETE CASCADE;
+
+ALTER TABLE ProductReview
+ADD CONSTRAINT productreview_productid_fkey
+FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
+ON DELETE CASCADE;
+
+-- OrderReview Table
+ALTER TABLE OrderReview
+DROP CONSTRAINT IF EXISTS orderreview_userid_fkey,
+DROP CONSTRAINT IF EXISTS orderreview_orderid_fkey;
+
+ALTER TABLE OrderReview
+ADD CONSTRAINT orderreview_userid_fkey
+FOREIGN KEY (UserID) REFERENCES Users (UserID)
+ON DELETE CASCADE;
+
+ALTER TABLE OrderReview
+ADD CONSTRAINT orderreview_orderid_fkey
+FOREIGN KEY (OrderID) REFERENCES Orders (OrderID)
+ON DELETE CASCADE;
+
+-- Cart Table
+ALTER TABLE Cart
+DROP CONSTRAINT IF EXISTS cart_userid_fkey,
+DROP CONSTRAINT IF EXISTS cart_productid_fkey;
+
+ALTER TABLE Cart
+ADD CONSTRAINT cart_userid_fkey
+FOREIGN KEY (UserID) REFERENCES Users (UserID)
+ON DELETE CASCADE;
+
+ALTER TABLE Cart
+ADD CONSTRAINT cart_productid_fkey
+FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
+ON DELETE CASCADE;

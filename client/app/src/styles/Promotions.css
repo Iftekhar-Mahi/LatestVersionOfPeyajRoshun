@@ -1,0 +1,78 @@
+/* Promotions Container */
+
+.promotions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: bisque;
+  }
+  
+  /* Promotions Title */
+  
+  .promotions-container h3 {
+    margin-bottom: 20px; /* Spacing below title */
+    font-size: 1.5em; /* Larger title size */
+    color: #333; /* Darker text color */
+  }
+  
+  /* Promotions Grid */
+  
+  .promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Spacing between cards */
+  }
+  
+  /* Promotion Card */
+  
+  .promotion-card {
+    background-color: #e99696; /* White card background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px;
+    transition: all 0.2s ease-in-out; /* Smooth hover animation */
+  }
+  
+  .promotion-card:hover {
+    transform: scale(1.1); /* Slight card scale on hover for emphasis */
+  }
+  
+  /* Card Body */
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  /* Promotion Name */
+  
+  .card-body h5:first-child {
+    margin-bottom: 10px; /* Spacing below name */
+    font-size: 1.2em; /* Larger font size for name */
+    font-weight: bold; /* Bold name */
+  }
+  
+  /* Promotion Description */
+  
+  .card-body h5:last-child {
+    margin-bottom: 15px; /* Spacing below description */
+    font-size: 1em; /* Regular font size for description */
+  }
+  
+  /* Go Button */
+  
+  .btn-primary {
+    background-color: #f7ca18; /* Gradient background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Button padding */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Indicate hover interaction */
+    text-decoration: none; /* Remove default link underline */
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff9a9e; /* Switch gradient color on hover */
+  }
+  

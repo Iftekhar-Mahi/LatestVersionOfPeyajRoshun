@@ -1004,7 +1004,7 @@ VALUES (3, 1, 4, 'Delicious and nutritious.'),
 
 
 -- Product ID 11
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 11, 5, 'Delicious cinnamon roll, loved it');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 11, 5, 'Delicious cinnamon roll, loved it ');
 insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 11, 4, 'Perfectly sweet with just the right amount of cinnamon');
 insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 11, 5, 'Warm and gooey, exactly what I wanted');
 insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 11, 3, 'Tasty but a bit too sugary for my liking');
@@ -1064,488 +1064,380 @@ insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 20, 3,
 insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 20, 5, 'Perfect balance of sweet and savory, loved it');
 
 
--- Product ID 21
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 21, 4, 'Delicious chocolate chip cookie, chewy and satisfying');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 21, 5, 'Perfectly soft with generous chocolate chips, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 21, 3, 'Decent cookie, but a bit too sweet for my taste');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 21, 4, 'Good balance of sweetness and chocolate, enjoyable treat');
-
--- Product ID 22
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 22, 5, 'Incredible brownie, rich and fudgy, just how I like it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 22, 4, 'Moist and chocolatey, perfect with a glass of milk');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 22, 3, 'Decent brownie, but could be more gooey in the center');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 22, 5, 'Best brownie I''ve ever had, will definitely order again');
-
--- Product ID 23
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 23, 4, 'Delicious lemon tart, tangy and refreshing');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 23, 5, 'Perfect balance of sweet and tart, loved the crust');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 23, 3, 'Decent lemon flavor, but crust was a bit too hard');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 23, 4, 'Great dessert, enjoyed every bite');
-
--- Product ID 24
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 24, 3, 'Decent vanilla cupcake, frosting was a bit too sweet');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 24, 4, 'Moist cake with creamy frosting, enjoyable treat');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 24, 2, 'Disappointing cupcake, tasted stale');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 24, 3, 'Average cupcake, nothing special');
-
--- Product ID 25
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 25, 4, 'Satisfying fruit tart, fresh fruits with creamy filling');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 25, 5, 'Loved the combination of fruits, perfect summer dessert');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 25, 3, 'Decent tart, but fruits could be more ripe');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 25, 4, 'Tasty dessert, enjoyed the mix of flavors');
-
--- Product ID 26
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 26, 5, 'Amazing carrot cake, moist and flavorful');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 26, 4, 'Perfectly spiced with delicious cream cheese frosting');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 26, 3, 'Decent carrot cake, but frosting was too sweet');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 26, 5, 'Best carrot cake ever, will order again for sure');
-
--- Product ID 27
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 27, 4, 'Flavorful pumpkin pie, perfect for fall');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 27, 5, 'Loved the spices, tasted homemade');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 27, 3, 'Decent pie, but crust was a bit too thick');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 27, 4, 'Great pumpkin pie, reminded me of Thanksgiving dinners');
-
--- Product ID 28
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 28, 3, 'Okay blueberry scone, a bit dry for my liking');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 28, 4, 'Decent scone, but could use more blueberries');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 28, 2, 'Disappointing, lacked flavor and moisture');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 28, 3, 'Average scone, nothing special');
-
--- Product ID 29
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 29, 4, 'Tasty raspberry tart, loved the crispy crust');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 29, 5, 'Perfect balance of sweet and tart, delicious dessert');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 29, 3, 'Decent tart, but could use more raspberries');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 29, 4, 'Enjoyable treat, would order again');
-
--- Product ID 30
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 30, 5, 'Delicious pecan pie, loved the crunchy nuts');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 30, 4, 'Perfectly sweet with rich pecan flavor, great dessert');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 30, 3, 'Decent pie, but filling was a bit too gooey');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 30, 5, 'Best pecan pie I''ve ever had, will definitely order again');
-
--- Product ID 31
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 31, 4, 'Delicious apple pie, loved the flaky crust');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 31, 5, 'Perfectly spiced with tender apples, great dessert');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 31, 3, 'Decent pie, but could use more filling');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 31, 4, 'Enjoyable treat, reminded me of homemade pies');
-
--- Product ID 32
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 32, 5, 'Incredible chocolate cake, moist and indulgent');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 32, 4, 'Rich chocolate flavor with creamy frosting, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 32, 3, 'Decent cake, but frosting was too sweet');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 32, 5, 'Best chocolate cake ever, will order again for sure');
-
--- Product ID 33
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 33, 4, 'Delicious strawberry shortcake, fresh strawberries with fluffy cake');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 33, 5, 'Perfect balance of sweetness, great dessert option');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 33, 3, 'Decent shortcake, but could use more strawberries');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 33, 4, 'Enjoyable treat, would order again');
-
--- Product ID 34
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 34, 3, 'Okay cinnamon roll, a bit dry for my liking');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 34, 4, 'Decent roll, but could use more cinnamon filling');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 34, 2, 'Disappointing, lacked flavor and moisture');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 34, 3, 'Average roll, nothing special');
-
--- Product ID 35
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 35, 4, 'Tasty blueberry muffin, bursting with berries');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 35, 5, 'Perfectly moist with generous blueberries, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 35, 3, 'Decent muffin, but a bit too crumbly');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 35, 4, 'Great breakfast option, enjoyed every bite');
-
--- Product ID 36
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 36, 5, 'Amazing red velvet cake, moist and flavorful');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 36, 4, 'Perfectly creamy with delicious cream cheese frosting');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 36, 3, 'Decent cake, but frosting was too sweet');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 36, 5, 'Best red velvet cake ever, will order again for sure');
-
--- Product ID 37
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 37, 4, 'Flavorful key lime pie, perfect balance of tartness');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 37, 5, 'Loved the tangy lime flavor, great dessert choice');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 37, 3, 'Decent pie, but crust was a bit too thick');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 37, 4, 'Great key lime pie, refreshing and delicious');
-
--- Product ID 38
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 38, 3, 'Okay almond croissant, a bit dry for my taste');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 38, 4, 'Decent croissant, but could use more almond filling');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 38, 2, 'Disappointing, lacked flavor and moisture');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 38, 3, 'Average croissant, nothing special');
-
--- Product ID 39
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 39, 4, 'Tasty cheesecake, creamy and delicious');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 39, 5, 'Perfectly rich with a smooth texture, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 39, 3, 'Decent cheesecake, but crust was a bit too hard');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 39, 4, 'Enjoyable dessert, would order again');
-
--- Product ID 40
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 40, 5, 'Delicious tiramisu, perfectly balanced flavors');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 40, 4, 'Rich and creamy with a hint of coffee, great dessert');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 40, 3, 'Decent tiramisu, but could use more cocoa powder');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 40, 5, 'Best tiramisu I''ve ever had, will definitely order again');
-
--- Product ID 41
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 41, 4, 'Delicious lemon meringue pie, tangy and sweet');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 41, 5, 'Perfectly balanced flavors with a fluffy meringue top');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 41, 3, 'Decent pie, but crust was a bit too thick');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 41, 4, 'Great lemon pie, refreshing and delightful');
-
--- Product ID 42
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 42, 3, 'Okay chocolate chip cookie, a bit too crunchy');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 42, 4, 'Decent cookie, but could use more chocolate chips');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 42, 2, 'Disappointing, lacked chocolate flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 42, 3, 'Average cookie, nothing special');
-
--- Product ID 43
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 43, 4, 'Tasty carrot cake, moist and flavorful');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 43, 5, 'Perfectly spiced with a creamy frosting, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 43, 3, 'Decent cake, but frosting was too sweet');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 43, 4, 'Great carrot cake, enjoyed every bite');
-
--- Product ID 44
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 44, 3, 'Okay brownie, a bit too dense for my liking');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 44, 4, 'Decent brownie, but could be more fudgy');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 44, 2, 'Disappointing, lacked chocolate flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 44, 3, 'Average brownie, nothing special');
-
--- Product ID 45
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 45, 4, 'Flavorful apple turnover, perfect for breakfast');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 45, 5, 'Loved the crispy pastry with warm apple filling, great treat');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 45, 3, 'Decent turnover, but could use more filling');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 45, 4, 'Great apple turnover, delicious and satisfying');
-
--- Product ID 46
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 46, 5, 'Amazing raspberry tart, perfectly balanced sweetness');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 46, 4, 'Delicious pastry with fresh raspberries, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 46, 3, 'Decent tart, but crust was a bit too hard');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 46, 5, 'Best raspberry tart ever, will order again for sure');
-
--- Product ID 47
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 47, 4, 'Tasty blueberry scone, perfect with coffee');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 47, 5, 'Loved the buttery texture with bursts of blueberries, great breakfast');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 47, 3, 'Decent scone, but a bit too dry');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 47, 4, 'Great blueberry scone, enjoyed every bite');
-
--- Product ID 48
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 48, 3, 'Okay coconut macaroon, a bit too chewy');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 48, 4, 'Decent macaroon, but could be more coconutty');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 48, 2, 'Disappointing, lacked coconut flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 48, 3, 'Average macaroon, nothing special');
-
--- Product ID 49
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 49, 4, 'Delicious banana bread, moist and flavorful');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 49, 5, 'Perfectly ripe bananas with a hint of cinnamon, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 49, 3, 'Decent bread, but a bit too crumbly');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 49, 4, 'Great banana bread, enjoyed every bite');
-
--- Product ID 50
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 50, 5, 'Incredible pecan pie, rich and nutty');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 50, 4, 'Delicious filling with crunchy pecans, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 50, 3, 'Decent pie, but crust was a bit too thick');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 50, 5, 'Best pecan pie ever, will order again for sure');
-
-
--- Product ID 51
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 51, 4, 'Delicious tiramisu, creamy and flavorful');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 51, 5, 'Perfect balance of coffee and mascarpone, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 51, 3, 'Decent dessert, but could be more moist');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 51, 4, 'Great tiramisu, enjoyed every bite');
-
--- Product ID 52
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 52, 3, 'Okay cheesecake, a bit too sweet for my taste');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 52, 4, 'Decent cheesecake, but could use more creaminess');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 52, 2, 'Disappointing, lacked flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 52, 3, 'Average cheesecake, nothing special');
-
--- Product ID 53
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 53, 4, 'Tasty key lime pie, tangy and refreshing');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 53, 5, 'Perfect balance of tartness with a crumbly crust, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 53, 3, 'Decent pie, but could use more lime flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 53, 4, 'Great key lime pie, enjoyed every bite');
-
--- Product ID 54
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 54, 3, 'Okay fruit tart, fruits were not very fresh');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 54, 4, 'Decent tart, but crust was a bit too hard');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 54, 2, 'Disappointing, lacked flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 54, 3, 'Average fruit tart, nothing special');
-
--- Product ID 55
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 55, 4, 'Flavorful red velvet cake, moist and rich');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 55, 5, 'Loved the cream cheese frosting with hints of cocoa, great cake');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 55, 3, 'Decent cake, but frosting was too sweet');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 55, 4, 'Great red velvet cake, enjoyed every bite');
-
--- Product ID 56
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 56, 5, 'Amazing chocolate truffle, rich and decadent');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 56, 4, 'Delicious ganache with a smooth texture, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 56, 3, 'Decent truffle, but could use more cocoa flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 56, 5, 'Best chocolate truffle ever, will order again for sure');
-
--- Product ID 57
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 57, 4, 'Tasty almond croissant, buttery and flaky');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 57, 5, 'Loved the crunchy almonds with the soft pastry, great treat');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 57, 3, 'Decent croissant, but could use more almond filling');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 57, 4, 'Great almond croissant, enjoyed every bite');
-
--- Product ID 58
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 58, 3, 'Okay lemon bar, a bit too sour for my liking');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 58, 4, 'Decent bar, but could use more sweetness');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 58, 2, 'Disappointing, lacked lemon flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 58, 3, 'Average lemon bar, nothing special');
-
--- Product ID 59
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 59, 4, 'Delicious pecan tart, crunchy and nutty');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 59, 5, 'Perfect balance of sweetness with a buttery crust, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 59, 3, 'Decent tart, but could use more pecans');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 59, 4, 'Great pecan tart, enjoyed every bite');
-
--- Product ID 60
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 60, 5, 'Incredible chocolate chip muffin, moist and delicious');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 60, 4, 'Delicious muffin with generous chocolate chips, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 60, 3, 'Decent muffin, but a bit too dense');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 60, 5, 'Best chocolate chip muffin ever, will order again for sure');
-
--- Product ID 61
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 61, 4, 'Delicious blueberry pie, bursting with flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 61, 5, 'Loved the sweet and tangy blueberries with a flaky crust, great pie');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 61, 3, 'Decent pie, but could use more filling');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 61, 4, 'Great blueberry pie, enjoyed every bite');
-
--- Product ID 62
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 62, 3, 'Okay almond biscotti, a bit too hard');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 62, 4, 'Decent biscotti, but could be more almond-flavored');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 62, 2, 'Disappointing, lacked almond flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 62, 3, 'Average biscotti, nothing special');
-
--- Product ID 63
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 63, 4, 'Tasty cinnamon roll, soft and gooey');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 63, 5, 'Loved the warm cinnamon filling with a sweet glaze, great treat');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 63, 3, 'Decent roll, but a bit too sweet');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 63, 4, 'Great cinnamon roll, enjoyed every bite');
-
--- Product ID 64
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 64, 3, 'Okay chocolate croissant, could be more chocolatey');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 64, 4, 'Decent croissant, but lacked flakiness');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 64, 2, 'Disappointing, lacked flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 64, 3, 'Average chocolate croissant, nothing special');
-
--- Product ID 65
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 65, 4, 'Flavorful apple strudel, crispy and delicious');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 65, 5, 'Loved the warm apple filling with flaky layers, great dessert');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 65, 3, 'Decent strudel, but could use more apples');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 65, 4, 'Great apple strudel, enjoyed every bite');
-
--- Product ID 66
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 66, 5, 'Amazing chocolate éclair, rich and creamy');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 66, 4, 'Delicious pastry with a smooth chocolate filling, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 66, 3, 'Decent éclair, but could use more chocolate');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 66, 5, 'Best chocolate éclair ever, will order again for sure');
-
--- Product ID 67
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 67, 4, 'Tasty strawberry shortcake, light and fluffy');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 67, 5, 'Loved the sweet strawberries with soft sponge cake, great dessert');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 67, 3, 'Decent shortcake, but could use more strawberries');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 67, 4, 'Great strawberry shortcake, enjoyed every bite');
-
--- Product ID 68
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 68, 3, 'Okay oatmeal cookie, a bit too dry');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 68, 4, 'Decent cookie, but could use more raisins');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 68, 2, 'Disappointing, lacked flavor');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 68, 3, 'Average oatmeal cookie, nothing special');
-
--- Product ID 69
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 69, 4, 'Delicious pumpkin pie, rich and flavorful');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 69, 5, 'Perfect balance of spices with a flaky crust, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 69, 3, 'Decent pie, but could use more filling');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 69, 4, 'Great pumpkin pie, enjoyed every bite');
-
--- Product ID 70
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 70, 5, 'Incredible lemon tart, tangy and refreshing');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 70, 4, 'Delicious pastry with a zesty lemon filling, loved it');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 70, 3, 'Decent tart, but crust was a bit too thick');
-insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 70, 5, 'Best lemon tart ever, will order again for sure');
-
-
-
--- ProductID 71
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 71, 5, 'Fantastic barley, perfectly cooked and flavorful');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 71, 4, 'Good quality barley, great addition to soups');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 71, 3, 'Decent barley, could be improved with more seasoning');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 71, 5, 'Excellent barley, love the texture and taste');
-
--- ProductID 72
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 72, 4, 'Tasty quinoa, good source of protein');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 72, 5, 'Fantastic quinoa, cooks up fluffy and delicious');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 72, 3, 'Average quinoa, slightly undercooked');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 72, 4, 'Great quality quinoa, satisfied with my purchase');
-
--- ProductID 73
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 73, 4, 'Good quality oats, perfect for breakfast');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 73, 5, 'Excellent oats, love the texture and taste');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 73, 3, 'Decent oats, slightly bland');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 73, 4, 'Very tasty oats, highly recommend');
-
--- ProductID 74
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 74, 5, 'Amazing chia seeds, great addition to smoothies');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 74, 4, 'High-quality chia seeds, love the health benefits');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 74, 3, 'Okay chia seeds, not as fresh as expected');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 74, 5, 'Delicious chia seeds, very versatile ingredient');
-
--- ProductID 75
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 75, 4, 'Great honey, love the flavor and consistency');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 75, 5, 'Fantastic honey, pure and delicious');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 75, 3, 'Okay honey, slightly too sweet for my taste');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 75, 4, 'Good quality honey, great for baking');
-
--- ProductID 76
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 76, 5, 'Excellent olive oil, rich flavor and aroma');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 76, 4, 'Very good olive oil, enhances the taste of dishes');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 76, 3, 'Decent olive oil, not as flavorful as expected');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 76, 5, 'Top-quality olive oil, impressed with the taste');
-
--- ProductID 77
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 77, 4, 'Good quality vinegar, adds a nice tang to salads');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 77, 5, 'Excellent vinegar, versatile ingredient for cooking');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 77, 3, 'Okay vinegar, lacks depth of flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 77, 4, 'Great tasting vinegar, pleased with the purchase');
-
--- ProductID 78
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 78, 5, 'Delicious pasta, cooks up perfectly al dente');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 78, 4, 'Very good pasta, love the texture');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 78, 3, 'Decent pasta, slightly too soft for my liking');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 78, 5, 'High-quality pasta, great with any sauce');
-
--- ProductID 79
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 79, 4, 'Tasty tomato sauce, good balance of flavors');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 79, 5, 'Fantastic tomato sauce, rich and delicious');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 79, 3, 'Okay tomato sauce, slightly too acidic');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 79, 4, 'Very flavorful tomato sauce, great for pasta dishes');
-
--- ProductID 80
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 80, 5, 'Amazing soy sauce, enhances the taste of dishes');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 80, 4, 'Great quality soy sauce, love the umami flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 80, 3, 'Decent soy sauce, slightly too salty');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 80, 5, 'Excellent soy sauce, staple in my kitchen');
-
--- ProductID 81
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 81, 4, 'Good quality rice, cooks up fluffy and delicious');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 81, 5, 'Fantastic rice, love the aroma and texture');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 81, 3, 'Okay rice, slightly undercooked');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 81, 4, 'Very tasty rice, great with any dish');
-
--- ProductID 82
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 82, 5, 'Excellent tea, flavorful and aromatic');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 82, 4, 'Very good quality tea, love the smooth taste');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 82, 3, 'Decent tea, lacks depth of flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 82, 5, 'Amazing tea, perfect for any time of day');
-
--- ProductID 83
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 83, 4, 'Great coffee, love the bold flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 83, 5, 'Fantastic coffee, rich and smooth taste');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 83, 3, 'Okay coffee, slightly bitter aftertaste');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 83, 4, 'Very good quality coffee, wakes me up in the morning');
-
--- ProductID 84
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 84, 5, 'Amazing black beans, cooked perfectly and very tasty');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 84, 4, 'Great quality black beans, love the texture');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 84, 3, 'Decent black beans, slightly undercooked');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 84, 5, 'Excellent black beans, versatile ingredient for many dishes');
-
--- ProductID 85
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 85, 4, 'Good quality lentils, cooks up well in soups');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 85, 5, 'Fantastic lentils, love the earthy flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 85, 3, 'Okay lentils, slightly tough texture');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 85, 4, 'Very tasty lentils, great source of protein');
-
--- ProductID 86
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 86, 5, 'Delicious almonds, crunchy and satisfying');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 86, 4, 'Great quality almonds, perfect for snacking');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 86, 3, 'Decent almonds, some are a bit stale');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 86, 5, 'Excellent almonds, love the flavor and texture');
-
--- ProductID 87
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 87, 4, 'Good quality walnuts, great for baking');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 87, 5, 'Fantastic walnuts, love the crunch and flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 87, 3, 'Okay walnuts, some are a bit bitter');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 87, 4, 'Very tasty walnuts, great addition to salads');
-
--- ProductID 88
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 88, 5, 'Amazing cashews, perfectly roasted and seasoned');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 88, 4, 'Great quality cashews, love the creamy texture');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 88, 3, 'Decent cashews, some are a bit stale');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 88, 5, 'Excellent cashews, addictive snack');
-
--- ProductID 89
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 89, 4, 'Tasty peanuts, love the crunch and flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 89, 5, 'Fantastic peanuts, great for snacking');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 89, 3, 'Okay peanuts, some are a bit dry');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 89, 4, 'Very good quality peanuts, satisfies my cravings');
-
--- ProductID 90
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 90, 5, 'Delicious pistachios, addictive snack');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 90, 4, 'Great quality pistachios, love the salty flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 90, 3, 'Decent pistachios, some are a bit tough to open');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 90, 5, 'Excellent pistachios, love the crunch and taste');
-
-
-
-
--- ProductID 91
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 91, 4, 'Tasty dark chocolate, rich and smooth');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 91, 5, 'Fantastic dark chocolate, love the intense flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 91, 3, 'Okay dark chocolate, slightly bitter aftertaste');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 91, 4, 'Very good quality dark chocolate, great for desserts');
-
--- ProductID 92
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 92, 5, 'Delicious milk chocolate, creamy and indulgent');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (6, 92, 4, 'Great quality milk chocolate, perfect for snacking');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 92, 3, 'Decent milk chocolate, a bit too sweet for my taste');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 92, 5, 'Excellent milk chocolate, melts in your mouth');
-
--- ProductID 93
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 93, 4, 'Tasty white chocolate, love the smooth texture');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 93, 5, 'Fantastic white chocolate, perfect for baking');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 93, 3, 'Okay white chocolate, lacks depth of flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 93, 4, 'Very good quality white chocolate, great with coffee');
-
--- ProductID 94
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 94, 5, 'Delicious chocolate chips, perfect for cookies');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 94, 4, 'Great quality chocolate chips, love the rich flavor');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 94, 3, 'Decent chocolate chips, slightly too sweet');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (6, 94, 5, 'Excellent chocolate chips, melts perfectly in baking');
-
--- ProductID 95
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 95, 4, 'Tasty chocolate bar, love the variety of flavors');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 95, 5, 'Fantastic chocolate bar, great for sharing');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 95, 3, 'Okay chocolate bar, some flavors are better than others');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 95, 4, 'Very good quality chocolate bar, satisfies my sweet tooth');
-
--- ProductID 96
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 96, 5, 'Delicious gummy bears, love the fruity flavors');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 96, 4, 'Great quality gummy bears, perfect chewy texture');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 96, 3, 'Decent gummy bears, flavors could be more intense');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 96, 5, 'Excellent gummy bears, addictive snack');
-
--- ProductID 97
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 97, 4, 'Tasty licorice, love the soft texture');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (6, 97, 5, 'Fantastic licorice, great variety of flavors');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 97, 3, 'Okay licorice, some flavors are better than others');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 97, 4, 'Very good quality licorice, enjoyable snack');
-
--- ProductID 98
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 98, 5, 'Delicious hard candies, love the assortment of flavors');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 98, 4, 'Great quality hard candies, perfect for parties');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (1, 98, 3, 'Decent hard candies, some flavors are too strong');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (2, 98, 5, 'Excellent hard candies, long-lasting flavor');
-
--- ProductID 99
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (3, 99, 4, 'Tasty lollipops, love the fruity flavors');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (4, 99, 5, 'Fantastic lollipops, great for kids');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (5, 99, 3, 'Okay lollipops, some flavors are better than others');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (6, 99, 4, 'Very good quality lollipops, enjoyable treat');
-
--- ProductID 100
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (7, 100, 5, 'Delicious chewing gum, love the minty freshness');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (8, 100, 4, 'Great quality chewing gum, perfect for freshening breath');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (9, 100, 3, 'Decent chewing gum, flavor fades quickly');
-INSERT INTO ProductReview (UserID, ProductID, Rating, Comment) VALUES (10, 100, 5, 'Excellent chewing gum, long-lasting flavor');
+-- Reviews for products with IDs from 21 to 30
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 21, 4, 'Great flavor and texture, perfect for sandwiches');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 21, 5, 'Delicious and fresh, love the crust');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 21, 3, 'Decent bread, but a bit dry');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 22, 5, 'Excellent bagel, perfectly toasted with cream cheese');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 22, 4, 'Fresh and chewy, great for breakfast');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 22, 4, 'Tasty and satisfying, would buy again');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 23, 5, 'Juicy and sweet, love these Orange');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 23, 4, 'Fresh and flavorful, great snack option');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 23, 4, 'Quality product, always fresh');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 24, 3, 'Decent quality, but a bit expensive for carrots');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 24, 4, 'Fresh and crunchy, great for salads');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 24, 5, 'Excellent carrots, love the sweetness');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 25, 5, 'Creamy and delicious, perfect for sandwiches');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 25, 4, 'Good quality cheese, melts nicely');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 25, 4, 'Rich flavor, great for cooking and snacking');
+
+-- Reviews for products with IDs from 31 to 40
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 26, 4, 'Crusty and delicious, perfect for sandwiches');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 26, 5, 'Authentic baguette, great for dipping in olive oil');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 26, 3, 'Decent baguette, a bit too crunchy for my liking');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 27, 5, 'Fresh and flavorful salmon, cooks beautifully');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 27, 4, 'High-quality fish, great for grilling');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 27, 4, 'Tasty and nutritious, perfect for a healthy meal');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 28, 4, 'Refreshing juice, great thirst quencher');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 28, 3, 'Good flavor, but a bit too sweet for me');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 28, 5, 'Love the natural taste, very refreshing');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 29, 3, 'Decent pretzels, a bit bland');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 29, 4, 'Crunchy and salty, great snack option');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 29, 5, 'Absolutely addictive, can''t stop munching');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 30, 4, 'Good canned soup, hearty and flavorful');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 30, 3, 'Decent quality, but a bit too salty');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 30, 5, 'Delicious and convenient, perfect for a quick meal');
+
+
+
+-- Reviews for products with IDs from 31 to 40
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 31, 4, 'Great quality quinoa, cooks up fluffy and delicious');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 31, 5, 'Excellent quinoa, love the nutty flavor and texture');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 31, 3, 'Decent quinoa, but a bit expensive compared to others');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 32, 5, 'Effective window cleaner, leaves glass streak-free');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 32, 4, 'Cleans well and has a pleasant scent');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 32, 3, 'Average performance, could be more effective');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 33, 4, 'Sweet and juicy grapes, great for snacking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 33, 5, 'Delicious grapes, always fresh and flavorful');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 33, 3, 'Decent quality, but sometimes too tart');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 34, 5, 'Fresh and crisp broccoli, perfect for stir-fries');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 34, 4, 'Good quality broccoli, love the earthy taste');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 34, 3, 'Decent broccoli, but sometimes a bit wilted');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 35, 5, 'Creamy and delicious yogurt, great for breakfast or snacks');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 35, 4, 'Good quality yogurt, love the tangy flavor');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 35, 3, 'Decent yogurt, but a bit expensive for the size');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 36, 4, 'Flaky and buttery croissant, perfect with coffee');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 36, 5, 'Love these croissants, always fresh and delicious');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 36, 3, 'Decent croissants, but sometimes a bit dry');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 37, 5, 'High-quality pork chops, great for grilling or roasting');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 37, 4, 'Tender and flavorful, perfect for a hearty meal');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 37, 4, 'Love these pork chops, very versatile and delicious');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 38, 4, 'Refreshing iced tea, great for hot summer days');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 38, 3, 'Good flavor, but a bit too sweet for my taste');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 38, 5, 'Love this iced tea, very thirst-quenching');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 39, 3, 'Decent peanuts, but a bit too salty for me');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 39, 4, 'Great snack option, love the crunchiness');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 39, 5, 'Absolutely delicious peanuts, addictive flavor');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 40, 4, 'Good quality canned corn, great for salads or soups');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 40, 3, 'Decent canned corn, but sometimes a bit mushy');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 40, 5, 'Love this canned corn, always fresh and sweet');
+
+
+
+
+
+
+
+
+-- Reviews for products with IDs from 41 to 50
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 41, 4, 'Great pasta, cooks al dente and holds sauce well');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 41, 5, 'Excellent quality, love the texture and flavor');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 41, 3, 'Decent pasta, but a bit overpriced');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 42, 5, 'Effective cleaner, leaves surfaces sparkling');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 42, 4, 'Cleans well and has a pleasant scent');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 42, 3, 'Average performance, could be more effective');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 43, 4, 'Sweet and juicy pineapple, great for snacking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 43, 5, 'Delicious pineapple, always fresh and flavorful');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 43, 3, 'Decent quality, but sometimes too tart');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 44, 5, 'Fresh and crisp spinach, perfect for salads');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 44, 4, 'Good quality greens, love the earthy flavor');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 44, 3, 'Decent spinach, but sometimes a bit wilted');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 45, 5, 'Creamy and flavorful, great for cooking and spreading');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 45, 4, 'Good quality butter, love the rich taste');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 45, 3, 'Decent butter, but a bit pricey');
+
+-- Reviews for products with IDs from 46 to 50 (continuing)
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 46, 4, 'Fresh and chewy bagel, perfect for breakfast sandwiches');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 46, 5, 'Love these bagels, great with cream cheese or jam');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 46, 3, 'Decent bagels, but sometimes a bit too dense');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 47, 5, 'High-quality ground beef, great for burgers and pasta dishes');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 47, 4, 'Fresh and flavorful, perfect for homemade meatballs');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 47, 4, 'Tasty and versatile, love using it in various recipes');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 48, 4, 'Refreshing lemonade, perfect balance of sweet and sour');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 48, 3, 'Good flavor, but a bit too sugary for my taste');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 48, 5, 'Love this lemonade, very thirst-quenching');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 49, 3, 'Decent popcorn, but a bit too salty for me');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 49, 4, 'Great snack option, love the buttery flavor');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 49, 5, 'Absolutely delicious popcorn, addictive crunchiness');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 50, 4, 'Good quality tuna, great for salads and sandwiches');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 50, 3, 'Decent canned tuna, but sometimes a bit dry');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 50, 5, 'Love this tuna, always fresh and flavorful');
+
+
+-- Reviews for products with IDs from 51 to 60
+
+-- Reviews for products with IDs from 51 to 60
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 51, 4, 'Great alternative to traditional pasta, cooks up nicely');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 51, 5, 'Excellent texture and flavor, love the nutritional benefits');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 51, 3, 'Decent quinoa pasta, but a bit pricey compared to others');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 52, 5, 'Effective glass cleaner, leaves mirrors streak-free');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 52, 4, 'Cleans well and has a pleasant scent');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 52, 3, 'Average performance, could be more effective');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 53, 4, 'Sweet and juicy grapes, great for snacking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 53, 5, 'Delicious grapes, always fresh and flavorful');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 53, 3, 'Decent quality, but sometimes too tart');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 54, 5, 'Fresh and crisp spinach, perfect for salads');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 54, 4, 'Good quality spinach, love the earthy taste');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 54, 3, 'Decent spinach, but sometimes a bit wilted');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 55, 5, 'Creamy and delicious yogurt, great for breakfast or snacks');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 55, 4, 'Good quality yogurt, love the tangy flavor');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 55, 3, 'Decent yogurt, but a bit expensive for the size');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 56, 4, 'Flaky and buttery croissant, perfect with coffee');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 56, 5, 'Love these croissants, always fresh and delicious');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 56, 3, 'Decent croissants, but sometimes a bit dry');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 57, 5, 'High-quality pork chops, great for grilling or roasting');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 57, 4, 'Tender and flavorful, perfect for a hearty meal');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 57, 4, 'Love these pork chops, very versatile and delicious');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 58, 4, 'Refreshing iced tea, great for hot summer days');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 58, 3, 'Good flavor, but a bit too sweet for my taste');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 58, 5, 'Love this iced tea, very thirst-quenching');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 59, 3, 'Decent peanuts, but a bit too salty for me');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 59, 4, 'Great snack option, love the crunchiness');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 59, 5, 'Absolutely delicious peanuts, addictive flavor');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 60, 4, 'Good quality canned corn, great for salads or soups');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 60, 3, 'Decent canned corn, but sometimes a bit mushy');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 60, 5, 'Love this canned corn, always fresh and sweet');
+
+-- Reviews for products with IDs from 61 to 80
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 61, 4, 'Great variety of crackers, perfect for snacking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 61, 5, 'Love these crackers, crispy and flavorful');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 61, 3, 'Decent crackers, but could use more seasoning');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 62, 5, 'Delicious assortment of nuts, great for munching');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 62, 4, 'Good quality nuts, love the variety');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 62, 3, 'Decent nuts, but some varieties are better than others');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 63, 4, 'Crunchy and flavorful pita chips, great for dipping');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 63, 5, 'Love these pita chips, perfect amount of seasoning');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 63, 3, 'Decent pita chips, but sometimes a bit too salty');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 64, 5, 'Light and crunchy rice cakes, great for snacking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 64, 4, 'Good alternative to chips, love the plain flavor');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 64, 3, 'Decent rice cakes, but prefer a bit more flavor variety');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 65, 4, 'Great selection of candy bars, perfect for satisfying cravings');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 65, 5, 'Love these candy bars, nostalgic flavors');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 65, 3, 'Decent candy bars, but some are too sweet for my taste');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 66, 4, 'Tasty sour gummy worms, addictive snack');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 66, 5, 'Absolutely love these gummy worms, perfect balance of sourness');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 66, 3, 'Decent gummy worms, but could be more sour');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 67, 4, 'Fresh and delicious mixed nuts, great for energy boost');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 67, 5, 'Love this mix of nuts, perfect combination');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 67, 3, 'Decent mixed nuts, but prefer more almonds');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 68, 4, 'Great quality brown rice, cooks up nicely');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 68, 5, 'Love this brown rice, nutty flavor and chewy texture');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 68, 3, 'Decent brown rice, but takes longer to cook than expected');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 69, 4, 'Healthy and versatile quinoa, great for salads or sides');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 69, 5, 'Absolutely love this quinoa, fluffy and delicious');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 69, 3, 'Decent quinoa, but can be a bit bland without seasoning');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 70, 4, 'Good whole wheat pasta, holds sauce well');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 70, 5, 'Love this whole wheat pasta, hearty and delicious');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 70, 3, 'Decent whole wheat pasta, but prefer regular pasta texture');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 71, 4, 'Great addition to soups and salads, cooks up nicely');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 71, 5, 'Love this barley, nutty flavor and chewy texture');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 71, 3, 'Decent barley, but takes longer to cook than expected');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 72, 4, 'Versatile grain, great for pilafs and salads');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 72, 5, 'Love this couscous, cooks up quickly and fluffy');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 72, 3, 'Decent couscous, but prefer a bit more flavor');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 73, 4, 'Healthy breakfast option, cooks up quickly');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 73, 5, 'Love these oats, creamy texture and great with toppings');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 73, 3, 'Decent oats, but prefer steel-cut for more texture');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 74, 4, 'Great for salads and pilafs, cooks up nicely');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 74, 5, 'Love this bulgur, nutty flavor and chewy texture');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 74, 3, 'Decent bulgur, but takes longer to cook than expected');
+
+-- Reviews for products with IDs from 75 to 90
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 75, 4, 'Fresh and flavorful onions, great for cooking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 75, 5, 'Love these onions, always crisp and tasty');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 75, 3, 'Decent onions, but sometimes they go bad quickly');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 76, 4, 'Good quality garlic, adds great flavor to dishes');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 76, 5, 'Love this garlic, cloves are always plump and juicy');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 76, 3, 'Decent garlic, but some cloves are too small');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 77, 4, 'Fresh and crunchy carrots, great for snacking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 77, 5, 'Love these carrots, sweet and flavorful');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 77, 3, 'Decent carrots, but sometimes they are a bit dry');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 78, 4, 'Fresh and vibrant broccoli, great for stir-fries');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 78, 5, 'Love this broccoli, always tender and delicious');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 78, 3, 'Decent broccoli, but sometimes the stems are tough');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 79, 4, 'Healthy and fresh spinach, great for salads');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 79, 5, 'Love this spinach, always crisp and green');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 79, 3, 'Decent spinach, but sometimes there are gritty bits');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 80, 4, 'Good quality soy sauce, adds great umami flavor');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 80, 5, 'Love this soy sauce, rich and savory');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 80, 3, 'Decent soy sauce, but prefer low-sodium version');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 81, 4, 'Tangy and flavorful barbecue sauce, perfect for grilling');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 81, 5, 'Love this barbecue sauce, great balance of sweet and smoky');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 81, 3, 'Decent barbecue sauce, but sometimes too sweet for my taste');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 82, 4, 'Creamy and tangy honey mustard, great for dipping');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 82, 5, 'Love this honey mustard, perfect balance of flavors');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 82, 3, 'Decent honey mustard, but could use more honey flavor');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 83, 4, 'Spicy and flavorful hot sauce, adds kick to any dish');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 83, 5, 'Love this hot sauce, not too overpowering but packs heat');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 83, 3, 'Decent hot sauce, but prefer more complexity in flavor');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 84, 4, 'Versatile vinegar, great for dressings and marinades');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 84, 5, 'Love this vinegar, adds brightness to dishes');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 84, 3, 'Decent vinegar, but prefer apple cider vinegar for salads');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 85, 4, 'Crunchy and tangy pickles, great for sandwiches');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 85, 5, 'Love these pickles, always crisp and flavorful');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 85, 3, 'Decent pickles, but sometimes too vinegary');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 86, 4, 'Zesty salsa, perfect for dipping with chips');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 86, 5, 'Love this salsa, fresh and flavorful with just the right amount of heat');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 86, 3, 'Decent salsa, but prefer chunkier texture');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 87, 4, 'Creamy and tangy tartar sauce, great with seafood');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 87, 5, 'Love this tartar sauce, adds brightness to fish dishes');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 87, 3, 'Decent tartar sauce, but could use more pickles');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 88, 4, 'Bold and savory Worcestershire sauce, great for marinades');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 88, 5, 'Love this Worcestershire sauce, adds depth of flavor to dishes');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 88, 3, 'Decent Worcestershire sauce, but prefer low-sodium version');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 89, 4, 'Rich and flavorful maple syrup, perfect for pancakes');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 89, 5, 'Love this maple syrup, great balance of sweetness and richness');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 89, 3, 'Decent maple syrup, but prefer darker grade for cooking');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 90, 4, 'Juicy and flavorful frozen burgers, great for quick meals');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 90, 5, 'Love these frozen burgers, convenient and tasty');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 90, 3, 'Decent frozen burgers, but prefer homemade patties');
+
+
+-- Reviews for products with IDs from 91 to 109
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 91, 4, 'Tasty and convenient frozen chicken nuggets, great for snacking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 91, 5, 'Love these frozen chicken nuggets, crispy on the outside and juicy inside');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 91, 3, 'Decent frozen chicken nuggets, but prefer homemade ones');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 92, 4, 'Flaky and flavorful frozen fish fillets, great for quick dinners');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 92, 5, 'Love these frozen fish fillets, always moist and delicious');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 92, 3, 'Decent frozen fish fillets, but sometimes a bit too salty');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 93, 4, 'Crispy and delicious frozen french fries, perfect as a side dish');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 93, 5, 'Love these frozen french fries, golden and crispy every time');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 93, 3, 'Decent frozen french fries, but prefer thicker cuts');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 94, 4, 'Hearty and satisfying frozen lasagna, great for busy nights');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 94, 5, 'Love this frozen lasagna, rich and cheesy with flavorful sauce');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 94, 3, 'Decent frozen lasagna, but prefer homemade taste');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 95, 4, 'Tasty and convenient frozen breakfast sandwiches, great for mornings on-the-go');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 95, 5, 'Love these frozen breakfast sandwiches, perfect balance of flavors');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 95, 3, 'Decent frozen breakfast sandwiches, but prefer fresher ingredients');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 96, 4, 'Delicious and indulgent frozen pies, great for dessert cravings');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 96, 5, 'Love these frozen pies, flaky crust and flavorful filling');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 96, 3, 'Decent frozen pies, but could use more filling');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 97, 4, 'Plump and juicy frozen shrimp, great for seafood dishes');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 97, 5, 'Love these frozen shrimp, always fresh-tasting and delicious');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 97, 3, 'Decent frozen shrimp, but prefer shell-on for more flavor');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 98, 4, 'Savory and tender frozen meatballs, great for spaghetti or sandwiches');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 98, 5, 'Love these frozen meatballs, perfectly seasoned and easy to cook');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 98, 3, 'Decent frozen meatballs, but prefer homemade texture');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 99, 4, 'Crispy and flavorful frozen chicken wings, great for game nights');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 99, 5, 'Love these frozen chicken wings, always a hit at parties');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 99, 3, 'Decent frozen chicken wings, but prefer bone-in for more meat');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 100, 4, 'Refreshing hand soap, cleans effectively without drying out the skin');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 100, 5, 'Love this hand soap, gentle on the skin with a pleasant scent');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 100, 3, 'Decent hand soap, but prefer foaming formula for easier lathering');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 101, 4, 'Gentle face wash, leaves skin feeling clean and refreshed');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 101, 5, 'Love this face wash, helps control breakouts without over-drying');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 101, 3, 'Decent face wash, but prefer exfoliating formula for smoother skin');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 102, 4, 'Moisturizing body lotion, absorbs quickly without greasiness');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 102, 5, 'Love this body lotion, keeps skin soft and hydrated all day');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 102, 3, 'Decent body lotion, but prefer thicker consistency for dry skin');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 103, 4, 'Hydrating facial moisturizer, lightweight and non-greasy');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 103, 5, 'Love this facial moisturizer, leaves skin smooth and glowing');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 103, 3, 'Decent facial moisturizer, but prefer SPF protection for daytime use');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 104, 4, 'Effective hand sanitizer, dries quickly without residue');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 104, 5, 'Love this hand sanitizer, convenient for on-the-go hygiene');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 104, 3, 'Decent hand sanitizer, but prefer gel formula for better coverage');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 105, 4, 'Smooth shaving cream, provides a close shave without irritation');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 105, 5, 'Love this shaving cream, leaves skin soft and moisturized');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 105, 3, 'Decent shaving cream, but prefer foam texture for thicker lather');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 106, 4, 'Long-lasting deodorant, keeps odor at bay all day');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 106, 5, 'Love this deodorant, gentle on the skin with a fresh scent');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (8, 106, 3, 'Decent deodorant, but prefer unscented formula for sensitive skin');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (9, 107, 4, 'Strong-hold hair gel, keeps hairstyle in place without stiffness');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (10, 107, 5, 'Love this hair gel, provides great hold without flaking');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (1, 107, 3, 'Decent hair gel, but prefer matte finish for more natural look');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (2, 108, 4, 'Refreshing toothpaste, leaves mouth feeling clean and minty');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (3, 108, 5, 'Love this toothpaste, helps maintain oral hygiene with fluoride protection');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (4, 108, 3, 'Decent toothpaste, but prefer whitening formula for brighter smile');
+
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (5, 109, 4, 'Refreshing mouthwash, kills germs and freshens breath');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (6, 109, 5, 'Love this mouthwash, leaves mouth feeling clean and invigorated');
+insert into ProductReview (UserID, ProductID, Rating, Comment) values (7, 109, 3, 'Decent mouthwash, but prefer alcohol-free formula for sensitive gums');

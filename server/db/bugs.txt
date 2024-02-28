@@ -1,0 +1,1143 @@
+[
+    {
+        "productid": 11,
+        "comment": "Perfectly sweet with just the right amount of cinnamon"
+    },
+    {
+        "productid": 11,
+        "comment": "Warm and gooey, exactly what I wanted"
+    },
+    {
+        "productid": 11,
+        "comment": "Tasty but a bit too sugary for my liking"
+    },
+    
+    {
+        "productid": 12,
+        "comment": "Crusty on the outside, soft on the inside"
+    },
+    {
+        "productid": 12,
+        "comment": "Decent baguette, but a bit too chewy"
+    },
+    {
+        "productid": 12,
+        "comment": "Excellent texture, pairs well with cheese"
+    },
+    {
+        "productid": 13,
+        "comment": "Loaded with blueberries, delicious!"
+    },
+    {
+        "productid": 13,
+        "comment": "Not enough blueberries, a bit dry"
+    },
+    {
+        "productid": 13,
+        "comment": "Good muffin, could be a bit sweeter"
+    },
+    {
+        "productid": 14,
+        "comment": "Perfectly tangy, great for avocado toast"
+    },
+    {
+        "productid": 14,
+        "comment": "Best sourdough I've ever had, will buy again"
+    },
+    {
+        "productid": 14,
+        "comment": "Good sourdough, but a bit too dense"
+    },
+    {
+        "productid": 15,
+        "comment": "Flaky pastry, but chocolate filling is lacking"
+    },
+    {
+        "productid": 15,
+        "comment": "Disappointing, barely any chocolate inside"
+    },
+    {
+        "productid": 15,
+        "comment": "Average croissant, nothing special"
+    },
+    {
+        "productid": 16,
+        "comment": "Perfect balance of sweetness and tartness"
+    },
+    {
+        "productid": 16,
+        "comment": "Could use more apple filling, pastry is good"
+    },
+    {
+        "productid": 16,
+        "comment": "Good apple danish, enjoyed it with coffee"
+    },
+    {
+        "productid": 17,
+        "comment": "Hearty bread, perfect for sandwiches"
+    },
+    {
+        "productid": 17,
+        "comment": "Decent whole grain bread, a bit dry"
+    },
+    {
+        "productid": 17,
+        "comment": "Excellent texture, very filling"
+    },
+    {
+        "productid": 18,
+        "comment": "Nice chewy texture, great with mustard"
+    },
+    {
+        "productid": 18,
+        "comment": "Disappointing, tasted stale"
+    },
+    {
+        "productid": 18,
+        "comment": "Decent pretzel, could be fresher"
+    },
+    {
+        "productid": 19,
+        "comment": "Flaky pastry with rich almond flavor, loved it"
+    },
+    {
+        "productid": 19,
+        "comment": "Could use more almond filling, pastry is good"
+    },
+    {
+        "productid": 19,
+        "comment": "Tasty almond croissant, would buy again"
+    },
+    {
+        "productid": 20,
+        "comment": "Creamy cheese filling with flaky pastry"
+    },
+    {
+        "productid": 20,
+        "comment": "Decent cheese danish, but could be cheesier"
+    },
+    {
+        "productid": 20,
+        "comment": "Perfect balance of sweet and savory, loved it"
+    },
+    {
+        "productid": 21,
+        "comment": "Perfectly soft with generous chocolate chips, loved it"
+    },
+    {
+        "productid": 21,
+        "comment": "Decent cookie, but a bit too sweet for my taste"
+    },
+    {
+        "productid": 21,
+        "comment": "Good balance of sweetness and chocolate, enjoyable treat"
+    },
+    {
+        "productid": 22,
+        "comment": "Moist and chocolatey, perfect with a glass of milk"
+    },
+    {
+        "productid": 22,
+        "comment": "Decent brownie, but could be more gooey in the center"
+    },
+    {
+        "productid": 22,
+        "comment": "Best brownie I've ever had, will definitely order again"
+    },
+    {
+        "productid": 23,
+        "comment": "Perfect balance of sweet and tart, loved the crust"
+    },
+    {
+        "productid": 23,
+        "comment": "Decent lemon flavor, but crust was a bit too hard"
+    },
+    {
+        "productid": 23,
+        "comment": "Great dessert, enjoyed every bite"
+    },
+    {
+        "productid": 24,
+        "comment": "Moist cake with creamy frosting, enjoyable treat"
+    },
+    {
+        "productid": 24,
+        "comment": "Disappointing cupcake, tasted stale"
+    },
+    {
+        "productid": 24,
+        "comment": "Average cupcake, nothing special"
+    },
+    {
+        "productid": 25,
+        "comment": "Loved the combination of fruits, perfect summer dessert"
+    },
+    {
+        "productid": 25,
+        "comment": "Decent tart, but fruits could be more ripe"
+    },
+    {
+        "productid": 25,
+        "comment": "Tasty dessert, enjoyed the mix of flavors"
+    },
+    {
+        "productid": 26,
+        "comment": "Perfectly spiced with delicious cream cheese frosting"
+    },
+    {
+        "productid": 26,
+        "comment": "Decent carrot cake, but frosting was too sweet"
+    },
+    {
+        "productid": 26,
+        "comment": "Best carrot cake ever, will order again for sure"
+    },
+    {
+        "productid": 27,
+        "comment": "Loved the spices, tasted homemade"
+    },
+    {
+        "productid": 27,
+        "comment": "Decent pie, but crust was a bit too thick"
+    },
+    {
+        "productid": 27,
+        "comment": "Great pumpkin pie, reminded me of Thanksgiving dinners"
+    },
+    {
+        "productid": 28,
+        "comment": "Decent scone, but could use more blueberries"
+    },
+    {
+        "productid": 28,
+        "comment": "Disappointing, lacked flavor and moisture"
+    },
+    {
+        "productid": 28,
+        "comment": "Average scone, nothing special"
+    },
+    {
+        "productid": 29,
+        "comment": "Perfect balance of sweet and tart, delicious dessert"
+    },
+    {
+        "productid": 29,
+        "comment": "Decent tart, but could use more raspberries"
+    },
+    {
+        "productid": 29,
+        "comment": "Enjoyable treat, would order again"
+    },
+    {
+        "productid": 30,
+        "comment": "Perfectly sweet with rich pecan flavor, great dessert"
+    },
+    {
+        "productid": 30,
+        "comment": "Decent pie, but filling was a bit too gooey"
+    },
+    {
+        "productid": 30,
+        "comment": "Best pecan pie I've ever had, will definitely order again"
+    },
+    {
+        "productid": 31,
+        "comment": "Perfectly spiced with tender apples, great dessert"
+    },
+    {
+        "productid": 31,
+        "comment": "Decent pie, but could use more filling"
+    },
+    {
+        "productid": 31,
+        "comment": "Enjoyable treat, reminded me of homemade pies"
+    },
+    {
+        "productid": 32,
+        "comment": "Rich chocolate flavor with creamy frosting, loved it"
+    },
+    {
+        "productid": 32,
+        "comment": "Decent cake, but frosting was too sweet"
+    },
+    {
+        "productid": 32,
+        "comment": "Best chocolate cake ever, will order again for sure"
+    },
+    {
+        "productid": 33,
+        "comment": "Perfect balance of sweetness, great dessert option"
+    },
+    {
+        "productid": 33,
+        "comment": "Decent shortcake, but could use more strawberries"
+    },
+    {
+        "productid": 33,
+        "comment": "Enjoyable treat, would order again"
+    },
+    {
+        "productid": 34,
+        "comment": "Decent roll, but could use more cinnamon filling"
+    },
+    {
+        "productid": 34,
+        "comment": "Disappointing, lacked flavor and moisture"
+    },
+    {
+        "productid": 34,
+        "comment": "Average roll, nothing special"
+    },
+    {
+        "productid": 35,
+        "comment": "Perfectly moist with generous blueberries, loved it"
+    },
+    {
+        "productid": 35,
+        "comment": "Decent muffin, but a bit too crumbly"
+    },
+    {
+        "productid": 35,
+        "comment": "Great breakfast option, enjoyed every bite"
+    },
+    {
+        "productid": 36,
+        "comment": "Perfectly creamy with delicious cream cheese frosting"
+    },
+    {
+        "productid": 36,
+        "comment": "Decent cake, but frosting was too sweet"
+    },
+    {
+        "productid": 36,
+        "comment": "Best red velvet cake ever, will order again for sure"
+    },
+    {
+        "productid": 37,
+        "comment": "Loved the tangy lime flavor, great dessert choice"
+    },
+    {
+        "productid": 37,
+        "comment": "Decent pie, but crust was a bit too thick"
+    },
+    {
+        "productid": 37,
+        "comment": "Great key lime pie, refreshing and delicious"
+    },
+    {
+        "productid": 38,
+        "comment": "Decent croissant, but could use more almond filling"
+    },
+    {
+        "productid": 38,
+        "comment": "Disappointing, lacked flavor and moisture"
+    },
+    {
+        "productid": 38,
+        "comment": "Average croissant, nothing special"
+    },
+    {
+        "productid": 39,
+        "comment": "Perfectly rich with a smooth texture, loved it"
+    },
+    {
+        "productid": 39,
+        "comment": "Decent cheesecake, but crust was a bit too hard"
+    },
+    {
+        "productid": 39,
+        "comment": "Enjoyable dessert, would order again"
+    },
+    {
+        "productid": 40,
+        "comment": "Rich and creamy with a hint of coffee, great dessert"
+    },
+    {
+        "productid": 40,
+        "comment": "Decent tiramisu, but could use more cocoa powder"
+    },
+    {
+        "productid": 40,
+        "comment": "Best tiramisu I've ever had, will definitely order again"
+    },
+    {
+        "productid": 41,
+        "comment": "Perfectly balanced flavors with a fluffy meringue top"
+    },
+    {
+        "productid": 41,
+        "comment": "Decent pie, but crust was a bit too thick"
+    },
+    {
+        "productid": 41,
+        "comment": "Great lemon pie, refreshing and delightful"
+    },
+    {
+        "productid": 42,
+        "comment": "Decent cookie, but could use more chocolate chips"
+    },
+    {
+        "productid": 42,
+        "comment": "Disappointing, lacked chocolate flavor"
+    },
+    {
+        "productid": 42,
+        "comment": "Average cookie, nothing special"
+    },
+    {
+        "productid": 43,
+        "comment": "Perfectly spiced with a creamy frosting, loved it"
+    },
+    {
+        "productid": 43,
+        "comment": "Decent cake, but frosting was too sweet"
+    },
+    {
+        "productid": 43,
+        "comment": "Great carrot cake, enjoyed every bite"
+    },
+    {
+        "productid": 44,
+        "comment": "Decent brownie, but could be more fudgy"
+    },
+    {
+        "productid": 44,
+        "comment": "Disappointing, lacked chocolate flavor"
+    },
+    {
+        "productid": 44,
+        "comment": "Average brownie, nothing special"
+    },
+    {
+        "productid": 45,
+        "comment": "Loved the crispy pastry with warm apple filling, great treat"
+    },
+    {
+        "productid": 45,
+        "comment": "Decent turnover, but could use more filling"
+    },
+    {
+        "productid": 45,
+        "comment": "Great apple turnover, delicious and satisfying"
+    },
+    {
+        "productid": 46,
+        "comment": "Delicious pastry with fresh raspberries, loved it"
+    },
+    {
+        "productid": 46,
+        "comment": "Decent tart, but crust was a bit too hard"
+    },
+    {
+        "productid": 46,
+        "comment": "Best raspberry tart ever, will order again for sure"
+    },
+    {
+        "productid": 47,
+        "comment": "Loved the buttery texture with bursts of blueberries, great breakfast"
+    },
+    {
+        "productid": 47,
+        "comment": "Decent scone, but a bit too dry"
+    },
+    {
+        "productid": 47,
+        "comment": "Great blueberry scone, enjoyed every bite"
+    },
+    {
+        "productid": 48,
+        "comment": "Decent macaroon, but could be more coconutty"
+    },
+    {
+        "productid": 48,
+        "comment": "Disappointing, lacked coconut flavor"
+    },
+    {
+        "productid": 48,
+        "comment": "Average macaroon, nothing special"
+    },
+    {
+        "productid": 49,
+        "comment": "Perfectly ripe bananas with a hint of cinnamon, loved it"
+    },
+    {
+        "productid": 49,
+        "comment": "Decent bread, but a bit too crumbly"
+    },
+    {
+        "productid": 49,
+        "comment": "Great banana bread, enjoyed every bite"
+    },
+    {
+        "productid": 50,
+        "comment": "Delicious filling with crunchy pecans, loved it"
+    },
+    {
+        "productid": 50,
+        "comment": "Decent pie, but crust was a bit too thick"
+    },
+    {
+        "productid": 50,
+        "comment": "Best pecan pie ever, will order again for sure"
+    },
+    {
+        "productid": 51,
+        "comment": "Perfect balance of coffee and mascarpone, loved it"
+    },
+    {
+        "productid": 51,
+        "comment": "Decent dessert, but could be more moist"
+    },
+    {
+        "productid": 51,
+        "comment": "Great tiramisu, enjoyed every bite"
+    },
+    {
+        "productid": 52,
+        "comment": "Decent cheesecake, but could use more creaminess"
+    },
+    {
+        "productid": 52,
+        "comment": "Disappointing, lacked flavor"
+    },
+    {
+        "productid": 52,
+        "comment": "Average cheesecake, nothing special"
+    },
+    {
+        "productid": 53,
+        "comment": "Perfect balance of tartness with a crumbly crust, loved it"
+    },
+    {
+        "productid": 53,
+        "comment": "Decent pie, but could use more lime flavor"
+    },
+    {
+        "productid": 53,
+        "comment": "Great key lime pie, enjoyed every bite"
+    },
+    {
+        "productid": 54,
+        "comment": "Decent tart, but crust was a bit too hard"
+    },
+    {
+        "productid": 54,
+        "comment": "Disappointing, lacked flavor"
+    },
+    {
+        "productid": 54,
+        "comment": "Average fruit tart, nothing special"
+    },
+    {
+        "productid": 55,
+        "comment": "Loved the cream cheese frosting with hints of cocoa, great cake"
+    },
+    {
+        "productid": 55,
+        "comment": "Decent cake, but frosting was too sweet"
+    },
+    {
+        "productid": 55,
+        "comment": "Great red velvet cake, enjoyed every bite"
+    },
+    {
+        "productid": 56,
+        "comment": "Delicious ganache with a smooth texture, loved it"
+    },
+    {
+        "productid": 56,
+        "comment": "Decent truffle, but could use more cocoa flavor"
+    },
+    {
+        "productid": 56,
+        "comment": "Best chocolate truffle ever, will order again for sure"
+    },
+    {
+        "productid": 57,
+        "comment": "Loved the crunchy almonds with the soft pastry, great treat"
+    },
+    {
+        "productid": 57,
+        "comment": "Decent croissant, but could use more almond filling"
+    },
+    {
+        "productid": 57,
+        "comment": "Great almond croissant, enjoyed every bite"
+    },
+    {
+        "productid": 58,
+        "comment": "Decent bar, but could use more sweetness"
+    },
+    {
+        "productid": 58,
+        "comment": "Disappointing, lacked lemon flavor"
+    },
+    {
+        "productid": 58,
+        "comment": "Average lemon bar, nothing special"
+    },
+    {
+        "productid": 59,
+        "comment": "Perfect balance of sweetness with a buttery crust, loved it"
+    },
+    {
+        "productid": 59,
+        "comment": "Decent tart, but could use more pecans"
+    },
+    {
+        "productid": 59,
+        "comment": "Great pecan tart, enjoyed every bite"
+    },
+    {
+        "productid": 60,
+        "comment": "Delicious muffin with generous chocolate chips, loved it"
+    },
+    {
+        "productid": 60,
+        "comment": "Decent muffin, but a bit too dense"
+    },
+    {
+        "productid": 60,
+        "comment": "Best chocolate chip muffin ever, will order again for sure"
+    },
+    {
+        "productid": 61,
+        "comment": "Loved the sweet and tangy blueberries with a flaky crust, great pie"
+    },
+    {
+        "productid": 61,
+        "comment": "Decent pie, but could use more filling"
+    },
+    {
+        "productid": 61,
+        "comment": "Great blueberry pie, enjoyed every bite"
+    },
+    {
+        "productid": 62,
+        "comment": "Decent biscotti, but could be more almond-flavored"
+    },
+    {
+        "productid": 62,
+        "comment": "Disappointing, lacked almond flavor"
+    },
+    {
+        "productid": 62,
+        "comment": "Average biscotti, nothing special"
+    },
+    {
+        "productid": 63,
+        "comment": "Loved the warm cinnamon filling with a sweet glaze, great treat"
+    },
+    {
+        "productid": 63,
+        "comment": "Decent roll, but a bit too sweet"
+    },
+    {
+        "productid": 63,
+        "comment": "Great cinnamon roll, enjoyed every bite"
+    },
+    {
+        "productid": 64,
+        "comment": "Decent croissant, but lacked flakiness"
+    },
+    {
+        "productid": 64,
+        "comment": "Disappointing, lacked flavor"
+    },
+    {
+        "productid": 64,
+        "comment": "Average chocolate croissant, nothing special"
+    },
+    {
+        "productid": 65,
+        "comment": "Loved the warm apple filling with flaky layers, great dessert"
+    },
+    {
+        "productid": 65,
+        "comment": "Decent strudel, but could use more apples"
+    },
+    {
+        "productid": 65,
+        "comment": "Great apple strudel, enjoyed every bite"
+    },
+    {
+        "productid": 66,
+        "comment": "Delicious pastry with a smooth chocolate filling, loved it"
+    },
+    {
+        "productid": 66,
+        "comment": "Decent ‚clair, but could use more chocolate"
+    },
+    {
+        "productid": 66,
+        "comment": "Best chocolate ‚clair ever, will order again for sure"
+    },
+    {
+        "productid": 67,
+        "comment": "Loved the sweet strawberries with soft sponge cake, great dessert"
+    },
+    {
+        "productid": 67,
+        "comment": "Decent shortcake, but could use more strawberries"
+    },
+    {
+        "productid": 67,
+        "comment": "Great strawberry shortcake, enjoyed every bite"
+    },
+    {
+        "productid": 68,
+        "comment": "Decent cookie, but could use more raisins"
+    },
+    {
+        "productid": 68,
+        "comment": "Disappointing, lacked flavor"
+    },
+    {
+        "productid": 68,
+        "comment": "Average oatmeal cookie, nothing special"
+    },
+    {
+        "productid": 69,
+        "comment": "Perfect balance of spices with a flaky crust, loved it"
+    },
+    {
+        "productid": 69,
+        "comment": "Decent pie, but could use more filling"
+    },
+    {
+        "productid": 69,
+        "comment": "Great pumpkin pie, enjoyed every bite"
+    },
+    {
+        "productid": 70,
+        "comment": "Delicious pastry with a zesty lemon filling, loved it"
+    },
+    {
+        "productid": 70,
+        "comment": "Decent tart, but crust was a bit too thick"
+    },
+    {
+        "productid": 70,
+        "comment": "Best lemon tart ever, will order again for sure"
+    },
+    {
+        "productid": 71,
+        "comment": "Fantastic barley, perfectly cooked and flavorful"
+    },
+    {
+        "productid": 71,
+        "comment": "Good quality barley, great addition to soups"
+    },
+    {
+        "productid": 71,
+        "comment": "Decent barley, could be improved with more seasoning"
+    },
+    {
+        "productid": 71,
+        "comment": "Excellent barley, love the texture and taste"
+    },
+    {
+        "productid": 72,
+        "comment": "Tasty quinoa, good source of protein"
+    },
+    {
+        "productid": 72,
+        "comment": "Fantastic quinoa, cooks up fluffy and delicious"
+    },
+    {
+        "productid": 72,
+        "comment": "Great quality quinoa, satisfied with my purchase"
+    },
+    {
+        "productid": 73,
+        "comment": "Good quality oats, perfect for breakfast"
+    },
+    {
+        "productid": 73,
+        "comment": "Excellent oats, love the texture and taste"
+    },
+    {
+        "productid": 73,
+        "comment": "Decent oats, slightly bland"
+    },
+    {
+        "productid": 73,
+        "comment": "Very tasty oats, highly recommend"
+    },
+    {
+        "productid": 74,
+        "comment": "High-quality chia seeds, love the health benefits"
+    },
+    {
+        "productid": 74,
+        "comment": "Okay chia seeds, not as fresh as expected"
+    },
+    {
+        "productid": 74,
+        "comment": "Delicious chia seeds, very versatile ingredient"
+    },
+    {
+        "productid": 75,
+        "comment": "Great honey, love the flavor and consistency"
+    },
+    {
+        "productid": 75,
+        "comment": "Fantastic honey, pure and delicious"
+    },
+    {
+        "productid": 75,
+        "comment": "Okay honey, slightly too sweet for my taste"
+    },
+    {
+        "productid": 75,
+        "comment": "Good quality honey, great for baking"
+    },
+    {
+        "productid": 76,
+        "comment": "Excellent olive oil, rich flavor and aroma"
+    },
+    {
+        "productid": 76,
+        "comment": "Very good olive oil, enhances the taste of dishes"
+    },
+    {
+        "productid": 76,
+        "comment": "Decent olive oil, not as flavorful as expected"
+    },
+    {
+        "productid": 77,
+        "comment": "Good quality vinegar, adds a nice tang to salads"
+    },
+    {
+        "productid": 77,
+        "comment": "Excellent vinegar, versatile ingredient for cooking"
+    },
+    {
+        "productid": 77,
+        "comment": "Okay vinegar, lacks depth of flavor"
+    },
+    {
+        "productid": 77,
+        "comment": "Great tasting vinegar, pleased with the purchase"
+    },
+    {
+        "productid": 78,
+        "comment": "Delicious pasta, cooks up perfectly al dente"
+    },
+    {
+        "productid": 78,
+        "comment": "Decent pasta, slightly too soft for my liking"
+    },
+    {
+        "productid": 78,
+        "comment": "High-quality pasta, great with any sauce"
+    },
+    {
+        "productid": 79,
+        "comment": "Tasty tomato sauce, good balance of flavors"
+    },
+    {
+        "productid": 79,
+        "comment": "Fantastic tomato sauce, rich and delicious"
+    },
+    {
+        "productid": 79,
+        "comment": "Okay tomato sauce, slightly too acidic"
+    },
+    {
+        "productid": 79,
+        "comment": "Very flavorful tomato sauce, great for pasta dishes"
+    },
+    {
+        "productid": 80,
+        "comment": "Amazing soy sauce, enhances the taste of dishes"
+    },
+    {
+        "productid": 80,
+        "comment": "Great quality soy sauce, love the umami flavor"
+    },
+    {
+        "productid": 80,
+        "comment": "Decent soy sauce, slightly too salty"
+    },
+    {
+        "productid": 81,
+        "comment": "Good quality rice, cooks up fluffy and delicious"
+    },
+    {
+        "productid": 81,
+        "comment": "Okay rice, slightly undercooked"
+    },
+    {
+        "productid": 81,
+        "comment": "Very tasty rice, great with any dish"
+    },
+    {
+        "productid": 82,
+        "comment": "Excellent tea, flavorful and aromatic"
+    },
+    {
+        "productid": 82,
+        "comment": "Decent tea, lacks depth of flavor"
+    },
+    {
+        "productid": 82,
+        "comment": "Amazing tea, perfect for any time of day"
+    },
+    {
+        "productid": 83,
+        "comment": "Great coffee, love the bold flavor"
+    },
+    {
+        "productid": 83,
+        "comment": "Fantastic coffee, rich and smooth taste"
+    },
+    {
+        "productid": 83,
+        "comment": "Okay coffee, slightly bitter aftertaste"
+    },
+    {
+        "productid": 83,
+        "comment": "Very good quality coffee, wakes me up in the morning"
+    },
+    {
+        "productid": 84,
+        "comment": "Amazing black beans, cooked perfectly and very tasty"
+    },
+    {
+        "productid": 84,
+        "comment": "Great quality black beans, love the texture"
+    },
+    {
+        "productid": 84,
+        "comment": "Decent black beans, slightly undercooked"
+    },
+    {
+        "productid": 84,
+        "comment": "Excellent black beans, versatile ingredient for many dishes"
+    },
+    {
+        "productid": 85,
+        "comment": "Fantastic lentils, love the earthy flavor"
+    },
+    {
+        "productid": 85,
+        "comment": "Okay lentils, slightly tough texture"
+    },
+    {
+        "productid": 85,
+        "comment": "Very tasty lentils, great source of protein"
+    },
+    {
+        "productid": 86,
+        "comment": "Delicious almonds, crunchy and satisfying"
+    },
+    {
+        "productid": 86,
+        "comment": "Great quality almonds, perfect for snacking"
+    },
+    {
+        "productid": 86,
+        "comment": "Decent almonds, some are a bit stale"
+    },
+    {
+        "productid": 86,
+        "comment": "Excellent almonds, love the flavor and texture"
+    },
+    {
+        "productid": 87,
+        "comment": "Good quality walnuts, great for baking"
+    },
+    {
+        "productid": 87,
+        "comment": "Okay walnuts, some are a bit bitter"
+    },
+    {
+        "productid": 87,
+        "comment": "Very tasty walnuts, great addition to salads"
+    },
+    {
+        "productid": 88,
+        "comment": "Amazing cashews, perfectly roasted and seasoned"
+    },
+    {
+        "productid": 88,
+        "comment": "Great quality cashews, love the creamy texture"
+    },
+    {
+        "productid": 88,
+        "comment": "Decent cashews, some are a bit stale"
+    },
+    {
+        "productid": 89,
+        "comment": "Tasty peanuts, love the crunch and flavor"
+    },
+    {
+        "productid": 89,
+        "comment": "Fantastic peanuts, great for snacking"
+    },
+    {
+        "productid": 89,
+        "comment": "Okay peanuts, some are a bit dry"
+    },
+    {
+        "productid": 89,
+        "comment": "Very good quality peanuts, satisfies my cravings"
+    },
+    {
+        "productid": 90,
+        "comment": "Delicious pistachios, addictive snack"
+    },
+    {
+        "productid": 90,
+        "comment": "Great quality pistachios, love the salty flavor"
+    },
+    {
+        "productid": 90,
+        "comment": "Decent pistachios, some are a bit tough to open"
+    },
+    {
+        "productid": 91,
+        "comment": "Fantastic dark chocolate, love the intense flavor"
+    },
+    {
+        "productid": 91,
+        "comment": "Okay dark chocolate, slightly bitter aftertaste"
+    },
+    {
+        "productid": 91,
+        "comment": "Very good quality dark chocolate, great for desserts"
+    },
+    {
+        "productid": 92,
+        "comment": "Delicious milk chocolate, creamy and indulgent"
+    },
+    {
+        "productid": 92,
+        "comment": "Great quality milk chocolate, perfect for snacking"
+    },
+    {
+        "productid": 92,
+        "comment": "Decent milk chocolate, a bit too sweet for my taste"
+    },
+    {
+        "productid": 92,
+        "comment": "Excellent milk chocolate, melts in your mouth"
+    },
+    {
+        "productid": 93,
+        "comment": "Tasty white chocolate, love the smooth texture"
+    },
+    {
+        "productid": 93,
+        "comment": "Fantastic white chocolate, perfect for baking"
+    },
+    {
+        "productid": 93,
+        "comment": "Very good quality white chocolate, great with coffee"
+    },
+    {
+        "productid": 94,
+        "comment": "Delicious chocolate chips, perfect for cookies"
+    },
+    {
+        "productid": 94,
+        "comment": "Great quality chocolate chips, love the rich flavor"
+    },
+    {
+        "productid": 94,
+        "comment": "Decent chocolate chips, slightly too sweet"
+    },
+    {
+        "productid": 94,
+        "comment": "Excellent chocolate chips, melts perfectly in baking"
+    },
+    {
+        "productid": 95,
+        "comment": "Tasty chocolate bar, love the variety of flavors"
+    },
+    {
+        "productid": 95,
+        "comment": "Fantastic chocolate bar, great for sharing"
+    },
+    {
+        "productid": 95,
+        "comment": "Okay chocolate bar, some flavors are better than others"
+    },
+    {
+        "productid": 95,
+        "comment": "Very good quality chocolate bar, satisfies my sweet tooth"
+    },
+    {
+        "productid": 96,
+        "comment": "Great quality gummy bears, perfect chewy texture"
+    },
+    {
+        "productid": 96,
+        "comment": "Decent gummy bears, flavors could be more intense"
+    },
+    {
+        "productid": 96,
+        "comment": "Excellent gummy bears, addictive snack"
+    },
+    {
+        "productid": 97,
+        "comment": "Tasty licorice, love the soft texture"
+    },
+    {
+        "productid": 97,
+        "comment": "Fantastic licorice, great variety of flavors"
+    },
+    {
+        "productid": 97,
+        "comment": "Okay licorice, some flavors are better than others"
+    },
+    {
+        "productid": 97,
+        "comment": "Very good quality licorice, enjoyable snack"
+    },
+    {
+        "productid": 98,
+        "comment": "Delicious hard candies, love the assortment of flavors"
+    },
+    {
+        "productid": 98,
+        "comment": "Great quality hard candies, perfect for parties"
+    },
+    {
+        "productid": 98,
+        "comment": "Excellent hard candies, long-lasting flavor"
+    },
+    {
+        "productid": 99,
+        "comment": "Tasty lollipops, love the fruity flavors"
+    },
+    {
+        "productid": 99,
+        "comment": "Fantastic lollipops, great for kids"
+    },
+    {
+        "productid": 99,
+        "comment": "Okay lollipops, some flavors are better than others"
+    },
+    {
+        "productid": 99,
+        "comment": "Very good quality lollipops, enjoyable treat"
+    },
+    {
+        "productid": 100,
+        "comment": "Delicious chewing gum, love the minty freshness"
+    },
+    {
+        "productid": 100,
+        "comment": "Great quality chewing gum, perfect for freshening breath"
+    },
+    {
+        "productid": 100,
+        "comment": "Decent chewing gum, flavor fades quickly"
+    },
+    {
+        "productid": 100,
+        "comment": "Excellent chewing gum, long-lasting flavor"
+    }
+]

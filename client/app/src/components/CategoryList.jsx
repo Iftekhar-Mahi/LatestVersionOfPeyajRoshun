@@ -24,16 +24,16 @@ const CategoryList = () => {
   }
 
   return (
-    <div className="category-container">
-      <h3>Categories</h3>
-      <h5>You can choose products from these categories:</h5>
-      <div className="category-grid">
+    <div className="category-list-container">
+      <h3 className="category-list-title">Categories</h3>
+      <h5 className="category-list-description">You can choose products from these categories:</h5>
+      <div className="category-list-grid">
         {categories.map((category) => (
-          <div key={category.categoryid} className="category-card">
-            <div className="card-body">
-              <h5>{category.categoryname}</h5>
-              <h5>{category.description}</h5>
-              <button className="btn btn-primary" onClick={() => navigateToProducts(category)}>
+          <div key={category.categoryid} className="category-list-card">
+            <div className="category-list-content">
+              <h5 className="category-list-name">{category.categoryname}</h5>
+              <h5 className="category-list-desc">{category.description}</h5>
+              <button className="category-list-button" onClick={() => navigateToProducts(category)}>
                 Go
               </button>
             </div>

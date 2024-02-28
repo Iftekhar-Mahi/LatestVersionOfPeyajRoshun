@@ -1,0 +1,547 @@
+[
+    {
+        "name": "Banana",
+        "productid": 2,
+        "categoryid": 1
+    },
+    {
+        "name": "Orange",
+        "productid": 23,
+        "categoryid": 1
+    },
+    {
+        "name": "Apple",
+        "productid": 1,
+        "categoryid": 1
+    },
+    {
+        "name": "Grapes",
+        "productid": 33,
+        "categoryid": 1
+    },
+    {
+        "name": "Pineapple",
+        "productid": 43,
+        "categoryid": 1
+    },
+    {
+        "name": "Spinach",
+        "productid": 44,
+        "categoryid": 2
+    },
+    {
+        "name": "Carrot",
+        "productid": 24,
+        "categoryid": 2
+    },
+    {
+        "name": "Broccoli",
+        "productid": 78,
+        "categoryid": 2
+    },
+    {
+        "name": "Spinach (bunch)",
+        "productid": 79,
+        "categoryid": 2
+    },
+    {
+        "name": "Garlic (1 kg)",
+        "productid": 76,
+        "categoryid": 2
+    },
+    {
+        "name": "Onion (1 kg)",
+        "productid": 75,
+        "categoryid": 2
+    },
+    {
+        "name": "Broccoli",
+        "productid": 34,
+        "categoryid": 2
+    },
+    {
+        "name": "Carrot (1 kg)",
+        "productid": 77,
+        "categoryid": 2
+    },
+    {
+        "name": "Cheese",
+        "productid": 25,
+        "categoryid": 3
+    },
+    {
+        "name": "Yogurt",
+        "productid": 35,
+        "categoryid": 3
+    },
+    {
+        "name": "Butter",
+        "productid": 45,
+        "categoryid": 3
+    },
+    {
+        "name": "Milk",
+        "productid": 3,
+        "categoryid": 3
+    },
+    {
+        "name": "Whole Grain Bread",
+        "productid": 17,
+        "categoryid": 4
+    },
+    {
+        "name": "Cinnamon Roll",
+        "productid": 11,
+        "categoryid": 4
+    },
+    {
+        "name": "Baguette",
+        "productid": 12,
+        "categoryid": 4
+    },
+    {
+        "name": "Blueberry Muffin",
+        "productid": 13,
+        "categoryid": 4
+    },
+    {
+        "name": "Sourdough Bread",
+        "productid": 14,
+        "categoryid": 4
+    },
+    {
+        "name": "Chocolate Croissant",
+        "productid": 15,
+        "categoryid": 4
+    },
+    {
+        "name": "Apple Danish",
+        "productid": 16,
+        "categoryid": 4
+    },
+    {
+        "name": "Pretzel",
+        "productid": 18,
+        "categoryid": 4
+    },
+    {
+        "name": "Almond Croissant",
+        "productid": 19,
+        "categoryid": 4
+    },
+    {
+        "name": "Cheese Danish",
+        "productid": 20,
+        "categoryid": 4
+    },
+    {
+        "name": "Rye Bread",
+        "productid": 21,
+        "categoryid": 4
+    },
+    {
+        "name": "Multigrain Bagel",
+        "productid": 22,
+        "categoryid": 4
+    },
+    {
+        "name": "Baguette",
+        "productid": 26,
+        "categoryid": 4
+    },
+    {
+        "name": "Croissant",
+        "productid": 36,
+        "categoryid": 4
+    },
+    {
+        "name": "Bread",
+        "productid": 4,
+        "categoryid": 4
+    },
+    {
+        "name": "Bagel",
+        "productid": 46,
+        "categoryid": 4
+    },
+    {
+        "name": "Salmon Fillet",
+        "productid": 27,
+        "categoryid": 5
+    },
+    {
+        "name": "Ground Beef",
+        "productid": 47,
+        "categoryid": 5
+    },
+    {
+        "name": "Chicken Breast",
+        "productid": 5,
+        "categoryid": 5
+    },
+    {
+        "name": "Pork Chops",
+        "productid": 37,
+        "categoryid": 5
+    },
+    {
+        "name": "Juice",
+        "productid": 28,
+        "categoryid": 6
+    },
+    {
+        "name": "Iced Tea",
+        "productid": 38,
+        "categoryid": 6
+    },
+    {
+        "name": "Soda",
+        "productid": 6,
+        "categoryid": 6
+    },
+    {
+        "name": "Lemonade",
+        "productid": 48,
+        "categoryid": 6
+    },
+    {
+        "name": "Pita Chips",
+        "productid": 63,
+        "categoryid": 7
+    },
+    {
+        "name": "Chips",
+        "productid": 7,
+        "categoryid": 7
+    },
+    {
+        "name": "Pretzels",
+        "productid": 29,
+        "categoryid": 7
+    },
+    {
+        "name": "Mixed Nuts",
+        "productid": 67,
+        "categoryid": 7
+    },
+    {
+        "name": "Rice Cakes",
+        "productid": 64,
+        "categoryid": 7
+    },
+    {
+        "name": "Peanuts",
+        "productid": 39,
+        "categoryid": 7
+    },
+    {
+        "name": "Candy Bars Variety",
+        "productid": 65,
+        "categoryid": 7
+    },
+    {
+        "name": "Popcorn",
+        "productid": 49,
+        "categoryid": 7
+    },
+    {
+        "name": "Granola Bars",
+        "productid": 58,
+        "categoryid": 7
+    },
+    {
+        "name": "Popcorn Bags",
+        "productid": 59,
+        "categoryid": 7
+    },
+    {
+        "name": "Dried Fruit Mix",
+        "productid": 60,
+        "categoryid": 7
+    },
+    {
+        "name": "Crackers",
+        "productid": 61,
+        "categoryid": 7
+    },
+    {
+        "name": "Nuts Assortment",
+        "productid": 62,
+        "categoryid": 7
+    },
+    {
+        "name": "Sour Gummy Worms",
+        "productid": 66,
+        "categoryid": 7
+    },
+    {
+        "name": "Potato Chips",
+        "productid": 53,
+        "categoryid": 7
+    },
+    {
+        "name": "Chocolate Bar",
+        "productid": 54,
+        "categoryid": 7
+    },
+    {
+        "name": "Trail Mix",
+        "productid": 55,
+        "categoryid": 7
+    },
+    {
+        "name": "Pretzel Sticks",
+        "productid": 56,
+        "categoryid": 7
+    },
+    {
+        "name": "Cheese Puffs",
+        "productid": 57,
+        "categoryid": 7
+    },
+    {
+        "name": "Canned Tuna",
+        "productid": 50,
+        "categoryid": 8
+    },
+    {
+        "name": "Canned Corn",
+        "productid": 40,
+        "categoryid": 8
+    },
+    {
+        "name": "Canned Beans",
+        "productid": 8,
+        "categoryid": 8
+    },
+    {
+        "name": "Canned Soup",
+        "productid": 30,
+        "categoryid": 8
+    },
+    {
+        "name": "Brown Rice",
+        "productid": 68,
+        "categoryid": 9
+    },
+    {
+        "name": "Rice",
+        "productid": 9,
+        "categoryid": 9
+    },
+    {
+        "name": "Quinoa",
+        "productid": 31,
+        "categoryid": 9
+    },
+    {
+        "name": "Pasta",
+        "productid": 41,
+        "categoryid": 9
+    },
+    {
+        "name": "Quinoa Pasta",
+        "productid": 51,
+        "categoryid": 9
+    },
+    {
+        "name": "Quinoa",
+        "productid": 69,
+        "categoryid": 9
+    },
+    {
+        "name": "Whole Wheat Pasta",
+        "productid": 70,
+        "categoryid": 9
+    },
+    {
+        "name": "Barley",
+        "productid": 71,
+        "categoryid": 9
+    },
+    {
+        "name": "Couscous",
+        "productid": 72,
+        "categoryid": 9
+    },
+    {
+        "name": "Oats",
+        "productid": 73,
+        "categoryid": 9
+    },
+    {
+        "name": "Bulgur",
+        "productid": 74,
+        "categoryid": 9
+    },
+    {
+        "name": "Glass Cleaner",
+        "productid": 52,
+        "categoryid": 10
+    },
+    {
+        "name": "Bathroom Cleaner",
+        "productid": 42,
+        "categoryid": 10
+    },
+    {
+        "name": "Window Cleaner",
+        "productid": 32,
+        "categoryid": 10
+    },
+    {
+        "name": "All-Purpose Cleaner",
+        "productid": 10,
+        "categoryid": 10
+    },
+    {
+        "name": "Soy Sauce",
+        "productid": 80,
+        "categoryid": 11
+    },
+    {
+        "name": "Barbecue Sauce",
+        "productid": 81,
+        "categoryid": 11
+    },
+    {
+        "name": "Honey Mustard",
+        "productid": 82,
+        "categoryid": 11
+    },
+    {
+        "name": "Hot Sauce",
+        "productid": 83,
+        "categoryid": 11
+    },
+    {
+        "name": "Vinegar",
+        "productid": 84,
+        "categoryid": 11
+    },
+    {
+        "name": "Pickles",
+        "productid": 85,
+        "categoryid": 11
+    },
+    {
+        "name": "Salsa",
+        "productid": 86,
+        "categoryid": 11
+    },
+    {
+        "name": "Tartar Sauce",
+        "productid": 87,
+        "categoryid": 11
+    },
+    {
+        "name": "Worcestershire Sauce",
+        "productid": 88,
+        "categoryid": 11
+    },
+    {
+        "name": "Maple Syrup",
+        "productid": 89,
+        "categoryid": 11
+    },
+    {
+        "name": "Frozen Burgers",
+        "productid": 90,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen Chicken Nuggets",
+        "productid": 91,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen Fish Fillets",
+        "productid": 92,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen French Fries",
+        "productid": 93,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen Lasagna",
+        "productid": 94,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen Breakfast Sandwiches",
+        "productid": 95,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen Pies",
+        "productid": 96,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen Shrimp",
+        "productid": 97,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen Meatballs",
+        "productid": 98,
+        "categoryid": 12
+    },
+    {
+        "name": "Frozen Chicken Wings",
+        "productid": 99,
+        "categoryid": 12
+    },
+    {
+        "name": "Hand Soap",
+        "productid": 100,
+        "categoryid": 13
+    },
+    {
+        "name": "Face Wash",
+        "productid": 101,
+        "categoryid": 13
+    },
+    {
+        "name": "Body Lotion",
+        "productid": 102,
+        "categoryid": 13
+    },
+    {
+        "name": "Facial Moisturizer",
+        "productid": 103,
+        "categoryid": 13
+    },
+    {
+        "name": "Hand Sanitizer",
+        "productid": 104,
+        "categoryid": 13
+    },
+    {
+        "name": "Shaving Cream",
+        "productid": 105,
+        "categoryid": 13
+    },
+    {
+        "name": "Deodorant",
+        "productid": 106,
+        "categoryid": 13
+    },
+    {
+        "name": "Hair Gel",
+        "productid": 107,
+        "categoryid": 13
+    },
+    {
+        "name": "Toothpaste",
+        "productid": 108,
+        "categoryid": 13
+    },
+    {
+        "name": "Mouthwash",
+        "productid": 109,
+        "categoryid": 13
+    }
+]
