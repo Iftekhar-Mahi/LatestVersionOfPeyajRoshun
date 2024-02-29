@@ -123,56 +123,38 @@ CREATE TABLE Cart (
     FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
 );
 
--- Order Details Table
-ALTER TABLE OrderDetails
-DROP CONSTRAINT IF EXISTS orderdetails_orderid_fkey;
 
-ALTER TABLE OrderDetails
-ADD CONSTRAINT orderdetails_orderid_fkey
-FOREIGN KEY (OrderID) REFERENCES Orders (OrderID)
-ON DELETE CASCADE;
+CREATE OR REPLACE FUNCTION placeorderforuser(
+    uid bigint, 
+    payment_method VARCHAR(50), 
+    payment_status VARCHAR(50)
+) 
+RETURNS void AS $$
+DECLARE
+    id int;
+BEGIN
+    -- Create a new order for the user
+    INSERT INTO orders (userid, dateplaced, amount, paymentmethod, paymentstatus, deliverystatus)
+    VALUES (uid, CURRENT_DATE, 0, payment_method, payment_status, 'Processing')
+    RETURNING orderid INTO id;
 
--- ProductReview Table
-ALTER TABLE ProductReview
-DROP CONSTRAINT IF EXISTS productreview_userid_fkey,
-DROP CONSTRAINT IF EXISTS productreview_productid_fkey;
+    -- Move products from cart to order details
+    -- Move unique products from cart to order details
+    INSERT INTO orderdetails (orderid, productid, quantity, price)
+    SELECT DISTINCT ON (c.productid) id, c.productid, c.quantity, p.price*c.quantity
+    FROM cart c
+    INNER JOIN products p ON c.productid = p.productid
+    WHERE c.userid = uid;
 
-ALTER TABLE ProductReview
-ADD CONSTRAINT productreview_userid_fkey
-FOREIGN KEY (UserID) REFERENCES Users (UserID)
-ON DELETE CASCADE;
+    -- Update the order amount based on the sum of product prices
+    UPDATE orders
+    SET amount = (SELECT SUM(price) FROM orderdetails WHERE orderid = id)
+    WHERE orderid = id;
 
-ALTER TABLE ProductReview
-ADD CONSTRAINT productreview_productid_fkey
-FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
-ON DELETE CASCADE;
-
--- OrderReview Table
-ALTER TABLE OrderReview
-DROP CONSTRAINT IF EXISTS orderreview_userid_fkey,
-DROP CONSTRAINT IF EXISTS orderreview_orderid_fkey;
-
-ALTER TABLE OrderReview
-ADD CONSTRAINT orderreview_userid_fkey
-FOREIGN KEY (UserID) REFERENCES Users (UserID)
-ON DELETE CASCADE;
-
-ALTER TABLE OrderReview
-ADD CONSTRAINT orderreview_orderid_fkey
-FOREIGN KEY (OrderID) REFERENCES Orders (OrderID)
-ON DELETE CASCADE;
-
--- Cart Table
-ALTER TABLE Cart
-DROP CONSTRAINT IF EXISTS cart_userid_fkey,
-DROP CONSTRAINT IF EXISTS cart_productid_fkey;
-
-ALTER TABLE Cart
-ADD CONSTRAINT cart_userid_fkey
-FOREIGN KEY (UserID) REFERENCES Users (UserID)
-ON DELETE CASCADE;
-
-ALTER TABLE Cart
-ADD CONSTRAINT cart_productid_fkey
-FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
-ON DELETE CASCADE;
+    -- Delete products from cart for the user
+    DELETE FROM cart WHERE userid = uid;
+    
+    -- Optional: If you want to return the OrderId
+    -- RETURN orderid;
+END;
+$$ LANGUAGE plpgsql;

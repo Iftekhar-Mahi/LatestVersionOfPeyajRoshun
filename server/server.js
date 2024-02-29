@@ -89,13 +89,57 @@ app.get("/api/productavgrating/:productid", async (req, res) => {
 app.get("/orders/:id", async (req, res) => {
     try {
         console.log("Fetching orders for user:", req.params.id);
-        const results = await db.query("SELECT * FROM orders WHERE userid = $1 order by amount desc", [req.params.id]);
+        const results = await db.query(`
+            SELECT 
+                orderid,
+                userid,
+                to_char(dateplaced, 'DD-MM-YYYY') AS dateplaced,
+                amount,
+                paymentmethod,
+                paymentstatus,
+                deliverystatus
+            FROM 
+                orders 
+            WHERE 
+                userid = $1 
+            ORDER BY 
+                amount DESC`, 
+            [req.params.id]
+        );
+
         res.status(200).json(results.rows);
     } catch (err) {
         console.error('Error fetching orders:', err);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+
+
+// app.get("/orders/:id", async (req, res) => {
+//     try {
+//         console.log("Fetching orders for user:", req.params.id);
+//         const results = await db.query("SELECT * FROM orders WHERE userid = $1 order by amount desc", [req.params.id]);
+
+//         // Format timestamps in the response
+//         const formattedResults = results.rows.map(row => {
+//             return {
+//                 orderid: row.orderid,
+//                 userid: row.userid,
+//                 dateplaced: row.dateplaced.toISOString(), // Format date to ISO string
+//                 amount: row.amount,
+//                 paymentmethod: row.paymentmethod,
+//                 paymentstatus: row.paymentstatus,
+//                 deliverystatus: row.deliverystatus
+//             };
+//         });
+
+//         res.status(200).json(formattedResults);
+//     } catch (err) {
+//         console.error('Error fetching orders:', err);
+//         res.status(500).json({ error: "Internal Server Error" });
+//     }
+// });
 
 app.get("/bugs", async (req, res) => {
     try {
