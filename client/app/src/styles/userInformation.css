@@ -6,14 +6,15 @@
   align-items: center;
 
   height: 100vh; /* Fill viewport height */
-    background-color: aliceblue; /* Added background color */
+    background-color: rgb(152, 186, 215); /* Added background color */
   }
  
 
 /* User Information Card */
 
 .user-info-card {
-  background-color: #935555; /* White card background */
+  text-align: left;
+  background-color: #f8f4f4; /* White card background */
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0 1px 3px rgba(57, 190, 59, 0.1); /* Subtle shadow */
   padding: 30px; /* Increased padding for more space */
@@ -23,7 +24,8 @@
 /* User Information Card Body */
 
 .user-info-card-body {
-  text-align: center; /* Center text alignment */
+
+  text-align: left; /* Center text alignment */
 }
 
 /* User Information Card Title */

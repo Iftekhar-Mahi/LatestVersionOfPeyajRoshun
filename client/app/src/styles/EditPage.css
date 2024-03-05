@@ -12,7 +12,7 @@
 /* Edit Card */
 
 .edit-card {
-  background-color: #6bc4db; /* White card background */
+  background-color: #adccd4; /* White card background */
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 30px; /* Increased padding for more space */
@@ -66,7 +66,7 @@
 /* Edit Button */
 
 .edit-button {
-  background-color: #f7ca18; /* Gradient background color */
+  background-color: #3f39f0; /* Gradient background color */
   color: #fff; /* White button text */
   padding: 15px 30px; /* Increased button padding for larger size */
   border: none;
@@ -79,7 +79,8 @@
 }
 
 .edit-button:hover {
-  background-color: #ff9a9e; /* Switch gradient color on hover */
+  background-color: #dd494e;
+   /* Switch gradient color on hover */
 }
 
 /* Edit Success Message (Optional) */

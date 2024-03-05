@@ -1,3 +1,4 @@
+
 CREATE OR REPLACE FUNCTION validate_email_format()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -17,9 +18,6 @@ FOR EACH ROW
 EXECUTE FUNCTION validate_email_format();
 
 
-
-
-
 CREATE OR REPLACE FUNCTION placeorderforuser(
     uid bigint, 
     payment_method VARCHAR(50), 
@@ -29,6 +27,10 @@ RETURNS void AS $$
 DECLARE
     id int;
 BEGIN
+    -- Set timezone to your desired timezone
+    SET TIME ZONE 'Asia/Dhaka';
+
+
     -- Create a new order for the user
     INSERT INTO orders (userid, dateplaced, amount, paymentmethod, paymentstatus, deliverystatus)
     VALUES (uid, CURRENT_DATE, 0, payment_method, payment_status, 'Processing')
@@ -50,11 +52,29 @@ BEGIN
     -- Delete products from cart for the user
     DELETE FROM cart WHERE userid = uid;
     
-    -- Optional: If you want to return the OrderI
+    -- Optional: If you want to return the OrderID
     -- RETURN orderid;
 END;
 $$ LANGUAGE plpgsql;
 
+-- Create trigger function
+CREATE OR REPLACE FUNCTION reduce_product_quantity()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Reduce the quantity of products in Products table when an order is placed
+    UPDATE Products
+    SET QuantityInStock = QuantityInStock - NEW.quantity
+    WHERE ProductID = NEW.productid;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Create trigger
+CREATE TRIGGER place_order_trigger
+AFTER INSERT ON OrderDetails
+FOR EACH ROW
+EXECUTE FUNCTION reduce_product_quantity();
 
 
 CREATE OR REPLACE FUNCTION getavgrating(id INT)

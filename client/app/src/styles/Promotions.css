@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: bisque;
+    background-color: rgb(237, 183, 116);
   }
   
   /* Promotions Title */
@@ -27,7 +27,7 @@
   /* Promotion Card */
   
   .promotion-card {
-    background-color: #e99696; /* White card background */
+    background-color: hsl(0, 43%, 97%); /* White card background */
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     padding: 15px;

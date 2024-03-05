@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #a19bc1; /* Light background color */
+  background-color: #e2e9ef; /* Light background color */
   border-radius: 10px; /* Rounded corners for container */
 }
 
@@ -19,7 +19,7 @@
 .category-list-description {
   font-size: 1em; /* Regular font size */
   margin-bottom: 20px; /* Spacing below description */
-  color: #b72b6f; /* Lighter text color for description */
+  color: #e02780; /* Lighter text color for description */
 }
 
 /* Category List Grid */
@@ -55,14 +55,14 @@
   font-size: 1.2em; /* Larger font size for name */
   margin-bottom: 10px; /* Spacing below name */
   font-weight: bold; /* Bold name */
-  color: #bd1a1a; /* Darker text color for key information */
+  color: #3535d3; /* Darker text color for key information */
 }
 
 /* Category Description */
 .category-list-desc {
   font-size: 1em; /* Regular font size for description */
   margin-bottom: 15px; /* Spacing below description */
-  color: #8a4444; /* Lighter text color for description */
+  color: #57c755; /* Lighter text color for description */
 }
 
 /* Category Button */
