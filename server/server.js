@@ -129,6 +129,25 @@ app.get("/order/:orderid", async (req, res) => {
     }
 });
 
+
+app.post("/addreviews/:productid/:userid", async (req, res) => {
+    try {
+        const productId = req.params.productid;
+        const userId = req.params.userid;
+        const { rating, comment } = req.body;
+        console.log("rating:", rating);
+        console.log("comment:", comment);
+
+        const results = await db.query("INSERT INTO productreview (userid, productid, rating, comment) VALUES ($1, $2, $3, $4)", [userId, productId, rating, comment]);
+        res.status(201).json({ message: 'Review added successfully' });
+    } catch (err) {
+        console.error('Error adding review:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}
+);
+
+
 app.post("/order/:orderid/:userid/review", async (req, res) => {
     try {
         const orderId = req.params.orderid;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { useUserContext } from '../App';
 import '../styles/AllOrders.css';
 
@@ -31,6 +32,8 @@ const AllOrders = () => {
           <p className='order-amount'>Amount: {order.amount}</p>
           <p className='order-payment-method'>Payment Method: {order.paymentmethod}</p>
           <p className='order-payment-status'>Payment Status: {order.paymentstatus}</p>
+          {/* Add a button to view order details */}
+          <Link to={`/order/${order.orderid}`} className='view-details-btn'>View Order Details</Link>
         </div>
       ))}
     </div>

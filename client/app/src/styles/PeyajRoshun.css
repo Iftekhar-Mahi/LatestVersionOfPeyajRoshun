@@ -1,27 +1,91 @@
-/* FILEPATH: /d:/6h pernstack/client/app/src/routes/Home.css */
+/* PeyajRoshun styling */
 
-/* Add your CSS styles here */
-.container {
+.peyaroshun-container {
+    background-color: #e4afaf;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  .welcome-text {
+    font-size: 4em;
+    font-family: serif;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .description {
+    font-size: 20px;
+    font-family: serif;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This centers the blocks horizontally */
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .feature-block {
+    background-color: #fff;
+    padding: 20px;
+    width: 400px;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .feature-block:hover {
+    box-shadow: 0 2px 5px rgba(167, 56, 56, 0.1);
+  }
+  
+  .feature-icon {
+    font-size: 2em;
+    color: #333; /* Adjust icon color as needed */
+    margin-bottom: 10px;
+  }
+  
+  .feature-block h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .feature-block p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .buttons-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
-
-.button {
-    padding: 10px 20px;
-    background-color: #f1f1f1;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .signup-button,
+  .login-button,
+  .home-button {
+    background-color: #5ae161; /* Green color */
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 4px;
     cursor: pointer;
-}
-
-.button:hover {
-    background-color: #ddd;
-}
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .signup-button:hover,
+  .login-button:hover,
+  .home-button:hover {
+    background-color: #2e7b32; /* Darker green on hover */
+  }
+  

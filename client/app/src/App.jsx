@@ -5,6 +5,10 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+
+
+import AddProductReview from "./routes/AddProductReview"; // Import the AddProductReview component
+
 import AllOrders from "./routes/AllOrders";
 import UserInformation from "./routes/userInfo";
 import ProductDetails from "./routes/ProductDetails";   
@@ -20,6 +24,7 @@ import ProductReview from "./routes/ProductReview"; // Import the ProductReview 
 import EditPage from "./routes/EditPage"; // Import the EditPage component
 import Promotions from "./routes/Promotions"; // Import the Promotions component
 // Create a custom context for userId and setUserId
+import OrdersDetails from "./routes/OrderDetails";
 const UserContext = createContext();
 
 const App = () => {
@@ -61,7 +66,7 @@ const App = () => {
 
   return (
     <UserContext.Provider value={{ userId, setUserId }}>
-      <h1 style={{ textAlign: "center" }}>UserId: {userId}</h1>
+      {/* <h1 style={{ textAlign: "center" }}>UserId: {userId}</h1> */}
       <div>
         <Router>
           <Routes>
@@ -79,6 +84,11 @@ const App = () => {
             <Route exact path="/edit" element={isAuthenticated ? <EditPage/> : <Navigate to="/login" />} /> 
             <Route exact path="/seeHotDeals" element={isAuthenticated ? <Promotions/> : <Navigate to="/login" />} />
             <Route exact path="/orders" element={isAuthenticated ? <AllOrders/> : <Navigate to="/login" />} />
+
+        
+
+            <Route exact path="/addProductReview/:productid" element={isAuthenticated ? <AddProductReview/> : <Navigate to="/login" />} />
+            <Route exact path ="/order/:orderid" element={isAuthenticated ? <OrdersDetails/> : <Navigate to="/login" />} />
           </Routes>
         </Router>
       </div>

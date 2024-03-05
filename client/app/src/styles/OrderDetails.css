@@ -1,0 +1,142 @@
+/* Order details styling */
+
+.order-details-wrapper {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  max-width: 700px; /* Adjust width as needed */
+  margin: auto;
+  background-color: #f5f5f5;
+}
+
+.order-details-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.order-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.order-detail-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.order-detail-card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.detail-label {
+  font-weight: bold;
+  width: 50%; /* Adjust width for proper alignment */
+}
+
+/* Add styles for the button */
+.add-review-button {
+  background-color: #4e7397; /* Button color */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.add-review-button:hover {
+  background-color: #2b0c92; /* Button color on hover */
+}
+
+/* Style for the link inside the button */
+.detail-link {
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+.detail-value {
+  text-align: right;
+}
+.detail-link {
+  color: #007bff; /* Blue color */
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.detail-link:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.loading-message {
+  text-align: center;
+  padding: 10px;
+}
+
+.review-section {
+  margin-top: 20px;
+}
+
+.review-button {
+  background-color: #388e3c; /* Green color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.review-button:hover {
+  background-color: #2e7b32; /* Darker green on hover */
+}
+
+.review-form {
+  margin-top: 10px;
+}
+
+.review-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+.submit-review-button {
+  margin-top: 10px;
+  background-color: #388e3c; /* Green color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit-review-button:hover {
+  background-color: #2e7b32; /* Darker green on hover */
+}

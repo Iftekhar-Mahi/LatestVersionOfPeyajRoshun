@@ -26,7 +26,7 @@ const CategoryList = () => {
   return (
     <div className="category-list-container">
       <h3 className="category-list-title">Categories</h3>
-      <h5 className="category-list-description">You can choose products from these categories:</h5>
+      <h5 className="category-list-description">You can choose products from these categories </h5>
       <div className="category-list-grid">
         {categories.map((category) => (
           <div key={category.categoryid} className="category-list-card">
@@ -34,7 +34,7 @@ const CategoryList = () => {
               <h5 className="category-list-name">{category.categoryname}</h5>
               <h5 className="category-list-desc">{category.description}</h5>
               <button className="category-list-button" onClick={() => navigateToProducts(category)}>
-                Go
+                Choose Prodcuts from this Category
               </button>
             </div>
           </div>

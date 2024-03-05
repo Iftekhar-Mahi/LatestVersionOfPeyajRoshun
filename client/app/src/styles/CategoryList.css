@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #e2e9ef; /* Light background color */
+  background-color: #f5f5f5; /* Light background color */
   border-radius: 10px; /* Rounded corners for container */
 }
 
@@ -12,14 +12,14 @@
 .category-list-title {
   font-size: 1.8em; /* Larger title size */
   margin-bottom: 15px; /* Spacing below title */
-  color: #7f50de; /* Darker text color */
+  color: #333; /* Darker text color */
 }
 
 /* Category List Description */
 .category-list-description {
   font-size: 1em; /* Regular font size */
   margin-bottom: 20px; /* Spacing below description */
-  color: #e02780; /* Lighter text color for description */
+  color: #999; /* Lighter text color for description */
 }
 
 /* Category List Grid */
@@ -55,19 +55,17 @@
   font-size: 1.2em; /* Larger font size for name */
   margin-bottom: 10px; /* Spacing below name */
   font-weight: bold; /* Bold name */
-  color: #3535d3; /* Darker text color for key information */
 }
 
 /* Category Description */
 .category-list-desc {
   font-size: 1em; /* Regular font size for description */
   margin-bottom: 15px; /* Spacing below description */
-  color: #57c755; /* Lighter text color for description */
 }
 
 /* Category Button */
 .category-list-button {
-  background-color: #62bd59; /* Gradient background color */
+  background-color: #333; /* Neutral button background color */
   color: #fff; /* White text color */
   padding: 10px 20px; /* Button padding */
   border: none;
@@ -77,5 +75,5 @@
 }
 
 .category-list-button:hover {
-  background-color: #ff9a9e; /* Switch gradient color on hover */
+  background-color: #666; /* Darker shade on hover */
 }
