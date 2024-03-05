@@ -88,7 +88,7 @@ app.get("/api/productavgrating/:productid", async (req, res) => {
 
 app.get("/orders/:id", async (req, res) => {
     try {
-        console.log("Fetching orders for user:", req.params.id);
+        console.log("Fetching order for user:", req.params.id);
         const results = await db.query(`
             SELECT 
                 orderid,
@@ -114,41 +114,47 @@ app.get("/orders/:id", async (req, res) => {
     }
 });
 
-
-
-// app.get("/orders/:id", async (req, res) => {
-//     try {
-//         console.log("Fetching orders for user:", req.params.id);
-//         const results = await db.query("SELECT * FROM orders WHERE userid = $1 order by amount desc", [req.params.id]);
-
-//         // Format timestamps in the response
-//         const formattedResults = results.rows.map(row => {
-//             return {
-//                 orderid: row.orderid,
-//                 userid: row.userid,
-//                 dateplaced: row.dateplaced.toISOString(), // Format date to ISO string
-//                 amount: row.amount,
-//                 paymentmethod: row.paymentmethod,
-//                 paymentstatus: row.paymentstatus,
-//                 deliverystatus: row.deliverystatus
-//             };
-//         });
-
-//         res.status(200).json(formattedResults);
-//     } catch (err) {
-//         console.error('Error fetching orders:', err);
-//         res.status(500).json({ error: "Internal Server Error" });
-//     }
-// });
-
-app.get("/bugs", async (req, res) => {
+app.get("/order/:orderid", async (req, res) => {
     try {
-        const results = await db.query('SELECT name,productid,categoryid FROM products order by productid asc');
+        console.log("Fetching order:", req.params.orderid);
+        console.log("Fetching order:", req.params.orderid);
+        const results = await db.query(
+            "SELECT * FROM OrderDetails WHERE orderid = $1",
+            [req.params.orderid]
+        );
         res.status(200).json(results.rows);
     } catch (err) {
-        console.log(err);
+        console.error('Error fetching order:');
+        res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+app.post("/order/:orderid/:userid/review", async (req, res) => {
+    try {
+        const orderId = req.params.orderid;
+        const userId = req.params.userid;
+        const { review } = req.body;
+
+        // Check if a review exists for the given userid and orderid
+        const existingReview = await db.query("SELECT * FROM orderreview WHERE userid = $1 AND orderid = $2", [userId, orderId]);
+
+        if (existingReview.rows.length > 0) {
+            // If a review exists, update it
+            await db.query("UPDATE orderreview SET comment = $1 WHERE userid = $2 AND orderid = $3", [review, userId, orderId]);
+            console.log('Review updated successfully');
+        } else {
+            // If no review exists, insert a new one
+            await db.query("INSERT INTO orderreview (userid, orderid, rating, comment) VALUES ($1, $2, $3, $4)", [userId, orderId, 4, review]);
+            console.log('Review inserted successfully');
+        }
+
+        res.status(200).json({ message: 'Review added successfully' });
+    } catch (err) {
+        console.error('Error adding/updating review:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
 
 
 app.get("/promotions", async (req, res) => {
@@ -162,14 +168,6 @@ app.get("/promotions", async (req, res) => {
     }
 });
 
-app.get("/bugsTwo", async (req, res) => {
-    try {
-        const results = await db.query('SELECT productid,comment from productreview order by productid asc');
-        res.status(200).json(results.rows);
-    } catch (err) {
-        console.log(err);
-    }
-});
 
 app.get("/api/allproducts", async (req, res) => {
     try {
