@@ -1,89 +1,61 @@
-/* User Information Container */
+/* userInformation.css */
 
 .user-info-container {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 100vh; /* Fill viewport height */
-    background-color: rgb(152, 186, 215); /* Added background color */
-  }
- 
-
-/* User Information Card */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d8cef1, #3c5576);
+  color: #fff;
+}
 
 .user-info-card {
-  text-align: left;
-  background-color: #f8f4f4; /* White card background */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 1px 3px rgba(57, 190, 59, 0.1); /* Subtle shadow */
-  padding: 30px; /* Increased padding for more space */
-  max-width: 500px; /* Increased card width */
+  width: 600px;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 2.5rem;
+  transition: transform 0.3s ease;
 }
 
-/* User Information Card Body */
-
-.user-info-card-body {
-
-  text-align: left; /* Center text alignment */
+.user-info-card:hover {
+  transform: scale(1.02);
 }
-
-/* User Information Card Title */
 
 .user-info-card-title {
-  font-size: 1.8em; /* Larger title size */
-  margin-bottom: 20px; /* Increased spacing below title */
-  color: #333; /* Darker text color */
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-
-/* User Information Item */
 
 .user-info-item {
-  margin-bottom: 15px; /* Increased spacing between information items */
-  font-weight: bold; /* Bold key information */
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #555;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-
-.user-info-item > strong {
-  margin-right: 10px; /* Increased spacing between key and value */
-  color: #f7ca18; /* Gradient color for key */
-}
-
-.user-info-item span {
-  color: #ff9a9e; /* Gradient color for value */
-}
-
-/* User Information Button */
 
 .user-info-button {
-  background-color: #f7ca18; /* Gradient background color */
-  color: #fff; /* White text color */
-  padding: 12px 25px; /* Increased button padding for larger size */
+  padding: 0.8rem 1.5rem;
+  background-color: #7fd281;
+  color: #fff;
   border: none;
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Indicate hover interaction */
-  transition: all 0.2s ease-in-out;
-  margin-top: 20px; /* Increased spacing above button */
-  text-decoration: none; /* Remove default link underline */
-  display: inline-block; /* Allow buttons to be displayed inline */
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .user-info-button:hover {
-  background-color: #ff9a9e; /* Switch gradient color on hover */
+  background-color: #9880df;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Edit Profile Link */
-
-.user-info-button.ml-2 {
-  margin-left: 15px; /* Increased spacing between buttons */
-  background-color: #ff9a9e; /* Gradient background color */
-}
-
-.user-info-button.ml-2:hover {
-  background-color: #f7ca18; /* Switch gradient color on hover */
-}
-
-/* Hidden Logout Message (Optional) */
-
-.user-info-item.hidden {
-  display: none; /* Hide the logout message initially */
+.ml-2 {
+  margin-left: 0.5rem;
 }

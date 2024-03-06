@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useUserContext } from "../App";
 import { Link } from "react-router-dom";
 import "../styles/userInformation.css";
+import { useUserContext } from "../App";
 // Import CSS file
 
 const UserInformation = ({ setAuth }) => {
+  
   const { userId, setUserId } = useUserContext(); 
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -77,7 +77,7 @@ const UserInformation = ({ setAuth }) => {
           <button className="user-info-button" onClick={buttonLogout}>
             Logout
           </button>
-          <Link to="/edit" className="user-info-button ml-2">Edit Profile</Link>
+          <Link to="/edit" className="user-info-button">Edit Profile</Link>
         </div>
       </div>
     </div>

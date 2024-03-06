@@ -18,6 +18,14 @@ FOR EACH ROW
 EXECUTE FUNCTION validate_email_format();
 
 
+
+--new function to place order with discount
+
+-- Alter the Cart table to include DiscountPercentage
+ALTER TABLE Cart
+ADD COLUMN DiscountPercentage DECIMAL(5, 2) DEFAULT 0;
+
+-- Update the placeorderforuser function to calculate price with discount
 CREATE OR REPLACE FUNCTION placeorderforuser(
     uid bigint, 
     payment_method VARCHAR(50), 
@@ -30,7 +38,6 @@ BEGIN
     -- Set timezone to your desired timezone
     SET TIME ZONE 'Asia/Dhaka';
 
-
     -- Create a new order for the user
     INSERT INTO orders (userid, dateplaced, amount, paymentmethod, paymentstatus, deliverystatus)
     VALUES (uid, CURRENT_DATE, 0, payment_method, payment_status, 'Processing')
@@ -39,7 +46,8 @@ BEGIN
     -- Move products from cart to order details
     -- Move unique products from cart to order details
     INSERT INTO orderdetails (orderid, productid, quantity, price)
-    SELECT DISTINCT ON (c.productid) id, c.productid, c.quantity, p.price
+    SELECT DISTINCT ON (c.productid) id, c.productid, c.quantity, 
+           (p.price - (p.price * (c.discountpercentage / 100))) AS discounted_price
     FROM cart c
     INNER JOIN products p ON c.productid = p.productid
     WHERE c.userid = uid;
@@ -56,6 +64,7 @@ BEGIN
     -- RETURN orderid;
 END;
 $$ LANGUAGE plpgsql;
+
 
 -- Create trigger function
 CREATE OR REPLACE FUNCTION reduce_product_quantity()

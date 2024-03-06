@@ -148,6 +148,49 @@ app.post("/addreviews/:productid/:userid", async (req, res) => {
 );
 
 
+//prevuos orders
+app.get("/previousorders/:categoryid/:userid", async (req, res) => {
+    try {
+        console.log("Fetching previously ordered products for category:", req.params.categoryid);
+        console.log("Fetching previously ordered products for user:", req.params.userid);
+        
+        // Fetch previously ordered products for the specified user and category
+        const userResults = await db.query(`
+            SELECT DISTINCT p.*
+            FROM orders o
+            JOIN orderdetails od ON o.orderid = od.orderid
+            JOIN products p ON od.productid = p.productid
+            WHERE o.userid = $1
+            AND p.categoryid = $2`,
+            [req.params.userid, req.params.categoryid]
+        );
+
+        // If no results found for the specified user, fetch previously ordered products for other users within the same category
+        if (userResults.rows.length === 0) {
+            console.log("No previously ordered products found for user. Fetching for other users...");
+            const otherUsersResults = await db.query(`
+                SELECT DISTINCT p.*
+                FROM orders o
+                JOIN orderdetails od ON o.orderid = od.orderid
+                JOIN products p ON od.productid = p.productid
+                WHERE o.userid != $1
+                AND p.categoryid = $2
+                LIMIT 10`, // Adjust the LIMIT based on your requirements
+                [req.params.userid, req.params.categoryid]
+            );
+            res.status(200).json(otherUsersResults.rows);
+        }
+        else {
+            res.status(200).json(userResults.rows);
+        }
+    } catch (err) {
+        console.error('Error fetching previously ordered products:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+
+
 app.post("/order/:orderid/:userid/review", async (req, res) => {
     try {
         const orderId = req.params.orderid;

@@ -66,8 +66,8 @@ const App = () => {
 
   return (
     <UserContext.Provider value={{ userId, setUserId }}>
-      {/* <h1 style={{ textAlign: "center" }}>UserId: {userId}</h1> */}
-      <div>
+  {/* <h1 style={{ textAlign: "center" }}>UserId: {userId}</h1> */}
+     <div>
         <Router>
           <Routes>
             <Route exact path="/" element={<PeyajRoshun/>} />

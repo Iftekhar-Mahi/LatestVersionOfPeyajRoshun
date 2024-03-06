@@ -34,7 +34,7 @@ const CategoryList = () => {
               <h5 className="category-list-name">{category.categoryname}</h5>
               <h5 className="category-list-desc">{category.description}</h5>
               <button className="category-list-button" onClick={() => navigateToProducts(category)}>
-                Choose Prodcuts from this Category
+                Choose Products from this Category
               </button>
             </div>
           </div>

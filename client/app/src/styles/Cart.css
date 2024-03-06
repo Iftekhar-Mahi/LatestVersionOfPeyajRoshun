@@ -7,13 +7,13 @@
   width: 100%; /* Maintain full width */
   margin: 0 auto; /* Center horizontally */
   padding: 20px;
-  background-color: #d89b9b; /* Light background color */
+  background-color: #d5c0c0; /* Light background color */
   border-radius: 10px; /* Rounded corners for container */
   transition: background-color 0.2s ease-in-out; /* Subtle hover effect for container */
 }
 
 .cart-container:hover {
-  background-color: #d08ba9; /* Slightly darker background on hover */
+  background-color: #ddbfcc; /* Slightly darker background on hover */
 }
 
 /* Cart Title */
@@ -63,7 +63,7 @@
 /* Remove Button */
 
 .remove-button {
-  background-color: #dc3545; /* Red color for removal */
+  background-color: #6ce372; /* Red color for removal */
   color: #fff;
   border: none;
   border-radius: 5px;
