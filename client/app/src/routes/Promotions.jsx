@@ -24,13 +24,15 @@ const Promotions = () => {
     <div className="promotions-container">
       <h3>Promotions</h3>
       <div className="promotions-grid">
+
         {promotions.map((promotion) => (
           <div key={promotion.promotionid} className="promotion-card">
             <div className="card-body">
               <h5>{promotion.name}</h5>
-              <h5>{promotion.description}</h5>
+              <p>{promotion.description}</p>
+              <p> Use Coupon : {promotion.couponcode} </p> 
               <Link to={`/productsunderpromotion/${promotion.promotionid}`} className="btn btn-primary">
-                Go
+                See Products Under Promotion
               </Link>
             </div>
           </div>

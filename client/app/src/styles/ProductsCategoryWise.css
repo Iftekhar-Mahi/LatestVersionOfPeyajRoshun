@@ -1,58 +1,64 @@
 /* General Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa, #427bd7);
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  background-color: #f8f8f8;
 }
 
-/* Product Container Styles */
+/* Product Container */
 .product-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .product-title {
+  font-size: 3rem;
+  font-weight: 700;
   text-align: center;
-  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
   color: #333;
-  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .category-info {
+  font-size: 1.4rem;
   text-align: center;
-  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
   color: #666;
-  margin-bottom: 30px;
 }
 
+/* Product Grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 2.5rem;
 }
 
+/* Product Card */
 .product-card {
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product-card-content {
-  padding: 20px;
+  padding: 2rem;
 }
 
 .product-name {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
   color: #333;
-  margin-bottom: 10px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .product-details {
@@ -62,74 +68,104 @@ body {
 }
 
 .product-detail {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
   color: #666;
-  margin-bottom: 5px;
 }
 
-.product-price {
-  font-weight: bold;
+.product-price,
+.product-quantity {
+  font-weight: 700;
+  color: #333;
 }
 
+/* See Details Button */
 .see-details-button-container {
-  padding: 20px;
+  padding: 1.5rem;
   text-align: center;
 }
 
 .see-details-button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #ff6b6b;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .see-details-button:hover {
-  background-color: #0056b3;
+  background-color: #ff4d4d;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Recommended Products Container Styles */
+/* Recommended Products */
 .recommended-products-container {
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-}
-
-.recommended-products-container h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
+  margin: 5rem auto 0;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .recommended-products-grid {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 2.5rem;
 }
 
 .recommended-product-card {
-  background-color: #ecd7d7;
-  border-radius: 5px;
-  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
   text-align: center;
-  flex: 0 0 200px;
-  margin-right: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommended-product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .recommended-product-name {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
   color: #333;
-  margin-bottom: 10px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .recommended-product-price {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .recommended-products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.product-card,
+.recommended-product-card {
+  animation: fadeIn 0.5s ease;
 }

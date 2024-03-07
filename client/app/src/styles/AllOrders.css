@@ -1,68 +1,151 @@
-/* Orders Container */
-
+/* AllOrders.css */
 .orders-container {
+  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e8f0f5; /* Light background color */
-  padding: 30px;
-  border-radius: 10px; /* Rounded corners for container */
-}
-
-/* Orders Title */
-
-.orders-title {
-  font-size: 2.5em; /* Larger title size */
-  margin-bottom: 20px; /* Spacing below title */
-  color: #333; /* Darker text color */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
-  font-weight: bold; /* Make the heading bold */
-}
-
-/* Order Card */
-
-.order-card {
-  background-color: #fff; /* White card background */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 20px;
-  width: 80%; /* Responsive width */
-  margin-bottom: 15px; /* Spacing between cards */
-  transition: all 0.2s ease-in-out; /* Smooth hover animation */
-}
-
-.order-card:hover {
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-  border: 1px solid #ddd; /* Optional border addition on hover */
-}
-
-/* Order Information */
-
-.order-date,
-.order-amount,
-.order-payment-method,
-.order-payment-status {
-  margin-bottom: 5px; /* Spacing between information items */
-  font-size: 1em; /* Consistent font size for information */
-  display: flex; /* Wrap labels and content */
-  align-items: center; /* Align content vertically */
-  justify-content: space-between; /* Align labels and content horizontally */
-}
-
-.order-date,
-.order-amount {
-  color: #333; /* Darker text color for key information */
-}
-
-.order-payment-method,
-.order-payment-status {
-  color: #666; /* Lighter text color for remaining information */
-}
-
-/* Additional Styling (Optional) */
-
-.order-payment-method:after,
-.order-payment-status:after {
-  content: ":"; /* Add colon after labels */
-  margin-right: 5px; /* Space between colon and value */
-}
+  margin: 2rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+ }
+ 
+ .orders-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: rotate(-45deg);
+  z-index: 1;
+  animation: wave 10s infinite linear;
+ }
+ 
+ .orders-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+ }
+ 
+ .orders-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 120px;
+  height: 4px;
+  background-color: #dd778d;
+  border-radius: 2px;
+ }
+ 
+ .order-card {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  width: 500px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+ }
+ 
+ .order-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #dd778d;
+  transition: height 0.3s ease;
+ }
+ 
+ .order-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .order-card:hover::before {
+  height: 12px;
+ }
+ 
+ .order-date,
+ .order-amount,
+ .order-payment-method,
+ .order-payment-status {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .order-payment-method:after,
+ .order-payment-status:after {
+  content: ":";
+  margin-right: 10px;
+  font-weight: bold;
+ }
+ 
+ .view-details-btn {
+  padding: 1.2rem 2rem;
+  background-color: #dd778d;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+ }
+ 
+ .view-details-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+ }
+ 
+ .view-details-btn:hover {
+  background-color: #856dcb;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .view-details-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 1;
+ }
+ 
+ /* Animation */
+ @keyframes wave {
+  0% {
+    transform: rotate(-45deg) translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: rotate(-45deg) translate(-50%, -50%) scale(1);
+  }
+ }

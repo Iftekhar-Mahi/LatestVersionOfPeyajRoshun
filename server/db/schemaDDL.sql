@@ -9,6 +9,7 @@ SELECT * from orders;
 SELECT * from orderdetails where orderid=
 SELECT * from cart;
 
+-- User Table
 CREATE TABLE Users (
 UserID BIGSERIAL PRIMARY KEY,
   firstName VARCHAR(255) NOT NULL,
@@ -90,8 +91,8 @@ CREATE TABLE
   );
 
 -- Promotions Table
-CREATE TABLE
-  Promotions (
+-- Create table for promotions
+CREATE TABLE Promotions (
     PromotionID SERIAL PRIMARY KEY,
     Name VARCHAR(255) NOT NULL,
     Description TEXT,
@@ -99,18 +100,18 @@ CREATE TABLE
     DiscountPercentage DECIMAL(5, 2) NOT NULL,
     StartDate DATE,
     EndDate DATE
-  );
+);
 
--- PromotionProduct Table
-CREATE TABLE
-  PromotionProduct (
+-- Create table for promotion-product associations
+CREATE TABLE PromotionProduct (
     PromotionID INT,
     ProductID INT,
     DiscountPercentage DECIMAL(5, 2) NOT NULL,
     PRIMARY KEY (PromotionID, ProductID),
-    FOREIGN KEY (PromotionID) REFERENCES Promotions (PromotionID),
-    FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
-  );
+    FOREIGN KEY (PromotionID) REFERENCES Promotions (PromotionID) ON DELETE CASCADE,
+    FOREIGN KEY (ProductID) REFERENCES Products (ProductID) ON DELETE CASCADE
+);
+
 
 --Create table for Cart
 CREATE TABLE Cart (

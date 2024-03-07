@@ -1,51 +1,74 @@
+/* Checkout.css */
 .checkout-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .checkout-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .checkout-info {
-    margin-bottom: 20px;
-  }
-  
-  .checkout-info p {
-    margin-bottom: 10px;
-  }
-  
-  .checkout-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .checkout-form label {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .checkout-form input {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
+  background: linear-gradient(135deg, rgb(158, 139, 210) 7%, #e9ecef);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-info {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-form label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form select,
+.checkout-form input {
+  padding: 0.9rem 1.5rem;
+  background-color: #f8f8f8;
+  color: #333;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkout-form select:hover,
+.checkout-form input:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button {
+  padding: 0.9rem 1.5rem;
+  background-color: #dd778d;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover {
+  background-color: #856dcb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

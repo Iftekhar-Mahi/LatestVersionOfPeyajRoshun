@@ -13,11 +13,16 @@ const ProductDetails = ({ setAuth }) => {
   const [num, setNum] = useState(1);
   const [quantityInStock, setQuantityInStock] = useState(0); // State to hold the quantity in stock
 
+  const [couponcode, setCouponcode] = useState("");
+  const [couponcodeValid, setCouponcodeValid] = useState(false);
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         console.log("Fetching product:", id);
-        const response = await fetch(`http://localhost:3006/productdetails/${id}`);
+        const response = await fetch(
+          `http://localhost:3006/productdetails/${id}`
+        );
         const data = await response.json();
         console.log("the desired Data:", data);
         setProduct(data);
@@ -34,7 +39,9 @@ const ProductDetails = ({ setAuth }) => {
     const fetchProductRating = async () => {
       try {
         console.log("Fetching product rating :", id);
-        const response = await fetch(`http://localhost:3006/api/productavgrating/${id}`);
+        const response = await fetch(
+          `http://localhost:3006/api/productavgrating/${id}`
+        );
         const data = await response.json();
         console.log("the desired Data:", data);
         setProductRating(data[0].rating);
@@ -47,23 +54,64 @@ const ProductDetails = ({ setAuth }) => {
 
   const handleAddToCart = async () => {
     try {
-      console.log("Adding product to cart:", id);
-      console.log("Adding product to cart for user:", userId);
-      const response = await fetch(`http://localhost:3006/api/addToCart/${id}/user/${userId}/quantity/${num}`, {
-        method: "POST",
-      });
+      if (couponcodeValid) {
+        const response = await fetch(
+          `http://localhost:3006/api/addToCart/${id}/user/${userId}/quantity/${num}/couponcode/${couponcode}`,
+          {
+            method: "POST",
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Failed to add product to cart");
+        }
+        const responseData = await response.json();
+        console.log(responseData);
+        setAddedToCart(true);
+      } else {
+        const response = await fetch(
+          `http://localhost:3006/api/addToCart/${id}/user/${userId}/quantity/${num}`,
+          {
+            method: "POST",
+          }
+        );
 
-      if (!response.ok) {
-        throw new Error("Failed to add product to cart");
+        if (!response.ok) {
+          throw new Error("Failed to add product to cart");
+        }
+
+        const responseData = await response.json();
+        console.log(responseData);
+
+        setAddedToCart(true);
       }
 
-      const responseData = await response.json();
-      console.log(responseData);
-
-      setAddedToCart(true);
+      console.log("Adding product to cart:", id);
+      console.log("Adding product to cart for user:", userId);
     } catch (error) {
       console.error("Error adding product to cart:", error);
       alert("Failed to add product to cart. Please try again later.");
+    }
+  };
+
+  const checkValidCouponCode = async () => {
+    try {
+      console.log("Checking coupon code:", couponcode);
+      const response = await fetch(
+        `http://localhost:3006/api/checkCouponCode/${couponcode}/productid/${id}`
+      );
+      const data = await response.json();
+      console.log("the desired Data:", data);
+
+      // Check if the server response includes the expected data
+      if (data && data.couponcode === couponcode && data.productid === id) {
+        setCouponcodeValid(true);
+      } else {
+        setCouponcodeValid(false);
+        alert("Coupon code is invalid!");
+      }
+    } catch (error) {
+      console.error("Error checking coupon code:", error);
+      alert("Failed to check coupon code. Please try again later.");
     }
   };
 
@@ -121,6 +169,18 @@ const ProductDetails = ({ setAuth }) => {
                 </span>
               </li>
             </ul>
+            <input
+              type="text"
+              placeholder="Any Coupon Code?"
+              value={couponcode}
+              onChange={(e) => setCouponcode(e.target.value)}
+            />
+            <button onClick={checkValidCouponCode}>Check Coupon Code</button>
+            {couponcodeValid && (
+              <span className="success-message">Coupon code is valid!</span>
+            )}
+            <br />
+            <br />
             <button className="add-to-cart-btn" onClick={handleAddToCart}>
               Add to Cart
             </button>
@@ -128,7 +188,8 @@ const ProductDetails = ({ setAuth }) => {
               <div>
                 {addedToCart && (
                   <span className="success-message">
-                    {product[0].name} has been added to cart. You can go to your cart to see that.
+                    {product[0].name} has been added to cart. You can go to your
+                    cart to see that.
                   </span>
                 )}
               </div>

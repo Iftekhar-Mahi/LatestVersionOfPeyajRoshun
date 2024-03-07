@@ -23,6 +23,7 @@ import Checkout from "./routes/Checkout"; // Import the Checkout component
 import ProductReview from "./routes/ProductReview"; // Import the ProductReview component
 import EditPage from "./routes/EditPage"; // Import the EditPage component
 import Promotions from "./routes/Promotions"; // Import the Promotions component
+import ProductsUnderPromotion from "./routes/ProductsUnderPromotion";
 // Create a custom context for userId and setUserId
 import OrdersDetails from "./routes/OrderDetails";
 const UserContext = createContext();
@@ -84,9 +85,7 @@ const App = () => {
             <Route exact path="/edit" element={isAuthenticated ? <EditPage/> : <Navigate to="/login" />} /> 
             <Route exact path="/seeHotDeals" element={isAuthenticated ? <Promotions/> : <Navigate to="/login" />} />
             <Route exact path="/orders" element={isAuthenticated ? <AllOrders/> : <Navigate to="/login" />} />
-
-        
-
+            <Route exact path="/productsunderpromotion/:promotionId" element={isAuthenticated ? <ProductsUnderPromotion/> : <Navigate to="/login" />} />
             <Route exact path="/addProductReview/:productid" element={isAuthenticated ? <AddProductReview/> : <Navigate to="/login" />} />
             <Route exact path ="/order/:orderid" element={isAuthenticated ? <OrdersDetails/> : <Navigate to="/login" />} />
           </Routes>

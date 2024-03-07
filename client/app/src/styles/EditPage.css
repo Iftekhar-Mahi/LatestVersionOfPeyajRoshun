@@ -4,89 +4,170 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aquamarine;
-  height: 100vh; /* Fill viewport height */
-  background-color: linear-gradient(to right, #f7ca18, #ff9a9e); /* Gradient background */
+  min-height: 100vh; /* Adjusted to min-height */
+  background: linear-gradient(45deg, #f7ca18, #ff9a9e);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem; /* Added padding */
+}
+
+.edit-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: rotate(-45deg);
+  z-index: 1;
+  animation: wave 10s infinite linear;
 }
 
 /* Edit Card */
 
 .edit-card {
-  background-color: #adccd4; /* White card background */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 30px; /* Increased padding for more space */
-  max-width: 500px; /* Increased card width */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
 }
 
 /* Edit Card Body */
 
 .edit-card-body {
-  text-align: center; /* Center text alignment */
+  text-align: center;
 }
 
 /* Edit Card Title */
 
 .edit-card-title {
-  font-size: 1.8em; /* Larger title size */
-  margin-bottom: 20px; /* Increased spacing below title */
-  color: #333; /* Darker text color */
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.edit-card-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 100px;
+  height: 4px;
+  background-color: #f7ca18;
+  border-radius: 2px;
 }
 
 /* User ID */
 
 .edit-card-body p {
-  margin-bottom: 15px; /* Increased spacing below user ID */
-  font-weight: bold; /* Bold user ID */
-  font-size: 1.2em; /* Larger font size for user ID */
+  margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #555;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Edit Field */
 
 .edit-field {
-  margin-bottom: 20px; /* Increased spacing between fields */
+  margin-bottom: 30px;
+  text-align: left;
 }
 
 .edit-field strong {
-  margin-right: 10px; /* Increased spacing between label and input */
-  font-weight: bold; /* Make labels bold */
-  font-size: 1.1em; /* Larger font size for labels */
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Edit Input */
 
 .edit-input {
-  width: 100%; /* Full-width input */
-  padding: 10px; /* Increased input padding */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 3px; /* Rounded corners */
-  font-size: 1em; /* Larger font size for input text */
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.edit-input:focus {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Edit Button */
 
 .edit-button {
-  background-color: #3f39f0; /* Gradient background color */
-  color: #fff; /* White button text */
-  padding: 15px 30px; /* Increased button padding for larger size */
+  background-color: #3f39f0;
+  color: #fff;
+  padding: 20px 40px;
   border: none;
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Indicate hover interaction */
-  transition: all 0.2s ease-in-out;
-  margin-top: 20px; /* Increased spacing above button */
-  font-size: 1.1em; /* Larger font size for button text */
-  text-decoration: none; /* Remove default link underline */
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 30px;
+  font-size: 1.2em;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.edit-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .edit-button:hover {
   background-color: #dd494e;
-   /* Switch gradient color on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.edit-button:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 1;
 }
 
 /* Edit Success Message (Optional) */
 
 .edit-success-message {
-  color: rgb(76, 20, 206); /* Green color for success */
-  margin-top: 15px; /* Increased spacing above message */
-  font-size: 1.1em; /* Larger font size for message */
+  color: #2ecc71;
+  margin-top: 25px;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation */
+
+@keyframes wave {
+  0% {
+    transform: rotate(-45deg) translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: rotate(-45deg) translate(-50%, -50%) scale(1);
+  }
 }

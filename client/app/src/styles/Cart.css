@@ -1,97 +1,86 @@
-/* Cart Container */
-
+/* Cart.css */
 .cart-container {
-  display: flex; /* Switch to flexbox for better alignment */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center content horizontally */
-  width: 100%; /* Maintain full width */
-  margin: 0 auto; /* Center horizontally */
-  padding: 20px;
-  background-color: #d5c0c0; /* Light background color */
-  border-radius: 10px; /* Rounded corners for container */
-  transition: background-color 0.2s ease-in-out; /* Subtle hover effect for container */
+  background: linear-gradient(135deg, rgb(187, 171, 230) 7%, #e9ecef);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.cart-container:hover {
-  background-color: #ddbfcc; /* Slightly darker background on hover */
-}
-
-/* Cart Title */
 
 .cart-title {
-  font-size: 24px; /* Maintain large font size */
-  margin-bottom: 20px; /* Spacing below title */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-/* Product Cards */
-
 .card {
-  display: flex; /* Switch to flexbox for horizontal layout */
-  justify-content: space-between; /* Align items horizontally */
-  width: 50%;
-  height: 200px; /* Adjusted width for better responsiveness */
-  background-color: #fff; /* White card background */
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: all 0.2s ease-in-out; /* Hover effects for card */
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+  width: 80%;
+  max-width: 500px;
 }
 
 .card:hover {
-  transform: scale(1.02); /* Slight card scale on hover for emphasis */
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-  border-color: #ccc; /* Adjust border color on hover (optional) */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Card Content */
-
-.card-content {
-  display: flex;
-  flex-direction: column;
+.card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-/* Card Title and Text */
-
-.card-title,
 .card-text {
-  font-size: 16px; /* Consistent font size */
-  margin-bottom: 5px; /* Reduced spacing for compact layout */
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #555;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-
-/* Remove Button */
 
 .remove-button {
-  background-color: #6ce372; /* Red color for removal */
+  padding: 0.9rem 1.5rem;
+  background-color: #dd778d;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 5px 10px; /* Reduced padding for better fit */
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out; /* Smooth hover animation */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .remove-button:hover {
-  background-color: #b00000; /* Darker red on hover */
-  /* Add additional hover effects if needed (e.g., transform: scale(1.02);) */
+  background-color: #856dcb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Proceed to Checkout Button */
-
 .proceed-to-checkout-button {
-  background-color: #007bff; /* Blue color for checkout */
+  padding: 0.9rem 1.5rem;
+  background-color: #dd778d;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px; /* Maintain padding */
-  text-decoration: none;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out; /* Smooth hover animation */
-  margin-top: 20px; /* Add spacing above button */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
 }
 
 .proceed-to-checkout-button:hover {
-  background-color: #b0509f; /* Purple color on hover */
-  /* Add additional hover effects if needed (e.g., transform: scale(1.02);) */
+  background-color: #856dcb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }

@@ -21,15 +21,19 @@ const ProductReview = () => {
   }, [id]);
 
   return (
-    <div className="product-review-container"> {/* Apply unique classname */}
-      <h2>Product Review</h2>
-      <div>
+    <div className="product-review-container">
+      <div className="review-header">
+        <h2>Product Review</h2>
+      </div>
+      <div className="review-list">
         {reviews.map((review, index) => (
-          <div className="review-item" key={index}> {/* Apply unique classname */}
-            <p><strong>User ID:</strong> {review.userid}</p>
-            <p><strong>Product ID:</strong> {review.productid}</p>
-            <p><strong>Rating:</strong> {review.rating}</p>
-            <p className="comment"><strong>Comment:</strong> {review.comment}</p> {/* Apply unique classname */}
+          <div className="review-card" key={index}>
+            <div className="review-item">
+              <p><strong>User ID:</strong> {review.userid}</p>
+              <p><strong>Product ID:</strong> {review.productid}</p>
+              <p><strong>Rating:</strong> {review.rating}</p>
+              <p className="comment"><strong>Comment:</strong> {review.comment}</p>
+            </div>
           </div>
         ))}
       </div>

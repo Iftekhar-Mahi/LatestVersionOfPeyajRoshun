@@ -230,6 +230,34 @@ app.get("/promotions", async (req, res) => {
     }
 });
 
+// app.get("/productsunderpromotion/:promotionid", async (req, res) => {   
+//     try {
+//         const results = await db.query("SELECT * FROM promotionproduct WHERE promotionid = $1", [req.params.promotionid]);
+//         res.status(200).json(results.rows);
+//     } catch (err) {
+//         console.error('Error fetching products under promotion:', err);
+//         res.status(500).json({ error: "Internal Server Error" });
+//     }
+// }
+// );
+
+app.get("/productsunderpromotion/:promotionid", async (req, res) => {   
+    try {
+        const results = await db.query(`
+            SELECT p.*, pp.discountpercentage 
+            FROM products p 
+            JOIN promotionproduct pp ON p.productid = pp.productid
+            WHERE pp.promotionid = $1
+        `, [req.params.promotionid]);
+
+        res.status(200).json(results.rows);
+    } catch (err) {
+        console.error('Error fetching products under promotion:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+
 
 app.get("/api/allproducts", async (req, res) => {
     try {
@@ -244,6 +272,8 @@ app.get("/api/allproducts", async (req, res) => {
 app.get("/productdetails/:productid", async (req, res) => {
     console.log("Fetching product:", req.params.productid);
     try {
+        //select p.* , pp.discountpercentage from products p join promotionproduct pp on p.productid=pp.productid where p.productid=$1
+        
         const results = await db.query("SELECT * FROM products WHERE productid = $1", [req.params.productid]);
         console.log(req.params.productid);
         res.status(200).json(results.rows);
@@ -332,13 +362,49 @@ app.delete("/api/removeFromCart/:productid/user/:userid", async (req, res) => {
 
 
 //handle
+// app.post("/api/addToCart/:productid/user/:userid/quantity/:num", async (req, res) => {
+//     console.log("Adding product to cart:", req.params.productid);
+//     console.log("Adding product to cart for user:", req.params.userid);
+//     try {
+//         const checkQuery = `
+//             SELECT userid, productid FROM cart 
+//             WHERE userid = $1 AND productid = $2`;
+//         const checkValues = [req.params.userid, req.params.productid];
+//         const checkResult = await db.query(checkQuery, checkValues);
+        
+//         if (checkResult.rows.length > 0) {
+//             // If the combination exists, update the quantity
+//             const updateQuery = `
+//                 UPDATE cart 
+//                 SET quantity = quantity + $1 
+//                 WHERE userid = $2 AND productid = $3`;
+//             const updateValues = [req.params.num, req.params.userid, req.params.productid];
+//             await db.query(updateQuery, updateValues);
+//         } else {
+//             // If the combination doesn't exist, insert a new row
+//             const insertQuery = `
+//                 INSERT INTO cart (userid, productid, quantity) 
+//                 VALUES ($1, $2, $3)`;
+//             const insertValues = [req.params.userid, req.params.productid, req.params.num];
+//             await db.query(insertQuery, insertValues);
+//         }
+
+//         res.status(201).json({ message: "Product added to cart successfully." });
+//     } catch (err) {
+//         console.error('Error adding product to cart:', err);
+//         res.status(500).json({ error: "Internal Server Error" });
+//     }
+// });
+
+
+//handle
 app.post("/api/addToCart/:productid/user/:userid/quantity/:num", async (req, res) => {
     console.log("Adding product to cart:", req.params.productid);
     console.log("Adding product to cart for user:", req.params.userid);
     try {
         const checkQuery = `
             SELECT userid, productid FROM cart 
-            WHERE userid = $1 AND productid = $2`;
+            WHERE userid = $1 AND productid = $2 `;
         const checkValues = [req.params.userid, req.params.productid];
         const checkResult = await db.query(checkQuery, checkValues);
         
@@ -365,6 +431,82 @@ app.post("/api/addToCart/:productid/user/:userid/quantity/:num", async (req, res
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+// add to cart with coupon code
+app.post("/api/addToCart/:productid/user/:userid/quantity/:num/couponcode/:couponcode", async (req, res) => {
+    console.log("Adding product to cart with coupon code:", req.params.productid);
+    console.log("Adding product to cart for user with coupon code:", req.params.userid);
+    console.log("Coupon code:", req.params.couponcode);
+  
+    try {
+      // Parse the discount percentage from the string
+      const discountPercentageString = req.params.couponcode.replace(/[^\d.-]/g, ''); // Remove non-numeric characters
+      const discountPercentage = parseFloat(discountPercentageString) || 0;
+  
+      const checkQuery = `
+        SELECT userid, productid FROM cart 
+        WHERE userid = $1 AND productid = $2 AND discountpercentage=0`;
+      const checkValues = [req.params.userid, req.params.productid];
+      const checkResult = await db.query(checkQuery, checkValues);
+  
+      if (checkResult.rows.length > 0) {
+        // If the combination exists, update the quantity
+        const updateQuery = `
+          UPDATE cart 
+          SET quantity = quantity + $1 ,discountpercentage=$4
+          WHERE userid = $2 AND productid = $3`;
+        const updateValues = [req.params.num, req.params.userid, req.params.productid, discountPercentage];
+        await db.query(updateQuery, updateValues);
+      } else {
+        // If the combination doesn't exist, insert a new row
+        const insertQuery = `
+          INSERT INTO cart (userid, productid, quantity, discountpercentage) 
+          VALUES ($1, $2, $3, $4)`;
+        const insertValues = [req.params.userid, req.params.productid, req.params.num, discountPercentage];
+        await db.query(insertQuery, insertValues);
+      }
+  
+      res.status(201).json({ message: "Product added to cart successfully." });
+    } catch (err) {
+      console.error('Error adding product to cart:', err);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+
+
+  // check coupon code
+app.get("/api/checkCouponCode/:couponcode/productid/:productid", async (req, res) => {
+    try {
+      console.log("Checking coupon code:", req.params.couponcode);
+        console.log("Checking coupon code for product:", req.params.productid);
+      const couponCode = req.params.couponcode;
+      const productId = req.params.productid;
+  
+      // Perform a database query to check if the coupon code is valid for the given product
+      const couponCheckQuery = `
+        SELECT p.couponcode, pp.productid
+        FROM promotions p
+        JOIN promotionproduct pp ON p.promotionid = pp.promotionid
+        WHERE p.couponcode = $1 AND pp.productid = $2
+      `;
+  
+      const couponCheckValues = [couponCode, productId];
+      const couponCheckResult = await db.query(couponCheckQuery, couponCheckValues);
+  
+      if (couponCheckResult.rows.length > 0) {
+        // Coupon code is valid for the given product
+        res.status(200).json({ couponcode: couponCode, productid: productId });
+      } else {
+        // Coupon code is not valid for the given product
+        res.status(404).json({ error: "Coupon code not valid for the specified product." });
+      }
+    } catch (error) {
+      console.error('Error checking coupon code:', error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+
+
 
 app.post("/api/placeorder/:userid", async (req, res) => {
     try {
