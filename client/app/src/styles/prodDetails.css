@@ -1,76 +1,159 @@
 /* prodDetails.css */
 
 .product-details-container {
-  margin-top: 20px;
-  padding: 0 20px;
-  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f8f8f8;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
 
 .product-item {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-item:hover {
-  transform: translateY(-5px);
+.product-image {
+  flex: 0 0 45%;
+  max-width: 45%;
+  padding-right: 40px;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-details li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
 }
 
 .label {
   font-weight: bold;
+  margin-right: 15px;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
-.price-label {
-  color: #f44336; /* Vibrant color for price label */
-}
-
-.name-label {
-  color: #3f51b5; /* Vibrant color for product name label */
-}
-
-.rating-label {
-  color: #26b7b0; /* Vibrant color for rating label */
-}
-
-.quantity-label {
-  color: #4caf50; /* Vibrant color for quantity label */
-}
-
-.category-label {
-  color: #9c27b0; /* Vibrant color for category label */
-}
-
-.description-label {
-  color: #ff9800; /* Vibrant color for description label */
-}
-
-.price-value,
-span {
-  color: #333; /* Default color for text */
+.price-value {
+  color: #ff4d4d;
+  font-weight: bold;
+  font-size: 28px;
 }
 
 .add-to-cart-btn {
-  background-color: #2196f3; /* Vibrant color for add to cart button */
+  background-color: #ff4d4d;
   color: #fff;
-  padding: 10px 20px;
+  padding: 14px 28px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
-  background-color: #1976d2; /* Darker shade on hover */
+  background-color: #e64343;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .success-message {
-  font-size: 15px;
-  background-color: #72c574; /* Vibrant color for success message */
-  color: #fff;
-  padding: 5px;
-  border-radius: 4px;
+  color: #28a745;
+  font-weight: bold;
   margin-top: 10px;
+  font-size: 16px;
+}
+
+.reviews-link {
+  display: inline-block;
+  margin-top: 30px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.reviews-link:hover {
+  color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.coupon-code-input {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) inset;
+}
+
+.coupon-code-btn {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.coupon-code-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.quantity-controls button {
+  background-color: #f8f8f8;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quantity-controls button:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.quantity-controls span {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 10px;
 }
