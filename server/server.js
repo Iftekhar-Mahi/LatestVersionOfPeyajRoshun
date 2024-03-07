@@ -440,12 +440,24 @@ app.post("/api/addToCart/:productid/user/:userid/quantity/:num/couponcode/:coupo
   
     try {
       // Parse the discount percentage from the string
-      const discountPercentageString = req.params.couponcode.replace(/[^\d.-]/g, ''); // Remove non-numeric characters
-      const discountPercentage = parseFloat(discountPercentageString) || 0;
-  
+    //   const discountPercentageString = req.params.couponcode.replace(/[^\d.-]/g, ''); // Remove non-numeric characters
+    //   const discountPercentage = parseFloat(discountPercentageString) || 0;
+    const q = `
+      SELECT pp.discountpercentage
+      FROM promotionproduct pp
+      JOIN promotions p ON pp.promotionid = p.promotionid
+      WHERE p.couponcode = $1 AND pp.productid = $2;
+      `;
+      const result = await db.query(q, [
+        req.params.couponcode,
+        req.params.productid,
+      ]);
+      const discountPercentage = result.rows[0].discountpercentage;
+
+    
       const checkQuery = `
         SELECT userid, productid FROM cart 
-        WHERE userid = $1 AND productid = $2 AND discountpercentage=0`;
+        WHERE userid = $1 AND productid = $2 `;
       const checkValues = [req.params.userid, req.params.productid];
       const checkResult = await db.query(checkQuery, checkValues);
   
