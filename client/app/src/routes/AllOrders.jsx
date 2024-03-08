@@ -28,10 +28,12 @@ const AllOrders = () => {
       <h1 className="orders-title">Orders</h1>
       {orders.map(order => (
         <div key={order.orderid} className="order-card">
-          <p className='order-date'>Date Placed: {order.dateplaced} </p>
-          <p className='order-amount'>Amount: {order.amount} $</p>
-          <p className='order-payment-method'>Payment Method: {order.paymentmethod}</p>
-          <p className='order-payment-status'>Payment Status: {order.paymentstatus}</p>
+          <p className='order-date'>Date Placed:::{order.dateplaced} </p>
+          <p className='order-amount'>Amount::: {order.amount} $</p>
+          <p className='order-payment-method'>Payment Method::: {order.paymentmethod} </p>
+          <p className='order-payment-status'>Payment Status::: {order.paymentstatus} </p>
+          <p className='order-payment-status'>Comment :::  {order.comment} </p>
+
           {/* Add a button to view order details */}
           <Link to={`/order/${order.orderid}`} className='view-details-btn'>View Order Details</Link>
         </div>

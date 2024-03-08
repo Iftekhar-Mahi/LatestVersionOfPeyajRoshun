@@ -149,8 +149,8 @@ const ProductDetails = ({ setAuth }) => {
                 <span>{quantityInStock}</span>
               </li>
               <li>
-                <span className="label category-label">Category ID:</span>{" "}
-                <span>{product[0].categoryid}</span>
+                <span className="label category-label">Category Name:</span>{" "}
+                <span>{product[0].categoryname}</span>
               </li>
               <li>
                 <span className="label description-label">Description:</span>{" "}

@@ -46,18 +46,6 @@ const ProductCategoryWise = () => {
 
   return (
     <Fragment>
- <div className="recommended-products-container">
-        <h2>Products You may Like</h2>
-        <div className="recommended-products-grid">
-          {previouslyOrderedProducts.map((product) => (
-            <div key={product.productid} className="recommended-product-card">
-              <h3 className="recommended-product-name">{product.name}</h3>
-              <h3 className="recommended-product-price">{product.price}$</h3>
-            </div>
-          ))}
-        </div>
-      </div>
-
 
 
       <div className="product-container">
@@ -97,7 +85,18 @@ const ProductCategoryWise = () => {
           ))}
         </div>
       </div>
-     
+
+      <div className="recommended-products-container">
+        <h2>Products You may Like</h2>
+        <div className="recommended-products-grid">
+          {previouslyOrderedProducts.map((product) => (
+            <div key={product.productid} className="recommended-product-card">
+              <h3 className="recommended-product-name">{product.name}</h3>
+              <h3 className="recommended-product-price">{product.price}$</h3>
+            </div>
+          ))}
+        </div>
+      </div>
     </Fragment>
   );
 };

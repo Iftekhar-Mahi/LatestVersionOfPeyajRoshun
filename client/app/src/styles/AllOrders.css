@@ -93,7 +93,6 @@
  
  .order-payment-method:after,
  .order-payment-status:after {
-  content: ":";
   margin-right: 10px;
   font-weight: bold;
  }
