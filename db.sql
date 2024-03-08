@@ -97,6 +97,56 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+--procedure 1
+
+CREATE OR REPLACE FUNCTION update_user_profile(
+    p_userId bigint,
+    p_firstName varchar(255),
+    p_lastName varchar(255),
+    p_email varchar(255),
+    p_city varchar(100),
+    p_district varchar(100)
+) RETURNS void AS $$
+BEGIN
+    UPDATE Users
+    SET
+        firstName = p_firstName,
+        LastName = p_lastName,
+        Email = p_email,
+        City = p_city,
+        District = p_district
+    WHERE
+        UserID = p_userId;
+END;
+$$ LANGUAGE plpgsql;
+
+--procedure 2
+
+CREATE OR REPLACE FUNCTION add_or_update_order_review(
+    p_order_id bigint,
+    p_user_id bigint,
+    p_review_text text
+) RETURNS void AS $$
+BEGIN
+    -- Check if a review exists for the given userid and orderid
+    IF EXISTS (
+        SELECT 1 FROM orderreview WHERE userid = p_user_id AND orderid = p_order_id
+    ) THEN
+        -- If a review exists, update it
+        UPDATE orderreview 
+        SET comment = p_review_text 
+        WHERE userid = p_user_id AND orderid = p_order_id;
+        RAISE NOTICE 'Review updated successfully';
+    ELSE
+        -- If no review exists, insert a new one
+        INSERT INTO orderreview (userid, orderid, rating, comment) 
+        VALUES (p_user_id, p_order_id, 4, p_review_text);
+        RAISE NOTICE 'Review inserted successfully';
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+
 
 psql - h < hostname > - p < port > - U < username > - d < database >
 

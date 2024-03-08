@@ -31,29 +31,56 @@ app.get("/categories", async (req, res) => {
   }
 });
 
+// app.post("/edit/:userId", async (req, res) => {
+//   const userId = req.params.userId;
+//   const { firstName, lastName, email, city, district } = req.body;
+
+//   try {
+//     const query = `
+//             UPDATE users
+//             SET firstName = $1, lastName = $2, email = $3, city = $4, district = $5
+//             WHERE userId = $6
+//         `;
+//     await db.query(query, [firstName, lastName, email, city, district, userId]);
+
+//     // Respond with success message
+//     res.status(200).json({ message: "Profile updated successfully" });
+//   } catch (err) {
+//     console.error("Error updating profile:", err);
+//     res
+//       .status(500)
+//       .json({ error: "An error occurred while updating the profile" });
+//   }
+// });
+
 app.post("/edit/:userId", async (req, res) => {
   const userId = req.params.userId;
   const { firstName, lastName, email, city, district } = req.body;
 
   try {
-    const query = `
-            UPDATE users
-            SET firstName = $1, lastName = $2, email = $3, city = $4, district = $5
-            WHERE userId = $6
-        `;
-    await db.query(query, [firstName, lastName, email, city, district, userId]);
+      // Call the stored procedure (function) directly without using the CALL keyword
+      await db.query('SELECT update_user_profile($1, $2, $3, $4, $5, $6)', [
+          userId,
+          firstName,
+          lastName,
+          email,
+          city,
+          district
+      ]);
 
-    // Respond with success message
-    res.status(200).json({ message: "Profile updated successfully" });
+      // Respond with success message
+      res.status(200).json({ message: "Profile updated successfully" });
   } catch (err) {
-    console.error("Error updating profile:", err);
-    res
-      .status(500)
-      .json({ error: "An error occurred while updating the profile" });
+      console.error("Error updating profile:", err);
+      res.status(500).json({ error: "An error occurred while updating the profile" });
   }
 });
 
+
+
 // get All products of a certain category
+
+
 app.get("/products/:categoryid", async (req, res) => {
   console.log("Fetching products for category:", req.params.categoryid);
   console.log("categoryid:", req.params.categoryid); //
@@ -64,8 +91,6 @@ app.get("/products/:categoryid", async (req, res) => {
       [req.params.categoryid]
     );
     console.log("Not reached here");
-    //console.log(results);
-
     res.status(200).json(results.rows);
   } catch (err) {
     console.error("Error fetching products:", err);
@@ -209,38 +234,25 @@ app.get("/previousorders/:categoryid/:userid", async (req, res) => {
 
 app.post("/order/:orderid/:userid/review", async (req, res) => {
   try {
-    const orderId = req.params.orderid;
-    const userId = req.params.userid;
-    const { review } = req.body;
+      const orderId = req.params.orderid;
+      const userId = req.params.userid;
+      const { review } = req.body;
 
-    // Check if a review exists for the given userid and orderid
-    const existingReview = await db.query(
-      "SELECT * FROM orderreview WHERE userid = $1 AND orderid = $2",
-      [userId, orderId]
-    );
-
-    if (existingReview.rows.length > 0) {
-      // If a review exists, update it
-      await db.query(
-        "UPDATE orderreview SET comment = $1 WHERE userid = $2 AND orderid = $3",
-        [review, userId, orderId]
-      );
-      console.log("Review updated successfully");
-    } else {
-      // If no review exists, insert a new one
-      await db.query(
-        "INSERT INTO orderreview (userid, orderid, rating, comment) VALUES ($1, $2, $3, $4)",
-        [userId, orderId, 4, review]
-      );
-      console.log("Review inserted successfully");
-    }
-
-    res.status(200).json({ message: "Review added successfully" });
+      // Call the stored procedure to add or update the review
+      await db.query('SELECT add_or_update_order_review($1, $2, $3)', [
+          orderId,
+          userId,
+          review
+      ]);
+      // Respond with success message
+      res.status(200).json({ message: "Review added successfully" });
   } catch (err) {
-    console.error("Error adding/updating review:", err);
-    res.status(500).json({ error: "Internal Server Error" });
+      console.error("Error adding/updating review:", err);
+      res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
 
 app.get("/promotions", async (req, res) => {
   try {
@@ -281,7 +293,7 @@ app.get("/api/allproducts", async (req, res) => {
     console.log(err);
   }
 });
-// get a product
+
 
 app.get("/productdetails/:productid", async (req, res) => {
   console.log("Fetching product:", req.params.productid);
@@ -298,7 +310,7 @@ app.get("/productdetails/:productid", async (req, res) => {
   }
 });
 
-//get product review
+
 app.get("/api/products/:productid/reviews", async (req, res) => {
   console.log("Fetching reviews for product:", req.params.productid);
   try {
@@ -313,6 +325,8 @@ app.get("/api/products/:productid/reviews", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
 app.get("/api/productsByName", async (req, res) => {
   console.log("Fetching product by name:", req.query.name);
   try {
@@ -328,6 +342,8 @@ app.get("/api/productsByName", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
 
 app.get("/api/productsByPrice", async (req, res) => {
   console.log("Fetching product by price:", req.query.price);
@@ -388,7 +404,7 @@ app.delete("/api/removeFromCart/:productid/user/:userid", async (req, res) => {
   }
 });
 
-//handle
+
 app.post(
   "/api/addToCart/:productid/user/:userid/quantity/:num",
   async (req, res) => {
@@ -511,26 +527,20 @@ app.get(
       console.log("Checking coupon code for product:", req.params.productid);
       const couponCode = req.params.couponcode;
       const productId = req.params.productid;
-
-      // Perform a database query to check if the coupon code is valid for the given product
       const couponCheckQuery = `
         SELECT p.couponcode, pp.productid
         FROM promotions p
         JOIN promotionproduct pp ON p.promotionid = pp.promotionid
         WHERE p.couponcode = $1 AND pp.productid = $2
       `;
-
       const couponCheckValues = [couponCode, productId];
       const couponCheckResult = await db.query(
         couponCheckQuery,
         couponCheckValues
       );
-
       if (couponCheckResult.rows.length > 0) {
-        // Coupon code is valid for the given product
         res.status(200).json({ couponcode: couponCode, productid: productId });
       } else {
-        // Coupon code is not valid for the given product
         res
           .status(404)
           .json({ error: "Coupon code not valid for the specified product." });
@@ -561,21 +571,6 @@ app.post("/api/placeorder/:userid", async (req, res) => {
   }
 });
 
-//create a user
-app.post("/api/v1/user", async (req, res) => {
-  try {
-    const results = await db.query("INSERT INTO Users (FirstName, LastName, Email, RoadNo, HouseNo, City, District, Password) values ($1,$2,$3,$4,$5,$6,$7,$8) returning *", [req.body.FirstName, req.body.LastName, req.body.Email, req.body.RoadNo, req.body.HouseNo, req.body.City, req.body.District, req.body.Password]);
-    console.log(results);
-    res.status(201).json({
-      status: "success",
-      data: {
-        user: results.rows[0],
-      },
-    });
-  } catch (err) {
-    console.log(err);
-  }
-});
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`connected via port ${port}`);
