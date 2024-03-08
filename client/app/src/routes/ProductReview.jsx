@@ -29,8 +29,8 @@ const ProductReview = () => {
         {reviews.map((review, index) => (
           <div className="review-card" key={index}>
             <div className="review-item">
-              <p><strong>User ID:</strong> {review.userid}</p>
-              <p><strong>Product ID:</strong> {review.productid}</p>
+              <p><strong>User Name:</strong> {review.firstname} {review.lastname}</p>
+              <p><strong>Product Name:</strong> {review.name}</p>
               <p><strong>Rating:</strong> {review.rating}</p>
               <p className="comment"><strong>Comment:</strong> {review.comment}</p>
             </div>

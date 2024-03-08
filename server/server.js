@@ -31,27 +31,7 @@ app.get("/categories", async (req, res) => {
   }
 });
 
-// app.post("/edit/:userId", async (req, res) => {
-//   const userId = req.params.userId;
-//   const { firstName, lastName, email, city, district } = req.body;
 
-//   try {
-//     const query = `
-//             UPDATE users
-//             SET firstName = $1, lastName = $2, email = $3, city = $4, district = $5
-//             WHERE userId = $6
-//         `;
-//     await db.query(query, [firstName, lastName, email, city, district, userId]);
-
-//     // Respond with success message
-//     res.status(200).json({ message: "Profile updated successfully" });
-//   } catch (err) {
-//     console.error("Error updating profile:", err);
-//     res
-//       .status(500)
-//       .json({ error: "An error occurred while updating the profile" });
-//   }
-// });
 
 app.post("/edit/:userId", async (req, res) => {
   const userId = req.params.userId;
@@ -59,16 +39,7 @@ app.post("/edit/:userId", async (req, res) => {
 
   try {
       // Call the stored procedure (function) directly without using the CALL keyword
-      await db.query('SELECT update_user_profile($1, $2, $3, $4, $5, $6)', [
-          userId,
-          firstName,
-          lastName,
-          email,
-          city,
-          district
-      ]);
-
-      // Respond with success message
+      await db.query('SELECT update_user_profile($1, $2, $3, $4, $5, $6)', [userId, firstName, lastName, email, city, district]);
       res.status(200).json({ message: "Profile updated successfully" });
   } catch (err) {
       console.error("Error updating profile:", err);
@@ -264,6 +235,7 @@ app.get("/promotions", async (req, res) => {
   }
 });
 
+
 app.get("/productsunderpromotion/:promotionid", async (req, res) => {
   try {
     const results = await db.query(
@@ -314,8 +286,13 @@ app.get("/productdetails/:productid", async (req, res) => {
 app.get("/api/products/:productid/reviews", async (req, res) => {
   console.log("Fetching reviews for product:", req.params.productid);
   try {
+
     const results = await db.query(
-      "SELECT * FROM productreview WHERE productid = $1",
+      `SELECT pr.*, u.firstname,u.lastname, p.name
+      FROM productreview pr
+      JOIN users u ON pr.userid = u.userid
+      JOIN products p ON pr.productid = p.productid
+      WHERE pr.productid = $1`,
       [req.params.productid]
     );
     console.log(req.params.productid);
@@ -345,20 +322,55 @@ app.get("/api/productsByName", async (req, res) => {
 
 
 
-app.get("/api/productsByPrice", async (req, res) => {
-  console.log("Fetching product by price:", req.query.price);
+// app.get("/api/productsByPrice", async (req, res) => {
+//   console.log("Fetching product by price:", req.query.price);
+//   try {
+//     console.log(req.query.price);
+//     const results = await db.query("SELECT * FROM products WHERE price = $1", [
+//       req.query.price,
+//     ]);
+//     console.log(req.query.price);
+//     res.status(200).json(results.rows);
+//   } catch (err) {
+//     console.error("Error fetching product:", err);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// });
+
+
+app.get("/api/productsByRating", async (req, res) => {
+  console.log("Fetching product by rating:", req.query.lower, req.query.upper);
   try {
-    console.log(req.query.price);
-    const results = await db.query("SELECT * FROM products WHERE price = $1", [
-      req.query.price,
-    ]);
-    console.log(req.query.price);
+    const results = await db.query(
+      "SELECT * FROM products WHERE getavgrating(productid) BETWEEN $1 AND $2",
+      [req.query.lower, req.query.upper]
+    );
+    console.log(req.query.lower, req.query.upper);
+    console.log(results.rows);
     res.status(200).json(results.rows);
   } catch (err) {
     console.error("Error fetching product:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
+app.get("/api/productsByPrice", async (req, res) => {
+  console.log("Fetching product by price:", req.query.lower, req.query.upper);
+  try {
+    const results = await db.query(
+      "SELECT * FROM products WHERE price BETWEEN $1 AND $2",
+      [req.query.lower, req.query.upper]
+    );
+    console.log(req.query.lower, req.query.upper);
+    console.log(results.rows);
+    res.status(200).json(results.rows);
+  } catch (err) {
+    console.error("Error fetching product:", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 
 app.get("/api/productsByRating", async (req, res) => {
   console.log("Fetching product by rating:", req.query.rating);
